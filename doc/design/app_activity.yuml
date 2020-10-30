@@ -1,0 +1,16 @@
+// {type:activity}
+// {generate:true}
+
+// 用户操作颜色:	#87CEFA
+// 系统操作颜色:    #FFE4B5
+
+(note: figure 1.2: Activity diagram{bg:beige})
+(start)->(登录{bg:#87CEFA})-><a>[选择文件系统来源]->(本地文件系统{bg:#FFE4B5})->|b|
+<a>->(网络学堂文件系统{bg:#FFE4B5})->(文件同步{bg:#87CEFA})->(本地文件系统)
+<a>->(其他文件系统{bg:#FFE4B5})->(文件同步)->(本地文件系统)
+|b|->(增删查改{bg:#87CEFA})->|c|
+|b|->(添加Tag{bg:#87CEFA})->|c|
+|b|->(备份共享{bg:#87CEFA})->|c|
+|c|->(end)
+(note: 用户操作颜色{bg:#87CEFA})
+(note: 系统操作颜色{bg:#FFE4B5})
