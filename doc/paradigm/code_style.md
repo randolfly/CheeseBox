@@ -8,4 +8,8 @@
 
     此外，变量中不要出现无意义的名称,比如x_location_data中data无意义，应该删去。
 
+    变量中单词组合时，名词放在动词前面，比如: user_login, file_save;
+
+    变量中名词只出现单数，比如file_save而不是~~files_save~~
+
 - 类命名

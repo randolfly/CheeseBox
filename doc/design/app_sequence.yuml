@@ -1,0 +1,20 @@
+// {type:sequence}
+// {generate:true}
+
+[:用户]sendUnsentEmail>[:UI]>[:Logic]>[:Data]
+[:用户]登录>[:UI]
+    [:UI]login_check>>[:Logic]
+    [:Logic]user_check>>[:Data]
+    [:Data]is_valid_user.>[:Logic]
+    [:Logic]get_user_files>[:Logic]
+    [:Logic]is_login_ready.>[:UI]
+    [:UI]update>[:UI]
+[:用户]选择文件来源>[:UI]
+    [:UI]choose_file_source>>[:Logic]
+    [:Logic]crawl_file>[:Logic]
+    [:Logic]file_info_save>>[:Data]
+    [:Data]update_file_info>[:Data]
+    [:Data]is_update_ready.>[:Logic]
+    [:Logic]is_login_ready.>[:UI]
+    [:UI]update>[:UI]
+
