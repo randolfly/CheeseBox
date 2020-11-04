@@ -11,6 +11,7 @@
     变量中单词组合时，名词放在动词前面，比如: user_login, file_save;
 
     变量中名词只出现单数，比如file_save而不是~~files_save~~
-    注意：这里面**get, set**单独说
+
+    注意：这里面**get, set**单独成类，比如有get_data()
 
 - 类命名
