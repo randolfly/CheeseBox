@@ -1,5 +1,7 @@
 ## Annotation style
 
+> **全部使用中文**
+
 - python 注释
 
     采用[google](https://google.github.io/styleguide/pyguide.html#381-docstrings)格式，足够轻量而且内容丰富易读，下面是几个例子
