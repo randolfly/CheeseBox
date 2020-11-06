@@ -2,6 +2,17 @@
 
 > **全部使用中文**
 
+- Python 头部注释
+
+    
+    ```python
+    # -*- coding: utf-8 -*-
+    # @Author: Randolf
+    # @Date:   2020-11-06 21:17:20
+    # @Last Modified by:   Randolf
+    # @Last Modified time: 2020-11-06 21:17:21
+    ```
+
 - python 注释
 
     采用[google](https://google.github.io/styleguide/pyguide.html#381-docstrings)格式，足够轻量而且内容丰富易读，下面是几个例子
