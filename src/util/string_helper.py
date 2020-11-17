@@ -2,7 +2,7 @@
 # @Author: Randolf
 # @Date:   2020-11-06 21:17:20
 # @Last Modified by:   Randolf
-# @Last Modified time: 2020-11-09 08:40:00
+# @Last Modified time: 2020-11-17 19:16:23
 
 from pypinyin import lazy_pinyin
 
@@ -31,4 +31,7 @@ class StringHelper():
         """
         chinese_string_list_sorted = sorted(chinese_string_list, key=lambda x: ''.join(lazy_pinyin(x)))
         # TODO: 写对应的测试
+        # 一组排序结果
+        # chinese_string_list = ['阿斯顿','太过分','而','234','asa','之日起','Randolf','bvc']
+        # 结果: ['234', 'Randolf', 'asa', '阿斯顿', 'bvc', '而', '太过分', '之日起']
         return chinese_string_list_sorted

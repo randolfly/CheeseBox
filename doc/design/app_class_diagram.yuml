@@ -1,0 +1,25 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+
+[note: You can stick notes on diagrams too!{bg:cornsilk}]
+// [Customer]<>1-orders 0..*>[Order]
+// [Order]++*-*>[LineItem]
+// [Order]-1>[DeliveryMethod]
+// [Order]*-*>[Product|EAN_Code|promo_price()]
+// [Category]<->[Product]
+// [DeliveryMethod]^[National]
+// [DeliveryMethod]^[International]
+
+[Node|-father_node:Node;-child_node:List;|+add_child():void;+delete_child():void;+set_father():void;+get_father():void;get_child():void]
+[Node]^[FileNode|-path:String;-tag:List;|+get_path():String;+get_tag():List;]
+
+// [Tree]
+
+[ErrorHelper||+error_handler():void;]
+
+[ConstData|-error_type:Dict;-button_text:String;...]
+
+[ConfigHelper|-username:String;-password:String;-system_root_path:Dict;|+data_load():void;+data_write():void;+get_username():String;+get_password():String;+get_root_path():Dict()]
+
+// [User|#counter;+Forename;+Surname;+HashedPassword;-Salt|+Login(user,pass);+Logout();+Register()]
