@@ -1,5 +1,5 @@
 // {type:class}
-// {direction:topDown}
+// {direction:leftToRight}
 // {generate:true}
 
 [note: You can stick notes on diagrams too!{bg:cornsilk}]
@@ -14,12 +14,13 @@
 [Node|-father_node:Node;-child_node:List;|+add_child():void;+delete_child():void;+set_father():void;+get_father():void;get_child():void]
 [Node]^[FileNode|-path:String;-tag:List;|+get_path():String;+get_tag():List;]
 
-// [Tree]
+[FileTree|-root_node:FileNode;-root_path:String;-file_system_type:String;|+generate_file_tree():uint;]
 
 [ErrorHelper||+error_handler():void;]
 
-[ConstData|-error_type:Dict;-button_text:String;...]
+[ConstData|-error_type:Dict{Status};-button_text:String;-Status:DIct;...]
 
 [ConfigHelper|-username:String;-password:String;-system_root_path:Dict;|+data_load():void;+data_write():void;+get_username():String;+get_password():String;+get_root_path():Dict()]
 
+[Network|-usename:String;-password:String;-url:String;-file_path:String|]
 // [User|#counter;+Forename;+Surname;+HashedPassword;-Salt|+Login(user,pass);+Logout();+Register()]
