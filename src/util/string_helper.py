@@ -1,8 +1,14 @@
-# -*- coding: utf-8 -*-
-# @Author: Randolf
-# @Date:   2020-11-06 21:17:20
-# @Last Modified by:   Randolf
-# @Last Modified time: 2020-11-17 19:16:23
+#!/usr/bin/env python
+# coding=utf-8
+# 
+# Author       : randolf
+# Date         : 2020-11-19 19:47:10
+# LastEditors  : randolf
+# LastEditTime : 2020-11-20 20:34:45
+# FilePath     : \CatInBox\src\util\string_helper.py
+# 
+
+
 
 from pypinyin import lazy_pinyin
 
