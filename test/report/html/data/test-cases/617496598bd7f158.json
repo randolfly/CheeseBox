@@ -1,12 +1,12 @@
 {
-  "uid" : "453f58239fd01768",
+  "uid" : "617496598bd7f158",
   "name" : "test_add",
   "fullName" : "test_sample.TestClass#test_add",
   "historyId" : "53c4a343689ea1b1d581fbe24395bfcc",
   "time" : {
-    "start" : 1607073669710,
-    "stop" : 1607073669711,
-    "duration" : 1
+    "start" : 1607073367559,
+    "stop" : 1607073367559,
+    "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,9 +16,9 @@
     "steps" : [ {
       "name" : "加法操作",
       "time" : {
-        "start" : 1607073669710,
-        "stop" : 1607073669711,
-        "duration" : 1
+        "start" : 1607073367559,
+        "stop" : 1607073367559,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
@@ -41,11 +41,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "测试加法"
-  }, {
     "name" : "feature",
     "value" : "熟悉框架功能"
+  }, {
+    "name" : "story",
+    "value" : "测试加法"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -57,7 +57,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19944-MainThread"
+    "value" : "19079-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -79,6 +79,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "453f58239fd01768.json",
+  "source" : "617496598bd7f158.json",
   "parameterValues" : [ ]
 }

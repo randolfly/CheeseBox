@@ -1,12 +1,12 @@
 {
-  "uid" : "aed020cdb72c6746",
-  "name" : "test_not_in",
-  "fullName" : "test_sample.TestClass#test_not_in",
-  "historyId" : "ed97724d3f98d97fc7458552054adf20",
+  "uid" : "8233a1476d0b891c",
+  "name" : "test_add",
+  "fullName" : "test_sample.TestClass#test_add",
+  "historyId" : "53c4a343689ea1b1d581fbe24395bfcc",
   "time" : {
-    "start" : 1607073669713,
-    "stop" : 1607073669713,
-    "duration" : 0
+    "start" : 1607073848501,
+    "stop" : 1607073848502,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,20 +14,23 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "步骤2:点xxx",
+      "name" : "加法操作",
       "time" : {
-        "start" : 1607073669713,
-        "stop" : 1607073669713,
+        "start" : 1607073848502,
+        "stop" : 1607073848502,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
-      "parameters" : [ ],
+      "parameters" : [ {
+        "name" : "x",
+        "value" : "2"
+      } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "hasContent" : false
+      "hasContent" : true
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
@@ -42,7 +45,7 @@
     "value" : "熟悉框架功能"
   }, {
     "name" : "story",
-    "value" : "测试不包含"
+    "value" : "测试加法"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -54,7 +57,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19944-MainThread"
+    "value" : "20617-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -76,6 +79,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "aed020cdb72c6746.json",
+  "source" : "8233a1476d0b891c.json",
   "parameterValues" : [ ]
 }

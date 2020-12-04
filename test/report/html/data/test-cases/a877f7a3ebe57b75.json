@@ -1,11 +1,11 @@
 {
-  "uid" : "2b4c7d86f867c4b9",
+  "uid" : "a877f7a3ebe57b75",
   "name" : "test_in",
   "fullName" : "test_sample.TestClass#test_in",
   "historyId" : "8165ef23e0760f161e3d81ad27a2ed0a",
   "time" : {
-    "start" : 1607073848503,
-    "stop" : 1607073848503,
+    "start" : 1607083628068,
+    "stop" : 1607083628068,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤1:点xxx",
       "time" : {
-        "start" : 1607073848503,
-        "stop" : 1607073848503,
+        "start" : 1607083628068,
+        "stop" : 1607083628068,
         "duration" : 0
       },
       "status" : "passed",
@@ -54,7 +54,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "20617-MainThread"
+    "value" : "9065-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -75,7 +75,15 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "53a77c5aa662541",
+      "uid" : "66ad2eadfbb02763",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073848503,
+        "stop" : 1607073848503,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "36b84585a10dfd20",
       "status" : "passed",
       "time" : {
         "start" : 1607073669712,
@@ -83,7 +91,7 @@
         "duration" : 0
       }
     }, {
-      "uid" : "fd964d4362a9aa5",
+      "uid" : "a6702ceb4b85b0a3",
       "status" : "passed",
       "time" : {
         "start" : 1607073367560,
@@ -91,7 +99,7 @@
         "duration" : 0
       }
     }, {
-      "uid" : "e64fc60c3103cd14",
+      "uid" : "4000a51240eeb549",
       "status" : "passed",
       "time" : {
         "start" : 1607073158900,
@@ -102,6 +110,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "2b4c7d86f867c4b9.json",
+  "source" : "a877f7a3ebe57b75.json",
   "parameterValues" : [ ]
 }

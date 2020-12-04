@@ -1,11 +1,11 @@
 {
-  "uid" : "fd964d4362a9aa5",
+  "uid" : "66ad2eadfbb02763",
   "name" : "test_in",
   "fullName" : "test_sample.TestClass#test_in",
   "historyId" : "8165ef23e0760f161e3d81ad27a2ed0a",
   "time" : {
-    "start" : 1607073367560,
-    "stop" : 1607073367560,
+    "start" : 1607073848503,
+    "stop" : 1607073848503,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤1:点xxx",
       "time" : {
-        "start" : 1607073367560,
-        "stop" : 1607073367560,
+        "start" : 1607073848503,
+        "stop" : 1607073848503,
         "duration" : 0
       },
       "status" : "passed",
@@ -38,11 +38,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "测试包含"
-  }, {
     "name" : "feature",
     "value" : "熟悉框架功能"
+  }, {
+    "name" : "story",
+    "value" : "测试包含"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -54,7 +54,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19079-MainThread"
+    "value" : "20617-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -76,6 +76,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "fd964d4362a9aa5.json",
+  "source" : "66ad2eadfbb02763.json",
   "parameterValues" : [ ]
 }

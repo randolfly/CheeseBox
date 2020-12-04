@@ -1,30 +1,30 @@
 [ {
-  "uid" : "8d2e1ca45e2619f1",
-  "name" : "test_not_in",
-  "time" : {
-    "start" : 1607073848505,
-    "stop" : 1607073848505,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2b4c7d86f867c4b9",
-  "name" : "test_in",
-  "time" : {
-    "start" : 1607073848503,
-    "stop" : 1607073848503,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "980c80b03db74a29",
+  "uid" : "35f23b9f54baf85e",
   "name" : "test_add",
   "time" : {
-    "start" : 1607073848501,
-    "stop" : 1607073848502,
-    "duration" : 1
+    "start" : 1607083628066,
+    "stop" : 1607083628066,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "27322430abc713b4",
+  "name" : "test_not_in",
+  "time" : {
+    "start" : 1607083628069,
+    "stop" : 1607083628069,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a877f7a3ebe57b75",
+  "name" : "test_in",
+  "time" : {
+    "start" : 1607083628068,
+    "stop" : 1607083628068,
+    "duration" : 0
   },
   "status" : "passed",
   "severity" : "normal"

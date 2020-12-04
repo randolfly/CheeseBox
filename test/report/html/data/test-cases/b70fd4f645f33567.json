@@ -1,23 +1,48 @@
 {
-  "uid" : "bbdc893e605283d4",
+  "uid" : "b70fd4f645f33567",
   "name" : "test_not_in",
   "fullName" : "test_sample.TestClass#test_not_in",
   "historyId" : "ed97724d3f98d97fc7458552054adf20",
   "time" : {
-    "start" : 1607073158901,
-    "stop" : 1607073158901,
+    "start" : 1607073848505,
+    "stop" : 1607073848505,
     "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
   "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "步骤2:点xxx",
+      "time" : {
+        "start" : 1607073848505,
+        "stop" : 1607073848505,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "测试不包含"
-  }, {
     "name" : "feature",
     "value" : "熟悉框架功能"
+  }, {
+    "name" : "story",
+    "value" : "测试不包含"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -29,7 +54,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "18565-MainThread"
+    "value" : "20617-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -51,6 +76,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "bbdc893e605283d4.json",
+  "source" : "b70fd4f645f33567.json",
   "parameterValues" : [ ]
 }
