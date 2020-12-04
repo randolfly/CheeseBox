@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+## CheeseBox
 
-You can use the [editor on GitHub](https://github.com/randolfly/CheeseBox/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+> Author: 张荣侨, ...(大家自己之后填写)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> 这是清华2020软件工程“盒子里的猫”小组的大作业——"Cheese Box(芝士盒子)"
 
-### Markdown
+### 项目简介
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### 文件夹介绍
+```txt
+.
+├── archive: (存档文件，包含外部数据)  
+│   ├── audio: (音频文件)
+│   └── img: (图片文件)
+├── build: (编译输出可执行文件)
+├── doc: (文档地址)
+│   ├── course: (课程相关报告地址)
+│   ├── design: (大作业设计相关文档)
+│   └── paradigm: (大作业编程范式)
+├── lib: (库文件)
+├── readme.md
+├── src: (代码源文件)
+└── test: (测试文件)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/randolfly/CheeseBox/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
