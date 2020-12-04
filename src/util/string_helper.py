@@ -4,8 +4,8 @@
 # Author       : randolf
 # Date         : 2020-11-19 19:47:10
 # LastEditors  : randolf
-# LastEditTime : 2020-11-20 20:34:45
-# FilePath     : \CatInBox\src\util\string_helper.py
+# LastEditTime : 2020-12-04 13:50:17
+# FilePath     : /CheeseBox/src/util/string_helper.py
 # 
 
 
@@ -43,3 +43,19 @@ class StringHelper():
         # chinese_string_list = ['阿斯顿','太过分','而','234','asa','之日起','Randolf','bvc']
         # 结果: ['234', 'Randolf', 'asa', '阿斯顿', 'bvc', '而', '太过分', '之日起']
         return chinese_string_list_sorted
+
+    def get_string_pinyin(self, string):
+        """获取一个字符串的拼音表示字符串
+        
+        如果是中文，比如'张荣侨'，返回'zhangrongqiao';
+        如果是英文或者数字，比如'randolf0210ppp', 返回原值，'randolf0210ppp'
+        如果中英文夹杂，返回对应的排列，如'randolf0210张荣侨ppp'，返回值，'randolf0210zhangrongqiaoppp'
+        如果含有特殊字符，比如'_'，比如'rand_olf张荣侨ppp', 返回: 'rand_olfzhangrongqiaoppp'
+
+        Args:
+            string ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        return ''.join(lazy_pinyin(string))
