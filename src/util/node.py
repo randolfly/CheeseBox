@@ -11,6 +11,12 @@
 import sys
 import os
 sys.path.append(os.getcwd())
+try:
+    sys.path.append(os.getcwd()+'/src')
+except Exception as e:
+    # 访问异常的错误编号和详细信息
+    print(e.args)
+
 from util import string_helper
 
 from bisect import bisect_left
