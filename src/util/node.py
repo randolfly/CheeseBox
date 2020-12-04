@@ -13,11 +13,12 @@ import os
 sys.path.append(os.getcwd())
 try:
     sys.path.append(os.getcwd()+'/src')
+    sys.path.append(os.getcwd()+'/src/util')
 except Exception as e:
     # 访问异常的错误编号和详细信息
     print(e.args)
 
-from util import string_helper
+from string_helper import StringHelper
 
 from bisect import bisect_left
 
@@ -32,6 +33,9 @@ class Node():
 
     def __init__(self, file_name):
         """初始化Node类
+
+        Args:
+            file_name (String): 用于初始化的文件夹名字
         """
         self.file_name = file_name
         self.father_node = None
@@ -39,7 +43,7 @@ class Node():
         self.child_node = []
 
         # 创建StringHelper 类
-        self.string_helper = string_helper.StringHelper()
+        self.string_helper = StringHelper()
 
     def search_left(self, file_name):
         """给定文件名，查找对应子节点,返回最接近的位置的左边index
@@ -146,7 +150,7 @@ if __name__ == "__main__":
     a = Node('hello')
 
     test_list = [Node(x) for x in ['胖嘟嘟', '老干妈', '123',
-                                   '12', '1', '张荣侨', '张荣Randolf']]
+                                   '12', '1', '张荣侨', '张荣Randolf', '配方法','sin']]
     for item in test_list:
         a.add_child(item)
 
