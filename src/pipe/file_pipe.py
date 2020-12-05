@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:57
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 10:50:11
+# LastEditTime : 2020-12-05 10:52:40
 # FilePath     : \CatInBox\src\pipe\file_pipe.py
 # 
 
@@ -105,7 +105,7 @@ def print_all_path(root_node):
 if __name__ == "__main__":
     # 简单测试
     # file_pipe = FilePipe(os.getcwd(), os.getcwd()+'/src')
-    file_pipe = FilePipe(os.getcwd(), '/home/randolf/Documents/Code/')
+    file_pipe = FilePipe(os.getcwd(), path.dirname(os.getcwd()))
     print(os.getcwd())
     print('=='*10)
     
