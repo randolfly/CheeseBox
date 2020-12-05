@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:35
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 10:50:37
+# LastEditTime : 2020-12-05 16:08:47
 # FilePath     : \CatInBox\src\pipe\pipe.py
 # 
 
@@ -68,3 +68,17 @@ class Pipe():
             file_system_name (String): 存储文件的名字
         """
         pass
+    
+    @abstractmethod
+    def file_system_xml_parse(self, xml_file_path, xml_file_name):
+        """给定使用xml格式存储的文件树文件的路径和文件名，解析出这个文件树
+
+        Args:
+            xml_file_path (String): xml文件的绝对路径
+            xml_file_name (String): xml文件的文件名
+        
+        Returns:
+            FileTree: 解析出的文件树
+        """
+        file_tree = None
+        return file_tree

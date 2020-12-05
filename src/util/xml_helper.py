@@ -4,12 +4,12 @@
 # Author       : randolf
 # Date         : 2020-11-20 20:00:10
 # LastEditors  : randolf
-# LastEditTime : 2020-11-20 20:34:37
+# LastEditTime : 2020-12-05 15:59:07
 # FilePath     : \CatInBox\src\util\xml_helper.py
-# 
+# ref: https://blog.csdn.net/weixin_36279318/article/details/79176475
 
 
-
+import os
 import xml.etree.ElementTree as ET
 
 class XmlHelper():
@@ -29,3 +29,17 @@ class XmlHelper():
             file_name (String): 生成的XML文件文件名
             file_path (String): 生成的XML文件文件绝对路径
         """
+        
+    def parse_xml(self, file_path, file_name):
+        """给定xml文件地址以及xml文件名，解析这个文件为一棵树
+
+        Args:
+            file_path (String): xml文件的地址
+            file_name (String): xml文件的文件名
+        
+        Returns:
+            ElementTree: xml树(未处理为文件树)
+        """
+        #TODO Error类型处理
+        self.xml_tree = ET.parse(os.path.join(file_path,file_name))
+        return self.xml_tree

@@ -23,17 +23,17 @@
 
 // [User|#counter;+Forename;+Surname;+HashedPassword;-Salt|+Login(user,pass);+Logout();+Register()]
 
-[Node|-father_node:Node;-child_node:List;|+add_child():void;+delete_child():void;+set_father():void;+get_father():void;get_child():void]
-[Tree|-root_node:Node;|]
-[Pipe|-file_destination:String|+file_system_scan:Tree]
+[Node|-file_name：String;-father_node:Node;-child_node:List;|+add_child():void;+delete_child():void;+set_father():void;+get_father():void;+get_child():void;+binary_search():int;+search_left():int]
+[Tree|-root_node:Node;|+get_subtree_node():Node;+print_tree():void]
+[Pipe|-file_system_root_path:String;-file_system_destination:String|+read_file_system():FileTree;+write_file_system():STATUS;+file_system_xml_parse():FileTree;]
 
 [Node]^[UINode|-color:String;-x_position:float;-y_position:float;-zoom:float;|+paint():STAUS;+set_color():void;set_text():void;set_text_color():void;]
-[Node]^[FileNode|-path:String;-tag:List;|+get_path():String;+get_tag():List;]
+[Node]^[FileNode|;-tag_list:List;|+get_relative_path():String;+get_tag():List;]
 
-[Tree]^[FileTree|-root_node:FileNode;-root_path:String;-file_system_type:String;|+fetch_file_tree():STATUS;]
+[Tree]^[FileTree|-root_path:String;-file_system_type:String;|+fetch_file_tree():STATUS;]
 [Tree]^[UITree|-root_node:UINode;-root_path:String;-file_system_type:String;|+fetch_ui_tree():STATUS;]
 
-[Pipe]^[FilePipe|-file_destination:String|+xml_write():STATUS;+xml_read():FileTree;+file_system_scan():FileTree;]
+[Pipe]^[FilePipe|-item_number:int;|-get_file_tree():FileTree;]
 [Pipe]^[NetPipe|-usename:String;-password:String;-file_destination:String;|+file_system_scan():FileTree;]
 
 [UI|-top_panel:TopPanel;-left_panel:LeftPanel;-right_panel:RightPanel;-tree_panel:TreePanel;-menu_panel:MenuPanel]

@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:57
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 10:52:40
+# LastEditTime : 2020-12-05 16:12:00
 # FilePath     : \CatInBox\src\pipe\file_pipe.py
 # 
 
@@ -73,7 +73,7 @@ class FilePipe(Pipe):
         
     # @functools.lru_cache()
     def get_file_tree(self, root_path, file_node):
-        """递归函数，遍历该文档目录和子目录下的所有文件，获取其path
+        """递归函数，遍历该文档目录和子目录下的所有文件，获取其path，作为本地文件下read_file_system的实现方式
 
         Args:
             root_path (String): 根目录
