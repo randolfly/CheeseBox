@@ -4,18 +4,22 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:45:37
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 15:51:37
-# FilePath     : /CheeseBox/src/util/file_tree.py
+# LastEditTime : 2020-12-05 10:50:24
+# FilePath     : \CatInBox\src\util\file_tree.py
 # 
 
 import sys
 import os
-# sys.path.append(os.getcwd())
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src')
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/util')
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/pipe')
+from os import path
 
-    
+src_path =  path.dirname(path.dirname(path.abspath(__file__)))
+util_path =  path.join(src_path, 'util')
+pipe_path =  path.join(src_path, 'pipe')
+
+sys.path.append(src_path)
+sys.path.append(util_path)
+sys.path.append(pipe_path)
+
 from tree import Tree
 from file_node import FileNode
 

@@ -4,16 +4,21 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:35
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 13:49:00
-# FilePath     : /CheeseBox/src/pipe/pipe.py
+# LastEditTime : 2020-12-05 10:50:37
+# FilePath     : \CatInBox\src\pipe\pipe.py
 # 
 
 import sys
 import os
-# sys.path.append(os.getcwd())
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src')
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/util')
-sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/pipe')
+from os import path
+
+src_path =  path.dirname(path.dirname(path.abspath(__file__)))
+util_path =  path.join(src_path, 'util')
+pipe_path =  path.join(src_path, 'pipe')
+
+sys.path.append(src_path)
+sys.path.append(util_path)
+sys.path.append(pipe_path)
 
     
 # 实现虚函数，ref: https://blog.csdn.net/tony_wong/article/details/39638887
