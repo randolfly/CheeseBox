@@ -10,17 +10,16 @@
 
 import sys
 import os
-sys.path.append(os.getcwd())
-try:
-    sys.path.append(os.getcwd()+'/src')
-    sys.path.append(os.getcwd()+'/src/util')
-except Exception as e:
-    # 访问异常的错误编号和详细信息
-    print(e.args)
+# sys.path.append(os.getcwd())
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/util')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/pipe')
+
 
 from string_helper import StringHelper
 
 from bisect import bisect_left
+# import functools
 
 class Node():
     """定义逻辑上的树操作的节点
@@ -101,6 +100,7 @@ class Node():
         Args:
             node (Node): 子节点
         """
+        node.father_node = self
         if self.child_node:
             node_index = self.search_left(node.file_name)
             self.child_node.insert(node_index, node)
@@ -144,6 +144,17 @@ class Node():
         """
         return self.child_node
 
+    # @functools.lru_cache()
+    def show(self, layer=0):
+        """打印当前节点下的子树
+
+        Args:
+            layer (int): 首节点前的空格. Defaults to 0.
+        """
+        print('|'+"--"*layer + self.file_name)
+        for child in self.child_node:
+            child.show(layer+1)
+        # map(lambda child:child.show(layer+1), self.child_node)
 
 if __name__ == "__main__":
     # 简单测试环节
@@ -154,9 +165,15 @@ if __name__ == "__main__":
     for item in test_list:
         a.add_child(item)
 
+    a.show()
+    print('#'*15)
+    
     for item in a.child_node:
         print(item.file_name)
     print('#'*15)
     a.delete_child('胖嘟嘟')
+    a.show()
+    print('#'*15)
+    
     for item in a.child_node:
         print(item.file_name)

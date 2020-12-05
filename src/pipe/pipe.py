@@ -10,13 +10,11 @@
 
 import sys
 import os
-sys.path.append(os.getcwd())
-try:
-    sys.path.append(os.getcwd()+'/src')
-    sys.path.append(os.getcwd()+'/src/util')
-except Exception as e:
-    # 访问异常的错误编号和详细信息
-    print(e.args)
+# sys.path.append(os.getcwd())
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/util')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/pipe')
+
     
 # 实现虚函数，ref: https://blog.csdn.net/tony_wong/article/details/39638887
 from abc import ABCMeta, abstractmethod

@@ -4,19 +4,17 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:02
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 00:14:49
+# LastEditTime : 2020-12-05 15:51:25
 # FilePath     : /CheeseBox/src/util/file_node.py
 # 
 
 import sys
 import os
-sys.path.append(os.getcwd())
-try:
-    sys.path.append(os.getcwd()+'/src')
-    sys.path.append(os.getcwd()+'/src/util')
-except Exception as e:
-    # 访问异常的错误编号和详细信息
-    print(e.args)
+# sys.path.append(os.getcwd())
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/util')
+sys.path.append('/home/randolf/Documents/Code/Python/Project/CheeseBox/src/pipe')
+
     
 from node import Node
 
@@ -34,16 +32,20 @@ class FileNode(Node):
             file_name (String): 根节点的文件名
         """
         Node.__init__(self, file_name)
-        self.file_path = ""
         self.tag_list = []
         
     def get_relative_path(self):
         """获取文件node的路径，在当前文件系统下的相对路径，可以是磁盘上的，也可以是网络上的
 
         Returns:
-            String: 相对于文件系统下的相对路径
+            String: 相对于文件系统下的相对路径("./A/B/C/")
         """
-        return self.file_path
+        cur_node = self
+        cur_path = ''
+        while(cur_node.father_node):
+            cur_path = os.path.sep + cur_node.file_name + cur_path
+            cur_node = cur_node.father_node
+        return cur_path
     
     def get_tag(self):
         """获取当前文件node的tag列表
