@@ -29,7 +29,7 @@
 
 ### 用例设计
 
-1. [用例表](doc/app_use_case.md)
+1. [用例表](doc/app_use_case.html)
 2. [用例图](./img/app_use_case.svg)
 
 ### 类图设计
