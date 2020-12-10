@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "E:\\01_Softwares\\02_Useful\\06_conda\\Conda\\python.exe",
+    "python.pythonPath": "/bin/python",
     "python.testing.pytestArgs": [
         "test"
     ],

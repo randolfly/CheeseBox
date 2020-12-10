@@ -4,8 +4,8 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:44:51
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 10:51:06
-# FilePath     : \CatInBox\src\util\tree.py
+# LastEditTime : 2020-12-10 17:00:33
+# FilePath     : /CheeseBox/src/util/tree.py
 # 
 
 import sys
@@ -38,6 +38,7 @@ class Tree():
         """
         self.root_node = node
         self.root_node.file_name = '.'
+        # TODO: 需要一个node_list不?存放所有的node列表
         
     def get_subtree_node(self, relative_dir):
         """给定相对路径，返回相对路径下的子节点
