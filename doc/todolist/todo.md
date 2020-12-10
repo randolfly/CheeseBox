@@ -3,3 +3,5 @@
 3. [ ] MindMap 实现： [QPaint](http://zetcode.com/gui/pyqt5/painting/)
 4. [ ] UI Test 实现(自动测试)   测试PyTest是否兼容QTest ：[QTest+uinttest](http://johnnado.com/pyqt-qtest-example/)
    1. [ ] [ref2](https://www.cnblogs.com/bhlt1998/p/10908219.html)
+   2. [ ] [ref3: pytest-qt插件](https://pytest-qt.readthedocs.io/en/latest/)
+      1. [ ] [插件地址](https://pypi.org/project/pytest-qt/)
