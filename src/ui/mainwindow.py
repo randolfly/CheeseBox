@@ -158,7 +158,7 @@ class MainWindow(QMainWindow):
                 # else:
                 #     ui_son_node.setNodeLevel(ThirdThemeLevel)
                 # ui_son_node.setText(m_text_name)   
-                # self.scene.NodeList.append(ui_son_node)
+                self.scene.NodeList.append(ui_son_node)
 
                 m_activateNode.sonNode.append(ui_son_node)
                 ui_son_node.parentNode = m_activateNode
