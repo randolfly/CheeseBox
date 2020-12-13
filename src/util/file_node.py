@@ -4,8 +4,8 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:02
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 10:50:51
-# FilePath     : \CatInBox\src\util\file_node.py
+# LastEditTime : 2020-12-11 20:17:49
+# FilePath     : /CheeseBox/src/util/file_node.py
 # 
 
 import sys
@@ -20,7 +20,7 @@ sys.path.append(src_path)
 sys.path.append(util_path)
 sys.path.append(pipe_path)
 
-    
+
 from node import Node
 
 class FileNode(Node):

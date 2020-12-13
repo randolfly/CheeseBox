@@ -1,44 +1,15 @@
-#!/usr/bin/env python
-# coding=utf-8
-# 
-# Author       : randolf
-# Date         : 2020-12-03 15:46:12
-# LastEditors  : randolf
-# LastEditTime : 2020-12-10 16:57:24
-# FilePath     : /CheeseBox/src/util/ui_node.py
-# 
-
-import sys
-import os
-from os import path
-
-src_path =  path.dirname(path.dirname(path.abspath(__file__)))
-util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
-
-sys.path.append(src_path)
-sys.path.append(util_path)
-sys.path.append(pipe_path)
-
-    
-from node import Node
-from config import *
-
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
+import re
+import sys
+from Config import *
 
-class UINode(Node, QGraphicsTextItem):
-    """继承Node, 作为视图上Node的节点，用于显示UI的文件系统树
 
-    Args:
-        Node (Node): [description]
-        
-    Attributes:
-        TODO
-        x_position (float): 
-        
+class Node(QGraphicsTextItem):
+    """ReWrite QGraphicsTextItem
+
     Signals:
         nodeChanged: node content change
         nodeMoved: node moved
@@ -46,27 +17,26 @@ class UINode(Node, QGraphicsTextItem):
         nodeSelected: click select node
         nodeLostFocus: node lost focus
     """
-    
-    node_changed = pyqtSignal()
-    node_moved = pyqtSignal(int, int)
-    node_edited = pyqtSignal()
-    node_selected = pyqtSignal()
-    node_lost_focus = pyqtSignal()
-    
-    def __init__(self, file_name):
-        """初始化一个文件节点，给定根节点的文件名
+    nodeChanged = pyqtSignal()
+    nodeMoved = pyqtSignal(int, int)
+    nodeEdited = pyqtSignal()
+    nodeSelected = pyqtSignal()
+    nodeLostFocus = pyqtSignal()
 
-        Args:
-            file_name (String): 根节点的文件名
-        """
-        Node.__init__(self, file_name)
-        QGraphicsTextItem.__init__(self)
-        
-        self.x_position = 0
-        self.y_position = 0
+    def __init__(self, *args, **kwargs):
+        super(Node, self).__init__(*args, **kwargs)
+
+        self.parentNode = None
+        self.sonNode = []
+        self.x = 0
+        self.y = 0
         self.width = 0
-        
-        self.default_text = ''
+        # self.num = 0
+
+        self.m_defaultText = ''
+        self.m_note = ''
+        self.m_link = 'https://'
+        self.hasLink = False
         self.m_size = (60, 30)
         self.m_margin = 30
         self.m_border = False
@@ -74,11 +44,12 @@ class UINode(Node, QGraphicsTextItem):
         self.m_level = -1
         self.m_textColor = QColor(Qt.black)
         self.m_editable = False
-        
+
+        self.setOpenExternalLinks(True)
         self.setFlag(QGraphicsItem.ItemIsSelectable)
         self.setFlag(QGraphicsItem.ItemIsMovable)
         self.setFlag(QGraphicsItem.ItemSendsScenePositionChanges)
-        
+
     def setBorder(self, hasBorder):
         self.m_border = hasBorder
         self.update()
@@ -126,6 +97,41 @@ class UINode(Node, QGraphicsTextItem):
             self.setTextColor(QColor(Qt.wwhite))
             self.setPlainText('自由主题')
     
+    def setText(self, text):
+        self.setPlainText(text)
+
+    def insertPicture(self, image):
+        self.width = self.boundingRect().width()
+        self.height = self.boundingRect().height()
+
+        c = self.textCursor()
+        c.setPosition(0)
+        self.setTextCursor(c)
+
+        print(image)
+        c.insertHtml('<img src="{}" width=15 height=15></img>'.format(image))
+
+  
+    def insertLink(self, link):
+        self.width = self.boundingRect().width()
+        self.height = self.boundingRect().height()
+
+        c = self.textCursor()
+        print(c)
+
+        print(c.document())
+
+        c.setPosition(len(c.document().toPlainText()))
+        self.setTextCursor(c)
+
+        c.insertHtml('<a href="{}">'
+                        '<img src="/media/wsl/UBUNTU 18_0/example_pyqt5/MyXmind/images/link.svg" width=15 height=15></img></a>'.format(link))
+
+    def updateLink(self, link):
+        res_url = r"(?<=href=\").+?(?=\")|(?<=href=\').+?(?=\')"
+        print(re.sub(res_url, link, self.toHtml(), 1))
+        self.setHtml(re.sub(res_url, link, self.toHtml(), 1))
+
     def paint(self, painter, option, w):
         if self.m_border:
             painter.setPen(QPen(QBrush(Qt.black), 1))
@@ -146,12 +152,13 @@ class UINode(Node, QGraphicsTextItem):
 
         super().paint(painter, option, w)
 
+
     def itemChange(self, change, value):
         if change == QGraphicsItem.ItemPositionHasChanged and self.scene():
             self.nodeChanged.emit()
 
         return super().itemChange(change, value)
-    
+
     def mousePressEvent(self, e):
         self.nodeSelected.emit()
         super().mousePressEvent(e)
@@ -162,9 +169,10 @@ class UINode(Node, QGraphicsTextItem):
         self.nodeEdited.emit()
 
     def mouseMoveEvent(self, e):
-        if not self.father_node:
+        if not self.parentNode:
             diff = QPointF(e.scenePos() - e.lastScenePos())
             self.nodeMoved.emit(diff.x(), diff.y())
 
     def focusOutEvent(self, e):
         self.nodeLostFocus.emit()
+
