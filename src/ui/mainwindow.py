@@ -142,8 +142,8 @@ class MainWindow(QMainWindow):
             for sonNode in v.child_node:
                 # 创建儿子节点
                 stack.append(sonNode)
-                for node in self.scene.NodeList:
-                    print(node.toPlainText(), node.x, node.y)
+                # for node in self.scene.NodeList:
+                #     print(node.toPlainText(), node.x, node.y)
                 ui_son_node = self.scene.addSonNode(sonNode.file_name)
                 # ui_son_node = self.scene.nodeFactory()
                 # self.scene.addItem(ui_son_node)
