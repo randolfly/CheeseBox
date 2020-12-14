@@ -92,12 +92,28 @@ class MainWindow(QMainWindow):
         if root_file_node is None:
             return
         stack = []       
+        node_stack = []
         print("Insert New Root Node")
         stack.append(root_file_node)
-                 
         # for sonNode in root_file_node.child_node:
         #     stack.append(sonNode)
+        # 新建一个rootnode
         
+        ui_root_node = self.scene.addFirstFileNode(root_file_node)
+        # ui_root_node = self.scene.nodeFactory()
+        # self.scene.addItem(ui_root_node)
+        # m_pos = self.scene.getSonPos()
+        # m_text_name = root_file_node.file_name
+        
+        # ui_root_node.x, ui_root_node.y = m_pos
+        # ui_root_node.num = 1
+        # ui_root_node.setNodeLevel(MainThemeLevel)
+        ui_root_node.setText(root_file_node.file_name)
+        
+        node_stack.append(ui_root_node)        
+        # node为焦点
+        # self.scene.setActivateNode(root_node)
+        # self.scene.NodeList.append(ui_root_node)
         # # 新建一个node
         # ui_root_node = self.scene.nodeFactory()
         # self.scene.addItem(ui_root_node)
@@ -118,33 +134,20 @@ class MainWindow(QMainWindow):
         while stack:
             v = stack.pop()
             print('v: ', v.file_name)
-            # 最后一个
-            if not self.scene.NodeList:
-                # 新建一个node
-                ui_root_node = self.scene.nodeFactory()
-                self.scene.addItem(ui_root_node)
-                m_pos = self.scene.getSonPos()
-                m_text_name = root_file_node.file_name
+            m_activateNode = node_stack.pop()
+            self.scene.setActivateNode(m_activateNode)
                 
-                ui_root_node.x, ui_root_node.y = m_pos
-                ui_root_node.num = 1
-                ui_root_node.setNodeLevel(MainThemeLevel)
-                
-                ui_root_node.setText(m_text_name)            
-                # node为焦点
-                # self.scene.setActivateNode(root_node)
-                self.scene.NodeList.append(ui_root_node)
-            
-            self.scene.setActivateNode(self.scene.NodeList[len(self.scene.NodeList)-1])
+            # self.scene.setActivateNode(self.scene.NodeList[len(self.scene.NodeList)-1])
             # self.scene.m_activateNode.toPlainText()
             # 准备插入node
-            m_activateNode = self.scene.m_activateNode
+            # node_index = 0
             for sonNode in v.child_node:
                 # 创建儿子节点
                 stack.append(sonNode)
                 # for node in self.scene.NodeList:
                 #     print(node.toPlainText(), node.x, node.y)
-                ui_son_node = self.scene.addSonNode(sonNode.file_name)
+                ui_son_node = self.scene.addSonNode(sonNode.file_name)                
+                node_stack.append(ui_son_node)
                 # ui_son_node = self.scene.nodeFactory()
                 # self.scene.addItem(ui_son_node)
                 
@@ -158,16 +161,23 @@ class MainWindow(QMainWindow):
                 # else:
                 #     ui_son_node.setNodeLevel(ThirdThemeLevel)
                 # ui_son_node.setText(m_text_name)   
-                self.scene.NodeList.append(ui_son_node)
+                # self.scene.NodeList.append(ui_son_node)
 
-                m_activateNode.sonNode.append(ui_son_node)
-                ui_son_node.parentNode = m_activateNode
-                self.scene.addBranch(m_activateNode, ui_son_node)
+                # m_activateNode.sonNode.append(ui_son_node)
+                # ui_son_node.parentNode = m_activateNode
+                # self.scene.addBranch(m_activateNode, ui_son_node)
                 
-                self.scene.m_activateNode = m_activateNode
+                self.scene.setActivateNode(m_activateNode)
+
+        # 调整高度(最低的非叶节点调整)
+            
+        # self.scene.adjustNode(m_activateNode, )
         
-        for node in self.scene.NodeList:
-            print(node.toPlainText(), node.x, node.y)
+        # for node in self.scene.NodeList:
+        #     print("final:", node.toPlainText(), node.x, node.y)
+            
+        # for branch in self.scene.BranchList:
+        #     print("src: {0}, dst: {1}".format(branch.srcNode.toPlainText(), branch.dstNode.toPlainText()))
             
     
     def set_shortcut(self):

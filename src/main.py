@@ -21,6 +21,7 @@ from file_node import FileNode
 from file_pipe import FilePipe
 from mainwindow import MainWindow
 from Component import *
+from main_panel import Ui_MainWindow
 
 
 def main():
@@ -32,6 +33,8 @@ def main():
         settings.setValue('lastpath', [])
 
     window = MainWindow(settings)
+    # window = Ui_MainWindow()
+    
     # NoteWindow = Note()
     # LinkWindow = Link()
     # 测试
@@ -46,6 +49,7 @@ def main():
     print('item total number of this file tree: ', file_pipe.item_number)
     
     window.show_file_tree(file_tree)
+    
     # window.addNote.connect(NoteWindow.handle_addnote)
     # window.close_signal.connect(NoteWindow.handle_close)
     # window.scene.press_close.connect(NoteWindow.handle_close)

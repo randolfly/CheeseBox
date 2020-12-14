@@ -83,6 +83,8 @@ class Graph(QGraphicsScene):
 
         self.addItem(node)
         self.NodeList.append(node)
+        
+        return node
 
     # 添加 branch
     def addBranch(self, srcNode, dstNode):
