@@ -60,3 +60,7 @@
 ### 测试报告
 
 [测试报告](./html/index.html)
+
+### 文件树显示
+
+参考[demo](./img/demo.png)
