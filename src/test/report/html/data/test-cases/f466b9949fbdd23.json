@@ -1,11 +1,11 @@
 {
-  "uid" : "7e95f32b2381dd56",
-  "name" : "test_not_in",
-  "fullName" : "test_sample.TestClass#test_not_in",
-  "historyId" : "ed97724d3f98d97fc7458552054adf20",
+  "uid" : "f466b9949fbdd23",
+  "name" : "test_in",
+  "fullName" : "test_sample.TestClass#test_in",
+  "historyId" : "8165ef23e0760f161e3d81ad27a2ed0a",
   "time" : {
-    "start" : 1607073158901,
-    "stop" : 1607073158901,
+    "start" : 1607073158900,
+    "stop" : 1607073158900,
     "duration" : 0
   },
   "status" : "passed",
@@ -14,7 +14,7 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "story",
-    "value" : "测试不包含"
+    "value" : "测试包含"
   }, {
     "name" : "feature",
     "value" : "熟悉框架功能"
@@ -51,6 +51,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "7e95f32b2381dd56.json",
+  "source" : "f466b9949fbdd23.json",
   "parameterValues" : [ ]
 }

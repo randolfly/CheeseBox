@@ -1,12 +1,12 @@
 {
-  "uid" : "35f23b9f54baf85e",
+  "uid" : "33b808f749a54bab",
   "name" : "test_add",
   "fullName" : "test_sample.TestClass#test_add",
   "historyId" : "53c4a343689ea1b1d581fbe24395bfcc",
   "time" : {
-    "start" : 1607083628066,
-    "stop" : 1607083628066,
-    "duration" : 0
+    "start" : 1607073669710,
+    "stop" : 1607073669711,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,9 +16,9 @@
     "steps" : [ {
       "name" : "加法操作",
       "time" : {
-        "start" : 1607083628066,
-        "stop" : 1607083628066,
-        "duration" : 0
+        "start" : 1607073669710,
+        "stop" : 1607073669711,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -41,11 +41,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "feature",
-    "value" : "熟悉框架功能"
-  }, {
     "name" : "story",
     "value" : "测试加法"
+  }, {
+    "name" : "feature",
+    "value" : "熟悉框架功能"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -57,7 +57,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "9065-MainThread"
+    "value" : "19944-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -73,46 +73,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ {
-      "uid" : "8233a1476d0b891c",
-      "status" : "passed",
-      "time" : {
-        "start" : 1607073848501,
-        "stop" : 1607073848502,
-        "duration" : 1
-      }
-    }, {
-      "uid" : "500226449881aa40",
-      "status" : "passed",
-      "time" : {
-        "start" : 1607073669710,
-        "stop" : 1607073669711,
-        "duration" : 1
-      }
-    }, {
-      "uid" : "617496598bd7f158",
-      "status" : "passed",
-      "time" : {
-        "start" : 1607073367559,
-        "stop" : 1607073367559,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "f383c24c4eda7602",
-      "status" : "passed",
-      "time" : {
-        "start" : 1607073158899,
-        "stop" : 1607073158899,
-        "duration" : 0
-      }
-    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "35f23b9f54baf85e.json",
+  "source" : "33b808f749a54bab.json",
   "parameterValues" : [ ]
 }

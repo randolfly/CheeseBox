@@ -1,11 +1,11 @@
 {
-  "uid" : "500226449881aa40",
-  "name" : "test_add",
-  "fullName" : "test_sample.TestClass#test_add",
-  "historyId" : "53c4a343689ea1b1d581fbe24395bfcc",
+  "uid" : "5b5be443477a6c29",
+  "name" : "test_sort_all",
+  "fullName" : "test_string_helper.TestStringHelper#test_sort_all",
+  "historyId" : "9670d4ccdac7a05ce12526829e1c687f",
   "time" : {
-    "start" : 1607073669710,
-    "stop" : 1607073669711,
+    "start" : 1608283554246,
+    "stop" : 1608283554247,
     "duration" : 1
   },
   "status" : "passed",
@@ -14,23 +14,20 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "加法操作",
+      "name" : "初始化StringHelper",
       "time" : {
-        "start" : 1607073669710,
-        "stop" : 1607073669711,
+        "start" : 1608283554246,
+        "stop" : 1608283554247,
         "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
-      "parameters" : [ {
-        "name" : "x",
-        "value" : "2"
-      } ],
+      "parameters" : [ ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "hasContent" : true
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
@@ -41,23 +38,23 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "测试加法"
-  }, {
     "name" : "feature",
-    "value" : "熟悉框架功能"
+    "value" : "测试中英文排序功能"
+  }, {
+    "name" : "story",
+    "value" : "测试排序功能"
   }, {
     "name" : "suite",
-    "value" : "test_sample"
+    "value" : "test_string_helper"
   }, {
     "name" : "subSuite",
-    "value" : "TestClass"
+    "value" : "TestStringHelper"
   }, {
     "name" : "host",
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19944-MainThread"
+    "value" : "50942-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -66,7 +63,7 @@
     "value" : "cpython3"
   }, {
     "name" : "package",
-    "value" : "test_sample"
+    "value" : "test_string_helper"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -79,6 +76,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "500226449881aa40.json",
+  "source" : "5b5be443477a6c29.json",
   "parameterValues" : [ ]
 }

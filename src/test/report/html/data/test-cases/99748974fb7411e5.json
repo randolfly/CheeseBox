@@ -1,0 +1,329 @@
+{
+  "uid" : "99748974fb7411e5",
+  "name" : "test_pinyin_get",
+  "fullName" : "test_string_helper.TestStringHelper#test_pinyin_get",
+  "historyId" : "3773d7e1654ea1d75827a9ea369d9bc9",
+  "time" : {
+    "start" : 1608284131965,
+    "stop" : 1608284131967,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化StringHelper",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'hello'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'pdd'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'_'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'张荣侨'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'踟蹰'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131966,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'踟躇'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131966,
+        "stop" : 1608284131967,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'randolf0210ppp'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取拼音",
+      "time" : {
+        "start" : 1608284131967,
+        "stop" : 1608284131967,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd90fb8d30>"
+      }, {
+        "name" : "chinese_string",
+        "value" : "'rand_olf张荣侨ppp'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "测试获取拼音功能"
+  }, {
+    "name" : "feature",
+    "value" : "测试中英文排序功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_string_helper"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestStringHelper"
+  }, {
+    "name" : "host",
+    "value" : "Randolf"
+  }, {
+    "name" : "thread",
+    "value" : "61106-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_string_helper"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "24899660f5392940",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608284070405,
+        "stop" : 1608284070407,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "3cd189964e82c5b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283981762,
+        "stop" : 1608283981765,
+        "duration" : 3
+      }
+    }, {
+      "uid" : "9ed43c9990168113",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283979671,
+        "stop" : 1608283979673,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "2f1d56a4f3d70d26",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283979671,
+        "stop" : 1608283979673,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "27f23c04fb963568",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283861188,
+        "stop" : 1608283861189,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "edc19aaea4e5a518",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283554243,
+        "stop" : 1608283554245,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "6588550bf70a68e2",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'TestStringHelper' object has no attribute 'string_helper_test'",
+      "time" : {
+        "start" : 1608283459202,
+        "stop" : 1608283459203,
+        "duration" : 1
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "99748974fb7411e5.json",
+  "parameterValues" : [ ]
+}

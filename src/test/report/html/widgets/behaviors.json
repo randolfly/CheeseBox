@@ -1,5 +1,5 @@
 {
-  "total" : 1,
+  "total" : 2,
   "items" : [ {
     "uid" : "b82796a7e551d9c30e79de61e7804a67",
     "name" : "熟悉框架功能",
@@ -10,6 +10,17 @@
       "passed" : 3,
       "unknown" : 0,
       "total" : 3
+    }
+  }, {
+    "uid" : "5b8f115412c0f63eb14e9244e630b913",
+    "name" : "测试中英文排序功能",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
     }
   } ]
 }

@@ -5,41 +5,69 @@
     "name" : "test_sample",
     "children" : [ {
       "name" : "test_add",
-      "uid" : "35f23b9f54baf85e",
+      "uid" : "69a58e8e6596692e",
       "parentUid" : "49d5c9ab53add678e0c3f97317188a18",
       "status" : "passed",
       "time" : {
-        "start" : 1607083628066,
-        "stop" : 1607083628066,
-        "duration" : 0
+        "start" : 1608284070410,
+        "stop" : 1608284070411,
+        "duration" : 1
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : "test_in",
-      "uid" : "a877f7a3ebe57b75",
+      "uid" : "6c541d701af3ebfc",
       "parentUid" : "49d5c9ab53add678e0c3f97317188a18",
       "status" : "passed",
       "time" : {
-        "start" : 1607083628068,
-        "stop" : 1607083628068,
+        "start" : 1608284070412,
+        "stop" : 1608284070412,
         "duration" : 0
       },
       "flaky" : false,
       "parameters" : [ ]
     }, {
       "name" : "test_not_in",
-      "uid" : "27322430abc713b4",
+      "uid" : "9c3da0bed32eb01",
       "parentUid" : "49d5c9ab53add678e0c3f97317188a18",
       "status" : "passed",
       "time" : {
-        "start" : 1607083628069,
-        "stop" : 1607083628069,
+        "start" : 1608284070413,
+        "stop" : 1608284070413,
         "duration" : 0
       },
       "flaky" : false,
       "parameters" : [ ]
     } ],
     "uid" : "49d5c9ab53add678e0c3f97317188a18"
+  }, {
+    "name" : "test_string_helper",
+    "children" : [ {
+      "name" : "test_pinyin_get",
+      "uid" : "99748974fb7411e5",
+      "parentUid" : "13d6dd068561c4542253a39747172623",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608284131965,
+        "stop" : 1608284131967,
+        "duration" : 2
+      },
+      "flaky" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_sort_all",
+      "uid" : "b09a6664e0672433",
+      "parentUid" : "13d6dd068561c4542253a39747172623",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608284131969,
+        "stop" : 1608284131969,
+        "duration" : 0
+      },
+      "flaky" : true,
+      "parameters" : [ ]
+    } ],
+    "uid" : "13d6dd068561c4542253a39747172623"
   } ]
 }

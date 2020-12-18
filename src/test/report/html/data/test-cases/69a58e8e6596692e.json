@@ -1,12 +1,12 @@
 {
-  "uid" : "27322430abc713b4",
-  "name" : "test_not_in",
-  "fullName" : "test_sample.TestClass#test_not_in",
-  "historyId" : "ed97724d3f98d97fc7458552054adf20",
+  "uid" : "69a58e8e6596692e",
+  "name" : "test_add",
+  "fullName" : "test_sample.TestClass#test_add",
+  "historyId" : "53c4a343689ea1b1d581fbe24395bfcc",
   "time" : {
-    "start" : 1607083628069,
-    "stop" : 1607083628069,
-    "duration" : 0
+    "start" : 1608284070410,
+    "stop" : 1608284070411,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,20 +14,23 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "步骤2:点xxx",
+      "name" : "加法操作",
       "time" : {
-        "start" : 1607083628069,
-        "stop" : 1607083628069,
+        "start" : 1608284070410,
+        "stop" : 1608284070410,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
-      "parameters" : [ ],
+      "parameters" : [ {
+        "name" : "x",
+        "value" : "2"
+      } ],
       "stepsCount" : 0,
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
-      "hasContent" : false
+      "hasContent" : true
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
@@ -42,7 +45,7 @@
     "value" : "熟悉框架功能"
   }, {
     "name" : "story",
-    "value" : "测试不包含"
+    "value" : "测试加法"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -54,7 +57,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "9065-MainThread"
+    "value" : "59962-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -75,41 +78,49 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "b70fd4f645f33567",
+      "uid" : "922fcddd0eb33f27",
       "status" : "passed",
       "time" : {
-        "start" : 1607073848505,
-        "stop" : 1607073848505,
+        "start" : 1607083628066,
+        "stop" : 1607083628066,
         "duration" : 0
       }
     }, {
-      "uid" : "ce202a5480a5dd13",
+      "uid" : "914d2f723ebd706d",
       "status" : "passed",
       "time" : {
-        "start" : 1607073669713,
-        "stop" : 1607073669713,
+        "start" : 1607073848501,
+        "stop" : 1607073848502,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "33b808f749a54bab",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073669710,
+        "stop" : 1607073669711,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "2d3f25c25f1c88e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073367559,
+        "stop" : 1607073367559,
         "duration" : 0
       }
     }, {
-      "uid" : "278044627c0eaa97",
+      "uid" : "a20dacfd2f31493d",
       "status" : "passed",
       "time" : {
-        "start" : 1607073367562,
-        "stop" : 1607073367562,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "7e95f32b2381dd56",
-      "status" : "passed",
-      "time" : {
-        "start" : 1607073158901,
-        "stop" : 1607073158901,
+        "start" : 1607073158899,
+        "stop" : 1607073158899,
         "duration" : 0
       }
     } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "27322430abc713b4.json",
+  "source" : "69a58e8e6596692e.json",
   "parameterValues" : [ ]
 }

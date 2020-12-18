@@ -1,11 +1,11 @@
 {
-  "uid" : "a6702ceb4b85b0a3",
+  "uid" : "6c541d701af3ebfc",
   "name" : "test_in",
   "fullName" : "test_sample.TestClass#test_in",
   "historyId" : "8165ef23e0760f161e3d81ad27a2ed0a",
   "time" : {
-    "start" : 1607073367560,
-    "stop" : 1607073367560,
+    "start" : 1608284070412,
+    "stop" : 1608284070412,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤1:点xxx",
       "time" : {
-        "start" : 1607073367560,
-        "stop" : 1607073367560,
+        "start" : 1608284070412,
+        "stop" : 1608284070412,
         "duration" : 0
       },
       "status" : "passed",
@@ -38,11 +38,11 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "测试包含"
-  }, {
     "name" : "feature",
     "value" : "熟悉框架功能"
+  }, {
+    "name" : "story",
+    "value" : "测试包含"
   }, {
     "name" : "suite",
     "value" : "test_sample"
@@ -54,7 +54,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19079-MainThread"
+    "value" : "59962-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -70,12 +70,54 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f3bf73c90c600b35",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607083628068,
+        "stop" : 1607083628068,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "86982d34db69a30d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073848503,
+        "stop" : 1607073848503,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "45ef67df4f4eef0e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073669712,
+        "stop" : 1607073669712,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "51665fc4de7059",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073367560,
+        "stop" : 1607073367560,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "f466b9949fbdd23",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607073158900,
+        "stop" : 1607073158900,
+        "duration" : 0
+      }
+    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a6702ceb4b85b0a3.json",
+  "source" : "6c541d701af3ebfc.json",
   "parameterValues" : [ ]
 }

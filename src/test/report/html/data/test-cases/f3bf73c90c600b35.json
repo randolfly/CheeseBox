@@ -1,11 +1,11 @@
 {
-  "uid" : "36b84585a10dfd20",
+  "uid" : "f3bf73c90c600b35",
   "name" : "test_in",
   "fullName" : "test_sample.TestClass#test_in",
   "historyId" : "8165ef23e0760f161e3d81ad27a2ed0a",
   "time" : {
-    "start" : 1607073669712,
-    "stop" : 1607073669712,
+    "start" : 1607083628068,
+    "stop" : 1607083628068,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤1:点xxx",
       "time" : {
-        "start" : 1607073669712,
-        "stop" : 1607073669712,
+        "start" : 1607083628068,
+        "stop" : 1607083628068,
         "duration" : 0
       },
       "status" : "passed",
@@ -54,7 +54,7 @@
     "value" : "Randolf"
   }, {
     "name" : "thread",
-    "value" : "19944-MainThread"
+    "value" : "9065-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -76,6 +76,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "36b84585a10dfd20.json",
+  "source" : "f3bf73c90c600b35.json",
   "parameterValues" : [ ]
 }

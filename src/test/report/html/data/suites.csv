@@ -1,4 +1,6 @@
 "Status","Name","Duration in ms","Description"
-"passed","test_sample.TestClass#test_add","0",""
-"passed","test_sample.TestClass#test_not_in","0",""
+"passed","test_sample.TestClass#test_add","1",""
 "passed","test_sample.TestClass#test_in","0",""
+"passed","test_string_helper.TestStringHelper#test_sort_all","0",""
+"passed","test_sample.TestClass#test_not_in","0",""
+"passed","test_string_helper.TestStringHelper#test_pinyin_get","2",""

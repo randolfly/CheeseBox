@@ -1,0 +1,161 @@
+{
+  "uid" : "b09a6664e0672433",
+  "name" : "test_sort_all",
+  "fullName" : "test_string_helper.TestStringHelper#test_sort_all",
+  "historyId" : "9670d4ccdac7a05ce12526829e1c687f",
+  "time" : {
+    "start" : 1608284131969,
+    "stop" : 1608284131969,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化StringHelper",
+      "time" : {
+        "start" : 1608284131969,
+        "stop" : 1608284131969,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "获取排序后列表",
+      "time" : {
+        "start" : 1608284131969,
+        "stop" : 1608284131969,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "string_helper_obj",
+        "value" : "<string_helper.StringHelper object at 0x7fcd8f4ad9d0>"
+      }, {
+        "name" : "string_list",
+        "value" : "['hello', 'pdd', '1', '_', '张荣侨', '踟蹰', '踟躇', 'randolf0210ppp', 'rand_olf张荣侨ppp']"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "测试中英文排序功能"
+  }, {
+    "name" : "story",
+    "value" : "测试排序功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_string_helper"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestStringHelper"
+  }, {
+    "name" : "host",
+    "value" : "Randolf"
+  }, {
+    "name" : "thread",
+    "value" : "61106-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_string_helper"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "6bbe322d3ebfa79f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608284070408,
+        "stop" : 1608284070409,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "bcebaafdcbaa8939",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283981772,
+        "stop" : 1608283981773,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "5b94c2e848a7022d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283979675,
+        "stop" : 1608283979675,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "e013b719851e8907",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283979675,
+        "stop" : 1608283979675,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "217a12d90a19737e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283861191,
+        "stop" : 1608283861191,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "5b5be443477a6c29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608283554246,
+        "stop" : 1608283554247,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "73d5704ef45c7381",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'TestStringHelper' object has no attribute 'string_helper_test'",
+      "time" : {
+        "start" : 1608283459219,
+        "stop" : 1608283459219,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b09a6664e0672433.json",
+  "parameterValues" : [ ]
+}
