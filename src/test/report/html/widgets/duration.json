@@ -1,5 +1,5 @@
 [ {
-  "uid" : "69a58e8e6596692e",
+  "uid" : "49d33a6161535d06",
   "name" : "test_add",
   "time" : {
     "start" : 1608284070410,
@@ -9,27 +9,17 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "6c541d701af3ebfc",
-  "name" : "test_in",
-  "time" : {
-    "start" : 1608284070412,
-    "stop" : 1608284070412,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b09a6664e0672433",
+  "uid" : "f0aebbda6d30f84a",
   "name" : "test_sort_all",
   "time" : {
-    "start" : 1608284131969,
-    "stop" : 1608284131969,
-    "duration" : 0
+    "start" : 1608293976644,
+    "stop" : 1608293976645,
+    "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "9c3da0bed32eb01",
+  "uid" : "8416df00c6e2bcf7",
   "name" : "test_not_in",
   "time" : {
     "start" : 1608284070413,
@@ -39,12 +29,62 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "99748974fb7411e5",
+  "uid" : "52124b875df9d290",
   "name" : "test_pinyin_get",
   "time" : {
-    "start" : 1608284131965,
-    "stop" : 1608284131967,
-    "duration" : 2
+    "start" : 1608293976641,
+    "stop" : 1608293976642,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8f099a5a03d04b8f",
+  "name" : "test_node_delete",
+  "time" : {
+    "start" : 1608293976653,
+    "stop" : 1608293976658,
+    "duration" : 5
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f6f4eee2f86c35db",
+  "name" : "test_binary_search",
+  "time" : {
+    "start" : 1608293976669,
+    "stop" : 1608293976672,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9ec059c6b1d451de",
+  "name" : "test_in",
+  "time" : {
+    "start" : 1608284070412,
+    "stop" : 1608284070412,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ff8d8590f162fa04",
+  "name" : "test_search_method",
+  "time" : {
+    "start" : 1608293976661,
+    "stop" : 1608293976667,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "85c541f405f7ca8e",
+  "name" : "test_node_insert",
+  "time" : {
+    "start" : 1608293976647,
+    "stop" : 1608293976651,
+    "duration" : 4
   },
   "status" : "passed",
   "severity" : "normal"

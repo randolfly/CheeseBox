@@ -1,13 +1,12 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
-  "name" : "behaviors",
   "children" : [ {
     "name" : "熟悉框架功能",
     "children" : [ {
       "name" : "测试加法",
       "children" : [ {
         "name" : "test_add",
-        "uid" : "69a58e8e6596692e",
+        "uid" : "49d33a6161535d06",
         "parentUid" : "54e7eb348d498684170b5c040e44e5d6",
         "status" : "passed",
         "time" : {
@@ -23,7 +22,7 @@
       "name" : "测试包含",
       "children" : [ {
         "name" : "test_in",
-        "uid" : "6c541d701af3ebfc",
+        "uid" : "9ec059c6b1d451de",
         "parentUid" : "8986a615a3160bfc7f18c2a1bef3a28d",
         "status" : "passed",
         "time" : {
@@ -39,7 +38,7 @@
       "name" : "测试不包含",
       "children" : [ {
         "name" : "test_not_in",
-        "uid" : "9c3da0bed32eb01",
+        "uid" : "8416df00c6e2bcf7",
         "parentUid" : "4dfc52f8b8369ec5ea2a2f305cb7e70e",
         "status" : "passed",
         "time" : {
@@ -59,13 +58,13 @@
       "name" : "测试获取拼音功能",
       "children" : [ {
         "name" : "test_pinyin_get",
-        "uid" : "99748974fb7411e5",
+        "uid" : "52124b875df9d290",
         "parentUid" : "cf9f2a68891cdf8abff2751f8cbcb112",
         "status" : "passed",
         "time" : {
-          "start" : 1608284131965,
-          "stop" : 1608284131967,
-          "duration" : 2
+          "start" : 1608293976641,
+          "stop" : 1608293976642,
+          "duration" : 1
         },
         "flaky" : true,
         "parameters" : [ ]
@@ -75,13 +74,13 @@
       "name" : "测试排序功能",
       "children" : [ {
         "name" : "test_sort_all",
-        "uid" : "b09a6664e0672433",
+        "uid" : "f0aebbda6d30f84a",
         "parentUid" : "49db604676cf735682bc6edb1abb1db4",
         "status" : "passed",
         "time" : {
-          "start" : 1608284131969,
-          "stop" : 1608284131969,
-          "duration" : 0
+          "start" : 1608293976644,
+          "stop" : 1608293976645,
+          "duration" : 1
         },
         "flaky" : true,
         "parameters" : [ ]
@@ -89,5 +88,74 @@
       "uid" : "49db604676cf735682bc6edb1abb1db4"
     } ],
     "uid" : "5b8f115412c0f63eb14e9244e630b913"
-  } ]
+  }, {
+    "name" : "测试Node节点的功能",
+    "children" : [ {
+      "name" : "测试插入子节点功能",
+      "children" : [ {
+        "name" : "test_node_insert",
+        "uid" : "85c541f405f7ca8e",
+        "parentUid" : "2813e5fd13e39a56cb568fe36b4edbf8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608293976647,
+          "stop" : 1608293976651,
+          "duration" : 4
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2813e5fd13e39a56cb568fe36b4edbf8"
+    }, {
+      "name" : "测试删除子节点功能",
+      "children" : [ {
+        "name" : "test_node_delete",
+        "uid" : "8f099a5a03d04b8f",
+        "parentUid" : "fc7e6c5538188e771bd2e89fad7ea718",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608293976653,
+          "stop" : 1608293976658,
+          "duration" : 5
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fc7e6c5538188e771bd2e89fad7ea718"
+    }, {
+      "name" : "测试从左搜索功能",
+      "children" : [ {
+        "name" : "test_search_method",
+        "uid" : "ff8d8590f162fa04",
+        "parentUid" : "12060cdaba565d563fadccd032b59f8c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608293976661,
+          "stop" : 1608293976667,
+          "duration" : 6
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "12060cdaba565d563fadccd032b59f8c"
+    }, {
+      "name" : "测试二分准确搜索功能",
+      "children" : [ {
+        "name" : "test_binary_search",
+        "uid" : "f6f4eee2f86c35db",
+        "parentUid" : "f5c5abad243e9c53b462a3ad76607010",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608293976669,
+          "stop" : 1608293976672,
+          "duration" : 3
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f5c5abad243e9c53b462a3ad76607010"
+    } ],
+    "uid" : "60efca4f51cfc4e52c5e0f818d962069"
+  } ],
+  "name" : "behaviors"
 }

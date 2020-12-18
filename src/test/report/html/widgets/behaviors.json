@@ -1,6 +1,17 @@
 {
-  "total" : 2,
+  "total" : 3,
   "items" : [ {
+    "uid" : "60efca4f51cfc4e52c5e0f818d962069",
+    "name" : "测试Node节点的功能",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 4,
+      "unknown" : 0,
+      "total" : 4
+    }
+  }, {
     "uid" : "b82796a7e551d9c30e79de61e7804a67",
     "name" : "熟悉框架功能",
     "statistic" : {

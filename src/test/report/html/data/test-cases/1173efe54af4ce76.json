@@ -1,0 +1,81 @@
+{
+  "uid" : "1173efe54af4ce76",
+  "name" : "test_not_in",
+  "fullName" : "test_sample.TestClass#test_not_in",
+  "historyId" : "ed97724d3f98d97fc7458552054adf20",
+  "time" : {
+    "start" : 1607073367562,
+    "stop" : 1607073367562,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "步骤2:点xxx",
+      "time" : {
+        "start" : 1607073367562,
+        "stop" : 1607073367562,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "熟悉框架功能"
+  }, {
+    "name" : "story",
+    "value" : "测试不包含"
+  }, {
+    "name" : "suite",
+    "value" : "test_sample"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestClass"
+  }, {
+    "name" : "host",
+    "value" : "Randolf"
+  }, {
+    "name" : "thread",
+    "value" : "19079-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_sample"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1173efe54af4ce76.json",
+  "parameterValues" : [ ]
+}
