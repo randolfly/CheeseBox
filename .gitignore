@@ -4,4 +4,4 @@ build/
 /test/__pycache__/
 /test/report/
 .exe
-**/__pycache__
+**/__pycache__/
