@@ -1,7 +1,6 @@
 .vscode
 .pytest_cache
-build/
-/test/__pycache__/
-/test/report/
 .exe
+build/
 **/__pycache__/
+/src/test/report/
