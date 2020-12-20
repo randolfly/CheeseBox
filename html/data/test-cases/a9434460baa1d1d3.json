@@ -1,0 +1,328 @@
+{
+  "uid" : "a9434460baa1d1d3",
+  "name" : "test_node_delete",
+  "fullName" : "test_tree.TestNode#test_node_delete",
+  "historyId" : "aed7150ebab0f48ab9c96171a6e033aa",
+  "time" : {
+    "start" : 1608479023281,
+    "stop" : 1608479023287,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023281,
+        "stop" : 1608479023281,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'hello'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023281,
+        "stop" : 1608479023281,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'胖嘟嘟'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023281,
+        "stop" : 1608479023281,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'老干妈'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'123'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'12'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'张荣侨'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'张荣Randolf'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'配方法'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023282,
+        "stop" : 1608479023282,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'sin'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "删除一个孩子",
+      "time" : {
+        "start" : 1608479023284,
+        "stop" : 1608479023285,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556eccce50>"
+      }, {
+        "name" : "file_name",
+        "value" : "'张荣侨'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "删除一个孩子",
+      "time" : {
+        "start" : 1608479023285,
+        "stop" : 1608479023285,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556eccce50>"
+      }, {
+        "name" : "file_name",
+        "value" : "'张荣侨'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "删除一个孩子",
+      "time" : {
+        "start" : 1608479023286,
+        "stop" : 1608479023286,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556eccce50>"
+      }, {
+        "name" : "file_name",
+        "value" : "'配方法'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取节点的孩子列表",
+      "time" : {
+        "start" : 1608479023286,
+        "stop" : 1608479023287,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556eccce50>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "测试删除子节点功能"
+  }, {
+    "name" : "feature",
+    "value" : "测试Node节点的功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_tree"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNode"
+  }, {
+    "name" : "host",
+    "value" : "Randolfly"
+  }, {
+    "name" : "thread",
+    "value" : "106187-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_tree"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a9434460baa1d1d3.json",
+  "parameterValues" : [ ]
+}

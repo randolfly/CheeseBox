@@ -1,0 +1,1403 @@
+{
+  "uid" : "3ac61aae7e6040db",
+  "name" : "test_tree_init",
+  "fullName" : "test_tree.TestTree#test_tree_init",
+  "historyId" : "1280393d6c7245188b26861a63b1242d",
+  "time" : {
+    "start" : 1608479388090,
+    "stop" : 1608479388106,
+    "duration" : 16
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'file_name'",
+  "statusTrace" : "self = <test_tree.TestTree object at 0x7f2f68c975e0>\n\n    @allure.story('测试树相对路径访问')\n    def test_tree_init(self):\n        # 初始化树\n        tree = Tree(init_node('hello'))\n        root_node = tree.root_node\n        first_level_node_list = [init_node(x) for x in ['胖嘟嘟', '老干妈', '123']]\n        for item in first_level_node_list:\n            add_child(root_node, item)\n        pdd_node_pos = binary_search(root_node, '胖嘟嘟')\n        lgm_node_pos = binary_search(root_node, '老干妈')\n        assert pdd_node_pos == 2\n        assert lgm_node_pos == 1\n    \n        root_node_child_list = get_child_list(root_node)\n        pdd_node = root_node_child_list[pdd_node_pos]\n        lgm_node = root_node_child_list[lgm_node_pos]\n    \n        pdd_node_list = [init_node(x) for x in ['12', '1', '张荣侨', '张荣Randolf', '配方法']]\n        lgm_node_list = [init_node(x) for x in ['沃尔沃','爱人1','怕扫平']]\n    \n        for item in pdd_node_list:\n            add_child(pdd_node, item)\n        for item in lgm_node_list:\n            add_child(lgm_node, item)\n        temp_node = init_node('测试节点{}'.format(0))\n        add_child(lgm_node,temp_node)\n        # 长链\n        for index in range(1,10):\n            temp_father_node = temp_node\n            temp_node = init_node('测试节点{}'.format(index))\n            add_child(temp_father_node, temp_node)\n            temp_noise_node = init_node('噪声')\n            add_child(temp_father_node, temp_noise_node)\n    \n        tree.print_tree()\n        t1 = get_subtree_node(tree, '老干妈/爱人1')\n        t2 = get_subtree_node(tree, '老干妈/爱人')\n        t3 = get_subtree_node(tree, '老干妈/测试节点0')\n        t4 = get_subtree_node(tree, '老干妈/测试节点0/测试节点1/测试节点2/测试节点3')\n    \n        assert t1.file_name=='爱人1'\n        assert t2 == None\n        assert t3.file_name == '测试节点0'\n>       assert t4.file_name == '测试节点3'\nE       AttributeError: 'NoneType' object has no attribute 'file_name'\n\ntest_tree.py:124: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'file_name'",
+    "statusTrace" : "self = <test_tree.TestTree object at 0x7f2f68c975e0>\n\n    @allure.story('测试树相对路径访问')\n    def test_tree_init(self):\n        # 初始化树\n        tree = Tree(init_node('hello'))\n        root_node = tree.root_node\n        first_level_node_list = [init_node(x) for x in ['胖嘟嘟', '老干妈', '123']]\n        for item in first_level_node_list:\n            add_child(root_node, item)\n        pdd_node_pos = binary_search(root_node, '胖嘟嘟')\n        lgm_node_pos = binary_search(root_node, '老干妈')\n        assert pdd_node_pos == 2\n        assert lgm_node_pos == 1\n    \n        root_node_child_list = get_child_list(root_node)\n        pdd_node = root_node_child_list[pdd_node_pos]\n        lgm_node = root_node_child_list[lgm_node_pos]\n    \n        pdd_node_list = [init_node(x) for x in ['12', '1', '张荣侨', '张荣Randolf', '配方法']]\n        lgm_node_list = [init_node(x) for x in ['沃尔沃','爱人1','怕扫平']]\n    \n        for item in pdd_node_list:\n            add_child(pdd_node, item)\n        for item in lgm_node_list:\n            add_child(lgm_node, item)\n        temp_node = init_node('测试节点{}'.format(0))\n        add_child(lgm_node,temp_node)\n        # 长链\n        for index in range(1,10):\n            temp_father_node = temp_node\n            temp_node = init_node('测试节点{}'.format(index))\n            add_child(temp_father_node, temp_node)\n            temp_noise_node = init_node('噪声')\n            add_child(temp_father_node, temp_noise_node)\n    \n        tree.print_tree()\n        t1 = get_subtree_node(tree, '老干妈/爱人1')\n        t2 = get_subtree_node(tree, '老干妈/爱人')\n        t3 = get_subtree_node(tree, '老干妈/测试节点0')\n        t4 = get_subtree_node(tree, '老干妈/测试节点0/测试节点1/测试节点2/测试节点3')\n    \n        assert t1.file_name=='爱人1'\n        assert t2 == None\n        assert t3.file_name == '测试节点0'\n>       assert t4.file_name == '测试节点3'\nE       AttributeError: 'NoneType' object has no attribute 'file_name'\n\ntest_tree.py:124: AttributeError",
+    "steps" : [ {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388090,
+        "stop" : 1608479388091,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'hello'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388091,
+        "stop" : 1608479388091,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'胖嘟嘟'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388091,
+        "stop" : 1608479388091,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'老干妈'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388091,
+        "stop" : 1608479388091,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'123'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388091,
+        "stop" : 1608479388091,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388091,
+        "stop" : 1608479388091,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cead90>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388092,
+        "stop" : 1608479388092,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8a3d0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "根据FileName，二分查找孩子的index",
+      "time" : {
+        "start" : 1608479388092,
+        "stop" : 1608479388092,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      }, {
+        "name" : "file_name",
+        "value" : "'胖嘟嘟'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "根据FileName，二分查找孩子的index",
+      "time" : {
+        "start" : 1608479388092,
+        "stop" : 1608479388093,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      }, {
+        "name" : "file_name",
+        "value" : "'老干妈'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "获取节点的孩子列表",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdfdf0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'12'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'张荣侨'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'张荣Randolf'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388093,
+        "stop" : 1608479388093,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'配方法'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'沃尔沃'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'爱人1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'怕扫平'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8adc0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8a5b0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388094,
+        "stop" : 1608479388094,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8a490>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388095,
+        "stop" : 1608479388095,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cd1d60>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388095,
+        "stop" : 1608479388095,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceaaf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceeca0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388095,
+        "stop" : 1608479388096,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cead90>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceec40>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388096,
+        "stop" : 1608479388096,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cead90>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceee20>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388096,
+        "stop" : 1608479388096,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cead90>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceed90>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388096,
+        "stop" : 1608479388097,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点0'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388097,
+        "stop" : 1608479388097,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cead90>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cdf5b0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388097,
+        "stop" : 1608479388097,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388097,
+        "stop" : 1608479388097,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdf5b0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cf35b0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388098,
+        "stop" : 1608479388098,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388098,
+        "stop" : 1608479388098,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cdf5b0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cf3460>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388098,
+        "stop" : 1608479388098,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点2'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388099,
+        "stop" : 1608479388099,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cf35b0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8ad00>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388099,
+        "stop" : 1608479388099,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388099,
+        "stop" : 1608479388099,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cf35b0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8a6d0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388100,
+        "stop" : 1608479388100,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点3'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388100,
+        "stop" : 1608479388100,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8ad00>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8aeb0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388100,
+        "stop" : 1608479388100,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388100,
+        "stop" : 1608479388101,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8ad00>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c97640>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388101,
+        "stop" : 1608479388101,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点4'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388101,
+        "stop" : 1608479388101,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8aeb0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c97250>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388101,
+        "stop" : 1608479388101,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388101,
+        "stop" : 1608479388101,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8aeb0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c97e80>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388101,
+        "stop" : 1608479388101,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点5'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c97250>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c976d0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c97250>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f6a37adc0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点6'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c976d0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cea6d0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388102,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388102,
+        "stop" : 1608479388103,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c976d0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cea1c0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点7'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cea6d0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceadf0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68cea6d0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68ceae20>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点8'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceadf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68c8af70>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388103,
+        "stop" : 1608479388103,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388104,
+        "stop" : 1608479388104,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68ceadf0>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cdf400>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388104,
+        "stop" : 1608479388104,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'测试节点9'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388104,
+        "stop" : 1608479388104,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8af70>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cdf040>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479388104,
+        "stop" : 1608479388104,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'噪声'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479388104,
+        "stop" : 1608479388104,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f2f68c8af70>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f2f68cdf340>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608479388105,
+        "stop" : 1608479388105,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<tree.Tree object at 0x7f2f68c97370>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'老干妈/爱人1'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608479388105,
+        "stop" : 1608479388105,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<tree.Tree object at 0x7f2f68c97370>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'老干妈/爱人'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608479388105,
+        "stop" : 1608479388106,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<tree.Tree object at 0x7f2f68c97370>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'老干妈/测试节点0'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608479388106,
+        "stop" : 1608479388106,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<tree.Tree object at 0x7f2f68c97370>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'老干妈/测试节点0/测试节点1/测试节点2/测试节点3'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 68,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "测试树相对路径访问"
+  }, {
+    "name" : "feature",
+    "value" : "测试Tree树结构的功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_tree"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestTree"
+  }, {
+    "name" : "host",
+    "value" : "Randolfly"
+  }, {
+    "name" : "thread",
+    "value" : "111571-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_tree"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3ac61aae7e6040db.json",
+  "parameterValues" : [ ]
+}

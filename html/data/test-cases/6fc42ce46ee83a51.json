@@ -1,0 +1,248 @@
+{
+  "uid" : "6fc42ce46ee83a51",
+  "name" : "test_tree_init",
+  "fullName" : "test_tree.TestTree#test_tree_init",
+  "historyId" : "1280393d6c7245188b26861a63b1242d",
+  "time" : {
+    "start" : 1608479023318,
+    "stop" : 1608479023321,
+    "duration" : 3
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 2 == 1",
+  "statusTrace" : "self = <test_tree.TestTree object at 0x7f556ec83c10>\n\n    @allure.story('测试树相对路径访问')\n    def test_tree_init(self):\n        # 初始化树\n        tree = Tree(init_node('hello'))\n        root_node = tree.root_node\n        first_level_node_list = [init_node(x) for x in ['胖嘟嘟', '老干妈', '123']]\n        for item in first_level_node_list:\n            add_child(root_node, item)\n        pdd_node_pos = binary_search(root_node, '胖嘟嘟')\n        lgm_node_pos = binary_search(root_node, '老干妈')\n        assert pdd_node_pos == 2\n>       assert pdd_node_pos == 1\nE       assert 2 == 1\n\ntest_tree.py:92: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 2 == 1",
+    "statusTrace" : "self = <test_tree.TestTree object at 0x7f556ec83c10>\n\n    @allure.story('测试树相对路径访问')\n    def test_tree_init(self):\n        # 初始化树\n        tree = Tree(init_node('hello'))\n        root_node = tree.root_node\n        first_level_node_list = [init_node(x) for x in ['胖嘟嘟', '老干妈', '123']]\n        for item in first_level_node_list:\n            add_child(root_node, item)\n        pdd_node_pos = binary_search(root_node, '胖嘟嘟')\n        lgm_node_pos = binary_search(root_node, '老干妈')\n        assert pdd_node_pos == 2\n>       assert pdd_node_pos == 1\nE       assert 2 == 1\n\ntest_tree.py:92: AssertionError",
+    "steps" : [ {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023318,
+        "stop" : 1608479023318,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'hello'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023319,
+        "stop" : 1608479023319,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'胖嘟嘟'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023319,
+        "stop" : 1608479023319,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'老干妈'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "初始化Node",
+      "time" : {
+        "start" : 1608479023319,
+        "stop" : 1608479023319,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_name",
+        "value" : "'123'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479023319,
+        "stop" : 1608479023319,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556ec83520>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f556ecbd820>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479023319,
+        "stop" : 1608479023319,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556ec83520>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f556ecd7cd0>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "添加一个孩子",
+      "time" : {
+        "start" : 1608479023320,
+        "stop" : 1608479023320,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556ec83520>"
+      }, {
+        "name" : "child_node",
+        "value" : "<node.Node object at 0x7f556ecd7760>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "根据FileName，二分查找孩子的index",
+      "time" : {
+        "start" : 1608479023320,
+        "stop" : 1608479023320,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556ec83520>"
+      }, {
+        "name" : "file_name",
+        "value" : "'胖嘟嘟'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "根据FileName，二分查找孩子的index",
+      "time" : {
+        "start" : 1608479023321,
+        "stop" : 1608479023321,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "node",
+        "value" : "<node.Node object at 0x7f556ec83520>"
+      }, {
+        "name" : "file_name",
+        "value" : "'老干妈'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "测试Tree树结构的功能"
+  }, {
+    "name" : "story",
+    "value" : "测试树相对路径访问"
+  }, {
+    "name" : "suite",
+    "value" : "test_tree"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestTree"
+  }, {
+    "name" : "host",
+    "value" : "Randolfly"
+  }, {
+    "name" : "thread",
+    "value" : "106187-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_tree"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6fc42ce46ee83a51.json",
+  "parameterValues" : [ ]
+}

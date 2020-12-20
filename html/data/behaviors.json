@@ -1,57 +1,188 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
-  "name" : "behaviors",
   "children" : [ {
-    "name" : "熟悉框架功能",
+    "name" : "测试中英文排序功能",
     "children" : [ {
-      "name" : "测试加法",
+      "name" : "测试获取拼音功能",
       "children" : [ {
-        "name" : "test_add",
-        "uid" : "35f23b9f54baf85e",
-        "parentUid" : "54e7eb348d498684170b5c040e44e5d6",
+        "name" : "test_pinyin_get",
+        "uid" : "37b008bc6fb43e0c",
+        "parentUid" : "cf9f2a68891cdf8abff2751f8cbcb112",
         "status" : "passed",
         "time" : {
-          "start" : 1607083628066,
-          "stop" : 1607083628066,
-          "duration" : 0
+          "start" : 1608479797415,
+          "stop" : 1608479797417,
+          "duration" : 2
         },
         "flaky" : false,
+        "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "54e7eb348d498684170b5c040e44e5d6"
+      "uid" : "cf9f2a68891cdf8abff2751f8cbcb112"
     }, {
-      "name" : "测试包含",
+      "name" : "测试排序功能",
       "children" : [ {
-        "name" : "test_in",
-        "uid" : "a877f7a3ebe57b75",
-        "parentUid" : "8986a615a3160bfc7f18c2a1bef3a28d",
+        "name" : "test_sort_all",
+        "uid" : "daacedf93dc76a86",
+        "parentUid" : "49db604676cf735682bc6edb1abb1db4",
         "status" : "passed",
         "time" : {
-          "start" : 1607083628068,
-          "stop" : 1607083628068,
-          "duration" : 0
+          "start" : 1608479797419,
+          "stop" : 1608479797420,
+          "duration" : 1
         },
         "flaky" : false,
+        "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "8986a615a3160bfc7f18c2a1bef3a28d"
-    }, {
-      "name" : "测试不包含",
-      "children" : [ {
-        "name" : "test_not_in",
-        "uid" : "27322430abc713b4",
-        "parentUid" : "4dfc52f8b8369ec5ea2a2f305cb7e70e",
-        "status" : "passed",
-        "time" : {
-          "start" : 1607083628069,
-          "stop" : 1607083628069,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "4dfc52f8b8369ec5ea2a2f305cb7e70e"
+      "uid" : "49db604676cf735682bc6edb1abb1db4"
     } ],
-    "uid" : "b82796a7e551d9c30e79de61e7804a67"
-  } ]
+    "uid" : "5b8f115412c0f63eb14e9244e630b913"
+  }, {
+    "name" : "测试Node节点的功能",
+    "children" : [ {
+      "name" : "测试插入子节点功能",
+      "children" : [ {
+        "name" : "test_node_insert",
+        "uid" : "28862f836cb9ed7d",
+        "parentUid" : "2813e5fd13e39a56cb568fe36b4edbf8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797422,
+          "stop" : 1608479797426,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_node_insert",
+        "uid" : "a226979b4756dbe4",
+        "parentUid" : "2813e5fd13e39a56cb568fe36b4edbf8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797465,
+          "stop" : 1608479797470,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2813e5fd13e39a56cb568fe36b4edbf8"
+    }, {
+      "name" : "测试删除子节点功能",
+      "children" : [ {
+        "name" : "test_node_delete",
+        "uid" : "d547e13a727a640",
+        "parentUid" : "fc7e6c5538188e771bd2e89fad7ea718",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797429,
+          "stop" : 1608479797436,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_node_delete",
+        "uid" : "3aa2aaa483b3efda",
+        "parentUid" : "fc7e6c5538188e771bd2e89fad7ea718",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797473,
+          "stop" : 1608479797480,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fc7e6c5538188e771bd2e89fad7ea718"
+    }, {
+      "name" : "测试从左搜索功能",
+      "children" : [ {
+        "name" : "test_search_method",
+        "uid" : "e6fa640269e5210b",
+        "parentUid" : "12060cdaba565d563fadccd032b59f8c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797443,
+          "stop" : 1608479797452,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_search_method",
+        "uid" : "e40efb07bb3c5a3f",
+        "parentUid" : "12060cdaba565d563fadccd032b59f8c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797484,
+          "stop" : 1608479797491,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "12060cdaba565d563fadccd032b59f8c"
+    }, {
+      "name" : "测试二分准确搜索功能",
+      "children" : [ {
+        "name" : "test_binary_search",
+        "uid" : "8dd9386a04ef480d",
+        "parentUid" : "f5c5abad243e9c53b462a3ad76607010",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797456,
+          "stop" : 1608479797462,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_binary_search",
+        "uid" : "f501a03c60441747",
+        "parentUid" : "f5c5abad243e9c53b462a3ad76607010",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797494,
+          "stop" : 1608479797505,
+          "duration" : 11
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "f5c5abad243e9c53b462a3ad76607010"
+    } ],
+    "uid" : "60efca4f51cfc4e52c5e0f818d962069"
+  }, {
+    "name" : "测试Tree树结构的功能",
+    "children" : [ {
+      "name" : "测试树相对路径访问",
+      "children" : [ {
+        "name" : "test_tree_init",
+        "uid" : "a96ce7c1312bd476",
+        "parentUid" : "5bfd719e408995bb9158ee9c69183b27",
+        "status" : "passed",
+        "time" : {
+          "start" : 1608479797508,
+          "stop" : 1608479797525,
+          "duration" : 17
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5bfd719e408995bb9158ee9c69183b27"
+    } ],
+    "uid" : "64faf9ea2d2132c58ff3d52cfd0a893b"
+  } ],
+  "name" : "behaviors"
 }

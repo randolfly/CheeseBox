@@ -1,15 +1,37 @@
 {
-  "total" : 1,
+  "total" : 3,
   "items" : [ {
-    "uid" : "454963c2eb2b95ec03292bbbafcb78f1",
-    "name" : "test_sample",
+    "uid" : "f90de240209aa2b08dbe90dbebf9cb27",
+    "name" : "test_tree",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 3,
+      "passed" : 5,
       "unknown" : 0,
-      "total" : 3
+      "total" : 5
+    }
+  }, {
+    "uid" : "cef065e1aa4aaeac19ce43dadfeb8930",
+    "name" : "test_node",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 4,
+      "unknown" : 0,
+      "total" : 4
+    }
+  }, {
+    "uid" : "42237da9a19654aac660f9d44a59db2c",
+    "name" : "test_string_helper",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
     }
   } ]
 }

@@ -1,15 +1,37 @@
 {
-  "total" : 1,
+  "total" : 3,
   "items" : [ {
-    "uid" : "b82796a7e551d9c30e79de61e7804a67",
-    "name" : "熟悉框架功能",
+    "uid" : "60efca4f51cfc4e52c5e0f818d962069",
+    "name" : "测试Node节点的功能",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 3,
+      "passed" : 4,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
+    }
+  }, {
+    "uid" : "5b8f115412c0f63eb14e9244e630b913",
+    "name" : "测试中英文排序功能",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "64faf9ea2d2132c58ff3d52cfd0a893b",
+    "name" : "测试Tree树结构的功能",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
     }
   } ]
 }
