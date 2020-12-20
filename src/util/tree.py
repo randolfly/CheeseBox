@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:44:51
 # LastEditors  : randolf
-# LastEditTime : 2020-12-10 17:00:33
+# LastEditTime : 2020-12-20 23:55:54
 # FilePath     : /CheeseBox/src/util/tree.py
 # 
 
@@ -51,16 +51,20 @@ class Tree():
         """
         if(relative_dir == '.'):
             return self.root_node
-        dir_list = os.path.split(relative_dir)
+        # dir_list = os.path.split(relative_dir)
+        dir_list = relative_dir.split(os.sep)
         subtree_node = self.root_node
         for dir_item in dir_list:
             #TODO 是否应该这么写?
             if(dir_item=='.'):
                 pass
+            if(dir_item.startswith('./')):
+                dir_item.replace('./', '')
             pos = subtree_node.binary_search(dir_item)
             if pos == -1:
                 #TODO 错误处理类
                 print("Search Error! node "+dir_item+' Search failed!')
+                return None
             else:
                 subtree_node = subtree_node.child_node[pos]
         return subtree_node
