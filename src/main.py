@@ -19,6 +19,7 @@ sys.path.append(ui_path)
 from file_tree import FileTree
 from file_node import FileNode
 from file_pipe import FilePipe
+from net_pipe import NetPipe
 from mainwindow import MainWindow
 from Component import *
 from main_panel import Ui_MainWindow
@@ -37,16 +38,21 @@ def main():
     
     # NoteWindow = Note()
     # LinkWindow = Link()
-    # 测试
-    file_pipe = FilePipe(os.getcwd(), (os.getcwd()))
-    print(os.getcwd())
-    print('=='*10)
     
-    file_tree = file_pipe.read_file_system()
-    file_tree.print_tree()
-    print('=='*10)
-    # print_all_path(file_tree.root_node)
-    print('item total number of this file tree: ', file_pipe.item_number)
+    # 测试
+    # file_pipe = FilePipe(os.getcwd(), (os.getcwd()))
+    # print(os.getcwd())
+    # print('=='*10)
+    
+    # file_tree = file_pipe.read_file_system()
+    # file_tree.print_tree()
+    # print('=='*10)
+    # # print_all_path(file_tree.root_node)
+    # print('item total number of this file tree: ', file_pipe.item_number)
+    
+    # 测试网络
+    net_pipe = NetPipe(username, password ,os.getcwd(), path.dirname(os.getcwd()))
+    file_tree = net_pipe.read_file_system(['2018-2019-1','2018-2019-1', '2019-2020-1'])
     
     window.show_file_tree(file_tree)
     
