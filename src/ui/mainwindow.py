@@ -4,13 +4,15 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtPrintSupport import *
+from PyQt5 import QtWidgets, QtCore
 
 import os
 import sys
 from Graph import Graph
 from Component import *
 from Config import *
-        
+from Top_panel import Top_panel
+from Left_panel import Left_panel
 
 class MainWindow(QMainWindow):
     """Main Window
@@ -57,6 +59,10 @@ class MainWindow(QMainWindow):
         self.view.show()
         self.m_undoStack = QUndoStack(self)
         self.scene.setUndoStack(self.m_undoStack)
+        # mlh
+        self.toppanel = Top_panel()
+        self.toppanel.setupUi(self)
+        self.setLeftPanel()
 
         self.initUI()
 
@@ -263,6 +269,12 @@ class MainWindow(QMainWindow):
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         # self.dock.hide()
 
+    def setLeftPanel(self):
+        self.leftpanel = QDockWidget('Tag', self)
+        leftpanel = Left_panel()
+        leftpanel.setupUi(self.leftpanel)
+        self.addDockWidget(Qt.LeftDockWidgetArea, self.leftpanel)
+
     ###########################################################################
     #
     #  menubar
@@ -411,11 +423,7 @@ class MainWindow(QMainWindow):
         hotKey_help_action.triggered.connect(self.hot_key)
         help_menu.addAction(hotKey_help_action)
 
-    ###########################################################################
-    #
-    #  ToolBar
-    #
-    ############################################################################
+
     def setUpToolBar(self):
         self.toolbar = self.addToolBar('toolbar')
         self.toolbar.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
@@ -815,6 +823,9 @@ class MainWindow(QMainWindow):
             self.icontoolbar.hide()
         else:
             self.icontoolbar.show()
+
+    def slot1(self):
+        print("TODO")
 
 
 if __name__ == '__main__':
