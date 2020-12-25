@@ -1,5 +1,5 @@
 {
-  "total" : 3,
+  "total" : 4,
   "items" : [ {
     "uid" : "60efca4f51cfc4e52c5e0f818d962069",
     "name" : "测试Node节点的功能",
@@ -14,6 +14,17 @@
   }, {
     "uid" : "5b8f115412c0f63eb14e9244e630b913",
     "name" : "测试中英文排序功能",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
+    "uid" : "332b0fb1d88956ffded68959653104c4",
+    "name" : "测试FilePipe功能",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,

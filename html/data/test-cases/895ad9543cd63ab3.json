@@ -1,0 +1,105 @@
+{
+  "uid" : "895ad9543cd63ab3",
+  "name" : "test_file_pipe_init",
+  "fullName" : "test_file_pipe.TestFilePipe#test_file_pipe_init",
+  "historyId" : "12c68470bbf95bf85c17f9f3fcdac786",
+  "time" : {
+    "start" : 1608545047222,
+    "stop" : 1608545047223,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "创建一个FilePipe对象",
+      "time" : {
+        "start" : 1608545047223,
+        "stop" : 1608545047223,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_system_destination",
+        "value" : "'/home/randolf/Documents/Code/Python/Project/CheeseBox/src/test'"
+      }, {
+        "name" : "file_system_root_path",
+        "value" : "'/home/randolf/Documents/Code/Python/Project/CheeseBox/src'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "测试FilePipe功能"
+  }, {
+    "name" : "story",
+    "value" : "测试创建FilePipe文件管道"
+  }, {
+    "name" : "suite",
+    "value" : "test_file_pipe"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFilePipe"
+  }, {
+    "name" : "host",
+    "value" : "Randolf"
+  }, {
+    "name" : "thread",
+    "value" : "46417-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_file_pipe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "110b54f906c6b1aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608545008895,
+        "stop" : 1608545008895,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "822faa5bcd85e442",
+      "status" : "passed",
+      "time" : {
+        "start" : 1608544987352,
+        "stop" : 1608544987352,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "895ad9543cd63ab3.json",
+  "parameterValues" : [ ]
+}
