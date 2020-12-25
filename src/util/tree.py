@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:44:51
 # LastEditors  : randolf
-# LastEditTime : 2020-12-20 23:55:54
+# LastEditTime : 2020-12-25 16:02:11
 # FilePath     : /CheeseBox/src/util/tree.py
 # 
 
@@ -56,8 +56,8 @@ class Tree():
         subtree_node = self.root_node
         for dir_item in dir_list:
             #TODO 是否应该这么写?
-            if(dir_item=='.'):
-                pass
+            if(dir_item == '.' or dir_item == ''):
+                continue
             if(dir_item.startswith('./')):
                 dir_item.replace('./', '')
             pos = subtree_node.binary_search(dir_item)
@@ -73,3 +73,40 @@ class Tree():
         """打印整棵树
         """
         self.root_node.show()
+
+
+if __name__ == '__main__':
+    tree = Tree(Node('hello'))
+    root_node = tree.root_node
+    first_level_node_list = [Node(x) for x in ['胖嘟嘟', '老干妈', '123']]
+    for item in first_level_node_list:
+        root_node.add_child(item)
+    pdd_node_pos = root_node.binary_search('胖嘟嘟')
+    lgm_node_pos = root_node.binary_search('老干妈')
+    pdd_node_list = [Node(x) for x in ['12', '1', '张荣侨', '张荣Randolf', '配方法']]
+    lgm_node_list = [Node(x) for x in ['沃尔沃','爱人1','怕扫平']]
+    
+    root_node_child_list = root_node.get_child()
+    pdd_node = root_node_child_list[pdd_node_pos]
+    lgm_node = root_node_child_list[lgm_node_pos]
+    
+    for item in pdd_node_list:
+        pdd_node.add_child(item)
+    for item in lgm_node_list:
+        lgm_node.add_child(item)
+    temp_node = Node('测试节点{}'.format(0))
+    lgm_node.add_child(temp_node)
+    # 长链
+    for index in range(1,10):
+        temp_father_node = temp_node
+        temp_node = Node('测试节点{}'.format(index))
+        temp_father_node.add_child(temp_node)
+        temp_noise_node = Node('噪声')
+        temp_father_node.add_child(temp_noise_node)
+    
+    tree.print_tree()
+    
+    test_node = tree.get_subtree_node('./老干妈/测试节点0/测试节点1/测试节点2/测试节点3')
+    print(test_node.file_name)
+    print('节点子树:')
+    test_node.show()
