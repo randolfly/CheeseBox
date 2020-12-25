@@ -46,8 +46,16 @@ class Right_panel(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.dock.setWidget(self.dockWidgetContents)
-
         self.retranslateUi()
+        # menu
+        self.listWidget.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.listWidget.customContextMenuRequested.connect(lambda: self.myListWidgetContext(self.listWidget.pos(),MainWindow))
+        self.menu = QtWidgets.QMenu(self.listWidget)
+        # self.action_change = QtWidgets.QAction("修改TAG",self.listWidget)
+        # self.action_delete = QtWidgets.QAction("删除TAG",self.listWidget)
+        # self.menu.addAction(self.action_change)
+        # self.menu.addAction(self.action_delete)
+
         QtCore.QMetaObject.connectSlotsByName(self.dock)
         # slot
         self.button_addtag.clicked.connect(lambda: self.add_tag(MainWindow))
@@ -116,6 +124,7 @@ class Right_panel(object):
         conn.commit()
         cur.close()
         conn.close()
+        self.updateTag(MainWindow)
 
     def search_through_tag(self, MainWindow):
 
@@ -188,6 +197,94 @@ class Right_panel(object):
         for item in result:
             self.listWidget.addItem(item[1])
         self.listWidget.show()
+
+    def myListWidgetContext(self,position,MainWindow):
+        #弹出菜单
+        popMenu = QtWidgets.QMenu()
+        delAct =QtWidgets.QAction("删除",self.listWidget)
+        renameAct =QtWidgets.QAction('修改', self.listWidget)
+        #查看右键时是否在item上面,如果不在.就不显示删除和修改.
+        if self.listWidget.itemAt(position):
+            popMenu.addAction(delAct)
+            popMenu.addAction(renameAct)
+
+        renameAct.triggered.connect(lambda: self.rename_item(MainWindow))
+        delAct.triggered.connect(lambda: self.delete_item(MainWindow))
+        popMenu.exec_(self.listWidget.mapToGlobal(position))
+
+    def rename_item(self,MainWindow):
+        curRow = self.listWidget.currentRow()
+        item = self.listWidget.item(curRow)
+        curtag = item.text()
+        item.setFlags(item.flags() | Qt.ItemIsEditable)
+        self.listWidget.editItem(item)
+        self.listWidget.itemChanged.connect(lambda: self.change_item(MainWindow, curtag, curRow, item.text()))
+    def delete_item(self, MainWindow):
+        item = self.listWidget.item(self.listWidget.currentRow())
+        tag = item.text()
+        cur_node = MainWindow.scene.m_activateNode
+        if not cur_node:
+            return
+
+        path_list = []
+        while cur_node:
+            # print(cur_node.toPlainText())
+            path_list.append(cur_node.toPlainText())
+            cur_node = cur_node.parentNode
+        print(path_list)
+        relative_path = ''
+        path_list.reverse()
+        for path in path_list:
+            relative_path = relative_path + path + os.sep
+
+        conn = sqlite3.connect("tag.db")
+        cur = conn.cursor()
+        sql_text = "DELETE FROM tag WHERE 路径=" + repr(relative_path)+" AND 标签="+ repr(tag)
+        cur.execute(sql_text)
+        conn.commit()
+        cur.close()
+        conn.close()
+        self.updateTag(MainWindow)
+
+    def change_item(self, MainWindow, tag, curRow, curtag):
+        print("change")
+        print(curtag)
+        print(tag)
+        cur_node = MainWindow.scene.m_activateNode
+        if not cur_node:
+            return
+
+        path_list = []
+        while cur_node:
+            # print(cur_node.toPlainText())
+            path_list.append(cur_node.toPlainText())
+            cur_node = cur_node.parentNode
+        print(path_list)
+        relative_path = ''
+        path_list.reverse()
+        for path in path_list:
+            relative_path = relative_path + path + os.sep
+
+        conn = sqlite3.connect("tag.db")
+        cur = conn.cursor()
+        sql_text = "DELETE FROM tag WHERE 路径=" + repr(relative_path) + " AND 标签=" + repr(tag)
+        cur.execute(sql_text)
+        conn.commit()
+        cur.close()
+        conn.close()
+        conn = sqlite3.connect("tag.db")
+        cur = conn.cursor()
+        data = (relative_path, curtag)
+        sql_text = "INSERT INTO tag VALUES" + str(data)
+        print(sql_text)
+        cur.execute(sql_text)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+
+
+
 
 
 
