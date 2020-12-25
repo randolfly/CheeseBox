@@ -12,8 +12,8 @@ from Graph import Graph
 from Component import *
 from Config import *
 from Top_panel import Top_panel
-from Left_panel import Left_panel
-
+# from Left_panel import Left_panel
+from Right_panel import Right_panel
 class MainWindow(QMainWindow):
     """Main Window
 
@@ -62,13 +62,14 @@ class MainWindow(QMainWindow):
         # mlh
         self.toppanel = Top_panel()
         self.toppanel.setupUi(self)
-        self.setLeftPanel()
+        self.rightpanel = Right_panel()
+        self.rightpanel.setupUi(self)
 
         self.initUI()
 
     def initUI(self):
         
-        self.setPropertyDock()
+        # self.setPropertyDock()
         # self.setUpMenuBar()
         # #! 不可删除，系统设置相关(Undo stack)
         # self.setUpToolBar()
@@ -268,12 +269,6 @@ class MainWindow(QMainWindow):
         self.dock.setWidget(hotkeyList)
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         # self.dock.hide()
-
-    def setLeftPanel(self):
-        self.leftpanel = QDockWidget('Tag', self)
-        leftpanel = Left_panel()
-        leftpanel.setupUi(self.leftpanel)
-        self.addDockWidget(Qt.LeftDockWidgetArea, self.leftpanel)
 
     ###########################################################################
     #
@@ -826,6 +821,10 @@ class MainWindow(QMainWindow):
 
     def slot1(self):
         print("TODO")
+
+    def mousePressEvent(self, Event):
+        self.rightpanel.updateTag(self)
+
 
 
 if __name__ == '__main__':
