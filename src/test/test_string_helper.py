@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-18 17:00:10
 # LastEditors  : randolf
-# LastEditTime : 2020-12-18 17:33:33
+# LastEditTime : 2020-12-25 18:53:39
 # FilePath     : /CheeseBox/src/test/test_string_helper.py
 # 
 import pytest
@@ -16,7 +16,7 @@ from os import path
 
 src_path =  path.dirname(path.dirname(path.abspath(__file__)))
 util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
+pipe_path =  path.join(src_path, 'pipes')
 
 sys.path.append(src_path)
 sys.path.append(util_path)

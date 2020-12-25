@@ -8,7 +8,7 @@ from os import path
 
 src_path =  path.dirname(path.abspath(__file__))
 util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
+pipe_path =  path.join(src_path, 'pipes')
 ui_path =  path.join(src_path, 'ui')
 
 sys.path.append(src_path)
@@ -51,10 +51,10 @@ def main():
     # print('item total number of this file tree: ', file_pipe.item_number)
     
     # 测试网络
-    net_pipe = NetPipe(username, password ,os.getcwd(), path.dirname(os.getcwd()))
-    file_tree = net_pipe.read_file_system(['2018-2019-1','2018-2019-1', '2019-2020-1'])
+    # net_pipe = NetPipe(username, password ,os.getcwd(), path.dirname(os.getcwd()))
+    # file_tree = net_pipe.read_file_system(['2018-2019-1','2018-2019-1', '2019-2020-1'])
     
-    window.show_file_tree(file_tree)
+    # window.show_file_tree(file_tree)
     
     # window.addNote.connect(NoteWindow.handle_addnote)
     # window.close_signal.connect(NoteWindow.handle_close)

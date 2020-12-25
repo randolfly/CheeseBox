@@ -4,8 +4,8 @@
 # Author       : randolf
 # Date         : 2020-12-03 15:46:57
 # LastEditors  : randolf
-# LastEditTime : 2020-12-05 16:12:00
-# FilePath     : \CatInBox\src\pipe\file_pipe.py
+# LastEditTime : 2020-12-25 18:52:39
+# FilePath     : /CheeseBox/src/pipes/file_pipe.py
 # 
 
 import sys
@@ -14,7 +14,7 @@ from os import path
 
 src_path =  path.dirname(path.dirname(path.abspath(__file__)))
 util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
+pipe_path =  path.join(src_path, 'pipes')
 
 sys.path.append(src_path)
 sys.path.append(util_path)

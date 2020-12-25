@@ -4,7 +4,7 @@
 # Author       : randolf
 # Date         : 2020-12-21 14:59:20
 # LastEditors  : randolf
-# LastEditTime : 2020-12-21 15:33:34
+# LastEditTime : 2020-12-25 18:53:31
 # FilePath     : /CheeseBox/src/test/test_file_pipe.py
 # 
 import pytest
@@ -16,7 +16,7 @@ from os import path
 
 src_path =  path.dirname(path.dirname(path.abspath(__file__)))
 util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
+pipe_path =  path.join(src_path, 'pipes')
 test_path =  path.join(src_path, 'test')
 
 sys.path.append(src_path)

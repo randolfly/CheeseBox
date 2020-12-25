@@ -16,7 +16,7 @@ from os import path
 
 src_path =  path.dirname(path.dirname(path.abspath(__file__)))
 util_path =  path.join(src_path, 'util')
-pipe_path =  path.join(src_path, 'pipe')
+pipe_path =  path.join(src_path, 'pipes')
 test_path =  path.join(src_path, 'test')
 
 
