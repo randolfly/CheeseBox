@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>src.ui package &mdash; CheeseBox 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CheeseBox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">src.ui package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-src.ui.Branch">src.ui.Branch module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Command">src.ui.Command module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Component">src.ui.Component module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Config">src.ui.Config module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Graph">src.ui.Graph module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Left_panel">src.ui.Left_panel module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Node">src.ui.Node module</a></li>
+<li><a class="reference internal" href="#module-src.ui.Top_panel">src.ui.Top_panel module</a></li>
+<li><a class="reference internal" href="#module-src.ui.main_panel">src.ui.main_panel module</a></li>
+<li><a class="reference internal" href="#module-src.ui.mainwindow">src.ui.mainwindow module</a></li>
+<li><a class="reference internal" href="#module-src.ui">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CheeseBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>src.ui package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/src.ui.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="src-ui-package">
+<h1>src.ui package<a class="headerlink" href="#src-ui-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-src.ui.Branch">
+<span id="src-ui-branch-module"></span><h2>src.ui.Branch module<a class="headerlink" href="#module-src.ui.Branch" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Branch.Branch">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Branch.</code><code class="sig-name descname">Branch</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Branch.html#Branch"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Branch.Branch" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QGraphicsLineItem</span></code></p>
+<p>Rewrite QGraphicsLineItem</p>
+<dl class="py method">
+<dt id="src.ui.Branch.Branch.adjust">
+<code class="sig-name descname">adjust</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Branch.html#Branch.adjust"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Branch.Branch.adjust" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Command">
+<span id="src-ui-command-module"></span><h2>src.ui.Command module<a class="headerlink" href="#module-src.ui.Command" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Command.Context">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">Context</code><a class="reference internal" href="_modules/src/ui/Command.html#Context"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.Context" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>context for Command</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.CopyCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">CopyCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CopyCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CopyCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<dl class="py method">
+<dt id="src.ui.Command.CopyCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CopyCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CopyCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.CopyCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CopyCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CopyCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.CutCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">CutCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CutCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CutCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<dl class="py method">
+<dt id="src.ui.Command.CutCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CutCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CutCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.CutCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#CutCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.CutCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.InsertNodeCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">InsertNodeCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#InsertNodeCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.InsertNodeCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<p>insert node</p>
+<dl class="py method">
+<dt id="src.ui.Command.InsertNodeCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#InsertNodeCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.InsertNodeCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.InsertNodeCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#InsertNodeCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.InsertNodeCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.MoveCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">MoveCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#MoveCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.MoveCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<p>move node</p>
+<dl class="py method">
+<dt id="src.ui.Command.MoveCommand.id">
+<code class="sig-name descname">id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/src/ui/Command.html#MoveCommand.id"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.MoveCommand.id" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.MoveCommand.mergeWith">
+<code class="sig-name descname">mergeWith</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#MoveCommand.mergeWith"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.MoveCommand.mergeWith" title="永久链接至目标">¶</a></dt>
+<dd><p>merge movecommand</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.MoveCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#MoveCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.MoveCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.MoveCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#MoveCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.MoveCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.NodeColorCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">NodeColorCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#NodeColorCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.NodeColorCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<p>Change Node Color</p>
+<dl class="py method">
+<dt id="src.ui.Command.NodeColorCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#NodeColorCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.NodeColorCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.NodeColorCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#NodeColorCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.NodeColorCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.PasteCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">PasteCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#PasteCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.PasteCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<dl class="py method">
+<dt id="src.ui.Command.PasteCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#PasteCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.PasteCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.PasteCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#PasteCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.PasteCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.RemoveNodeCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">RemoveNodeCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#RemoveNodeCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.RemoveNodeCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<p>remove node</p>
+<dl class="py method">
+<dt id="src.ui.Command.RemoveNodeCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#RemoveNodeCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.RemoveNodeCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.RemoveNodeCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#RemoveNodeCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.RemoveNodeCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Command.TextColorCommand">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Command.</code><code class="sig-name descname">TextColorCommand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">context</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#TextColorCommand"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.TextColorCommand" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QUndoCommand</span></code></p>
+<p>Change Text Color</p>
+<dl class="py method">
+<dt id="src.ui.Command.TextColorCommand.redo">
+<code class="sig-name descname">redo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#TextColorCommand.redo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.TextColorCommand.redo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Command.TextColorCommand.undo">
+<code class="sig-name descname">undo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Command.html#TextColorCommand.undo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Command.TextColorCommand.undo" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Component">
+<span id="src-ui-component-module"></span><h2>src.ui.Component module<a class="headerlink" href="#module-src.ui.Component" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Component.Link">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Component.</code><code class="sig-name descname">Link</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Link"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Link" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
+<p>New a Link Window</p>
+<p>new a Link Window under activateNode</p>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>link: close Link Window send link content
+linkChange: Link Window text Change</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="src.ui.Component.Link.handle_addLink">
+<code class="sig-name descname">handle_addLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Link.handle_addLink"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Link.handle_addLink" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Link.handle_close">
+<code class="sig-name descname">handle_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Link.handle_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Link.handle_close" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Component.Link.link">
+<code class="sig-name descname">link</code><a class="headerlink" href="#src.ui.Component.Link.link" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Component.Link.linkChange">
+<code class="sig-name descname">linkChange</code><a class="headerlink" href="#src.ui.Component.Link.linkChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Link.link_changed">
+<code class="sig-name descname">link_changed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Link.link_changed"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Link.link_changed" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Component.MySlider">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Component.</code><code class="sig-name descname">MySlider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#MySlider"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.MySlider" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QSlider</span></code></p>
+<p>ReWrite for QSlider</p>
+<p>Control View Scale
+Due to slide time delay, start a timer.</p>
+<dl class="py attribute">
+<dt id="src.ui.Component.MySlider.view">
+<code class="sig-name descname">view</code><a class="headerlink" href="#src.ui.Component.MySlider.view" title="永久链接至目标">¶</a></dt>
+<dd><p>QGraphicsView对象</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.MySlider.mousePressEvent">
+<code class="sig-name descname">mousePressEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">e</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#MySlider.mousePressEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.MySlider.mousePressEvent" title="永久链接至目标">¶</a></dt>
+<dd><p>record last time value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.MySlider.mouseReleaseEvent">
+<code class="sig-name descname">mouseReleaseEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#MySlider.mouseReleaseEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.MySlider.mouseReleaseEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.MySlider.scaleView">
+<code class="sig-name descname">scaleView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#MySlider.scaleView"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.MySlider.scaleView" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="src.ui.Component.Note">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Component.</code><code class="sig-name descname">Note</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
+<p>New a Note SubWindow</p>
+<p>new a window under activateNode</p>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>note: close Note Window send note content
+noteChange: Note Window text Change</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="src.ui.Component.Note.bold">
+<code class="sig-name descname">bold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.bold"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.bold" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.changeFormat">
+<code class="sig-name descname">changeFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmt</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.changeFormat"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.changeFormat" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.handle_addnote">
+<code class="sig-name descname">handle_addnote</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">note</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.handle_addnote"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.handle_addnote" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.handle_close">
+<code class="sig-name descname">handle_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.handle_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.handle_close" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Component.Note.note">
+<code class="sig-name descname">note</code><a class="headerlink" href="#src.ui.Component.Note.note" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Component.Note.noteChange">
+<code class="sig-name descname">noteChange</code><a class="headerlink" href="#src.ui.Component.Note.noteChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.skew">
+<code class="sig-name descname">skew</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.skew"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.skew" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.text_changed">
+<code class="sig-name descname">text_changed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.text_changed"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.text_changed" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Component.Note.underline">
+<code class="sig-name descname">underline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Component.html#Note.underline"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Component.Note.underline" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Config">
+<span id="src-ui-config-module"></span><h2>src.ui.Config module<a class="headerlink" href="#module-src.ui.Config" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-src.ui.Graph">
+<span id="src-ui-graph-module"></span><h2>src.ui.Graph module<a class="headerlink" href="#module-src.ui.Graph" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Graph.Graph">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QGraphicsScene</span></code></p>
+<p>ReWrite QGraphicsScene</p>
+<p>Add Node and Branch to Scene</p>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>contentChanged: node content change signal
+nodeNumChange: num od node changed
+messageShow: message show in status bar
+press_close: press scene close subWindow(Note Window and Link Window)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.addBranch">
+<code class="sig-name descname">addBranch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">srcNode</span></em>, <em class="sig-param"><span class="n">dstNode</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.addBranch"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.addBranch" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.addFirstFileNode">
+<code class="sig-name descname">addFirstFileNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileNode</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.addFirstFileNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.addFirstFileNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.addFirstNode">
+<code class="sig-name descname">addFirstNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.addFirstNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.addFirstNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.addSiblingNode">
+<code class="sig-name descname">addSiblingNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.addSiblingNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.addSiblingNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.addSonNode">
+<code class="sig-name descname">addSonNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.addSonNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.addSonNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.adjustBranch">
+<code class="sig-name descname">adjustBranch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.adjustBranch"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.adjustBranch" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.adjustNode">
+<code class="sig-name descname">adjustNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span></em>, <em class="sig-param"><span class="n">son</span></em>, <em class="sig-param"><span class="n">reverse</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.adjustNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.adjustNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.adjustSubTreeNode">
+<code class="sig-name descname">adjustSubTreeNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.adjustSubTreeNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.adjustSubTreeNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Graph.Graph.brachDistance">
+<code class="sig-name descname">brachDistance</code><em class="property"> = 80</em><a class="headerlink" href="#src.ui.Graph.Graph.brachDistance" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.buildRelation">
+<code class="sig-name descname">buildRelation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.buildRelation"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.buildRelation" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Graph.Graph.contentChanged">
+<code class="sig-name descname">contentChanged</code><a class="headerlink" href="#src.ui.Graph.Graph.contentChanged" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.contextMenuEvent">
+<code class="sig-name descname">contextMenuEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneContextMenuEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.contextMenuEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.contextMenuEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.copy"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.copy" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.cut">
+<code class="sig-name descname">cut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.cut"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.cut" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.genSubTree">
+<code class="sig-name descname">genSubTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodeInfo</span></em>, <em class="sig-param"><span class="n">nodeList</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.genSubTree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.genSubTree" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.getSonNodeMaxPos">
+<code class="sig-name descname">getSonNodeMaxPos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.getSonNodeMaxPos"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.getSonNodeMaxPos" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.getSonPos">
+<code class="sig-name descname">getSonPos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.getSonPos"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.getSonPos" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.getSubTree">
+<code class="sig-name descname">getSubTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.getSubTree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.getSubTree" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.getSubTreeBranch">
+<code class="sig-name descname">getSubTreeBranch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.getSubTreeBranch"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.getSubTreeBranch" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.insertPicture">
+<code class="sig-name descname">insertPicture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.insertPicture"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.insertPicture" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.keyPressEvent">
+<code class="sig-name descname">keyPressEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QKeyEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.keyPressEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.keyPressEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Graph.Graph.messageShow">
+<code class="sig-name descname">messageShow</code><a class="headerlink" href="#src.ui.Graph.Graph.messageShow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.mousePressEvent">
+<code class="sig-name descname">mousePressEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.mousePressEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.mousePressEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.moveDown">
+<code class="sig-name descname">moveDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.moveDown"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.moveDown" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.moveLeft">
+<code class="sig-name descname">moveLeft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.moveLeft"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.moveLeft" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.moveRight">
+<code class="sig-name descname">moveRight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.moveRight"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.moveRight" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.moveTree">
+<code class="sig-name descname">moveTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">dy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.moveTree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.moveTree" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.moveUp">
+<code class="sig-name descname">moveUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.moveUp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.moveUp" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeChanged">
+<code class="sig-name descname">nodeChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeChanged"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeChanged" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeColor">
+<code class="sig-name descname">nodeColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeEdited">
+<code class="sig-name descname">nodeEdited</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeEdited"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeEdited" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeFactory">
+<code class="sig-name descname">nodeFactory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeFactory"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeFactory" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeLostFocus">
+<code class="sig-name descname">nodeLostFocus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeLostFocus"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeLostFocus" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeMoved">
+<code class="sig-name descname">nodeMoved</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeMoved"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeMoved" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Graph.Graph.nodeNumChange">
+<code class="sig-name descname">nodeNumChange</code><a class="headerlink" href="#src.ui.Graph.Graph.nodeNumChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.nodeSelected">
+<code class="sig-name descname">nodeSelected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.nodeSelected"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.nodeSelected" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.node_">
+<code class="sig-name descname">node_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">father</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.node_"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.node_" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.paste">
+<code class="sig-name descname">paste</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.paste"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.paste" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Graph.Graph.press_close">
+<code class="sig-name descname">press_close</code><a class="headerlink" href="#src.ui.Graph.Graph.press_close" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.readContentFromXmlFile">
+<code class="sig-name descname">readContentFromXmlFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.readContentFromXmlFile"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.readContentFromXmlFile" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.removeAllBranches">
+<code class="sig-name descname">removeAllBranches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.removeAllBranches"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.removeAllBranches" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.removeAllNodes">
+<code class="sig-name descname">removeAllNodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.removeAllNodes"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.removeAllNodes" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.removeBranch">
+<code class="sig-name descname">removeBranch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m_node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.removeBranch"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.removeBranch" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.removeNode">
+<code class="sig-name descname">removeNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.removeNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.removeNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.setActivateNode">
+<code class="sig-name descname">setActivateNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.setActivateNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.setActivateNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.setUndoStack">
+<code class="sig-name descname">setUndoStack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stack</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.setUndoStack"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.setUndoStack" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.textColor">
+<code class="sig-name descname">textColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.textColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.textColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.writeContentToPdfFile">
+<code class="sig-name descname">writeContentToPdfFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.writeContentToPdfFile"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.writeContentToPdfFile" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.writeContentToPngFile">
+<code class="sig-name descname">writeContentToPngFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.writeContentToPngFile"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.writeContentToPngFile" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Graph.Graph.writeContentToXmlFile">
+<code class="sig-name descname">writeContentToXmlFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Graph.html#Graph.writeContentToXmlFile"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Graph.Graph.writeContentToXmlFile" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Left_panel">
+<span id="src-ui-left-panel-module"></span><h2>src.ui.Left_panel module<a class="headerlink" href="#module-src.ui.Left_panel" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Left_panel.Left_panel">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Left_panel.</code><code class="sig-name descname">Left_panel</code><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="src.ui.Left_panel.Left_panel.add_tag">
+<code class="sig-name descname">add_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel.add_tag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel.add_tag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Left_panel.Left_panel.create_tag">
+<code class="sig-name descname">create_tag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel.create_tag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel.create_tag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Left_panel.Left_panel.retranslateUi">
+<code class="sig-name descname">retranslateUi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">DockWidget</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel.retranslateUi"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel.retranslateUi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Left_panel.Left_panel.search_through_tag">
+<code class="sig-name descname">search_through_tag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel.search_through_tag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel.search_through_tag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Left_panel.Left_panel.setupUi">
+<code class="sig-name descname">setupUi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">DockWidget</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Left_panel.html#Left_panel.setupUi"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Left_panel.Left_panel.setupUi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Node">
+<span id="src-ui-node-module"></span><h2>src.ui.Node module<a class="headerlink" href="#module-src.ui.Node" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Node.Node">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Node.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QGraphicsTextItem</span></code></p>
+<p>ReWrite QGraphicsTextItem</p>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>nodeChanged: node content change
+nodeMoved: node moved
+nodeEdited: dobleclick edit node
+nodeSelected: click select node
+nodeLostFocus: node lost focus</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="src.ui.Node.Node.focusOutEvent">
+<code class="sig-name descname">focusOutEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QFocusEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.focusOutEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.focusOutEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.insertLink">
+<code class="sig-name descname">insertLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.insertLink"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.insertLink" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.insertPicture">
+<code class="sig-name descname">insertPicture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.insertPicture"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.insertPicture" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.itemChange">
+<code class="sig-name descname">itemChange</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">QGraphicsItem.GraphicsItemChange</em>, <em class="sig-param">Any</em><span class="sig-paren">)</span> &#x2192; Any<a class="reference internal" href="_modules/src/ui/Node.html#Node.itemChange"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.itemChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.mouseDoubleClickEvent">
+<code class="sig-name descname">mouseDoubleClickEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.mouseDoubleClickEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.mouseDoubleClickEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.mouseMoveEvent">
+<code class="sig-name descname">mouseMoveEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.mouseMoveEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.mouseMoveEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.mousePressEvent">
+<code class="sig-name descname">mousePressEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.mousePressEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.mousePressEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Node.Node.nodeChanged">
+<code class="sig-name descname">nodeChanged</code><a class="headerlink" href="#src.ui.Node.Node.nodeChanged" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Node.Node.nodeEdited">
+<code class="sig-name descname">nodeEdited</code><a class="headerlink" href="#src.ui.Node.Node.nodeEdited" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Node.Node.nodeLostFocus">
+<code class="sig-name descname">nodeLostFocus</code><a class="headerlink" href="#src.ui.Node.Node.nodeLostFocus" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Node.Node.nodeMoved">
+<code class="sig-name descname">nodeMoved</code><a class="headerlink" href="#src.ui.Node.Node.nodeMoved" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.Node.Node.nodeSelected">
+<code class="sig-name descname">nodeSelected</code><a class="headerlink" href="#src.ui.Node.Node.nodeSelected" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.paint">
+<code class="sig-name descname">paint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QPainter</span></em>, <em class="sig-param"><span class="n">QStyleOptionGraphicsItem</span></em>, <em class="sig-param"><span class="n">QWidget</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.paint"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.paint" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setBorder">
+<code class="sig-name descname">setBorder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hasBorder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setBorder"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setBorder" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setColor">
+<code class="sig-name descname">setColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setEditable">
+<code class="sig-name descname">setEditable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">editable</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setEditable"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setEditable" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setMargin">
+<code class="sig-name descname">setMargin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">margin</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setMargin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setMargin" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setNodeLevel">
+<code class="sig-name descname">setNodeLevel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setNodeLevel"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setNodeLevel" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setText">
+<code class="sig-name descname">setText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setText"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setText" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.setTextColor">
+<code class="sig-name descname">setTextColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textColor</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.setTextColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.setTextColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Node.Node.updateLink">
+<code class="sig-name descname">updateLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Node.html#Node.updateLink"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Node.Node.updateLink" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.Top_panel">
+<span id="src-ui-top-panel-module"></span><h2>src.ui.Top_panel module<a class="headerlink" href="#module-src.ui.Top_panel" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.Top_panel.Top_panel">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.Top_panel.</code><code class="sig-name descname">Top_panel</code><a class="reference internal" href="_modules/src/ui/Top_panel.html#Top_panel"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Top_panel.Top_panel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="src.ui.Top_panel.Top_panel.setupUi">
+<code class="sig-name descname">setupUi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">MainWindow</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Top_panel.html#Top_panel.setupUi"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Top_panel.Top_panel.setupUi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.Top_panel.Top_panel.slot1">
+<code class="sig-name descname">slot1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/Top_panel.html#Top_panel.slot1"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.Top_panel.Top_panel.slot1" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.main_panel">
+<span id="src-ui-main-panel-module"></span><h2>src.ui.main_panel module<a class="headerlink" href="#module-src.ui.main_panel" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.main_panel.Ui_MainWindow">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.main_panel.</code><code class="sig-name descname">Ui_MainWindow</code><a class="reference internal" href="_modules/src/ui/main_panel.html#Ui_MainWindow"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.main_panel.Ui_MainWindow" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="src.ui.main_panel.Ui_MainWindow.retranslateUi">
+<code class="sig-name descname">retranslateUi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">MainWindow</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/main_panel.html#Ui_MainWindow.retranslateUi"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.main_panel.Ui_MainWindow.retranslateUi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.main_panel.Ui_MainWindow.setupUi">
+<code class="sig-name descname">setupUi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">MainWindow</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/main_panel.html#Ui_MainWindow.setupUi"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.main_panel.Ui_MainWindow.setupUi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui.mainwindow">
+<span id="src-ui-mainwindow-module"></span><h2>src.ui.mainwindow module<a class="headerlink" href="#module-src.ui.mainwindow" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.ui.mainwindow.MainWindow">
+<em class="property">class </em><code class="sig-prename descclassname">src.ui.mainwindow.</code><code class="sig-name descname">MainWindow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">settings</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
+<p>Main Window</p>
+<p>Show the main window for app</p>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>addNote: (int, int, str) -&gt; (pos_x, pos_y, note_text)
+addLink: (int, int, str) -&gt; (pos_x, pos_y, link_text)
+close_signal: MainWindow close signal</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.about">
+<code class="sig-name descname">about</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.about"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.about" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.mainwindow.MainWindow.addLink">
+<code class="sig-name descname">addLink</code><a class="headerlink" href="#src.ui.mainwindow.MainWindow.addLink" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.mainwindow.MainWindow.addNote">
+<code class="sig-name descname">addNote</code><a class="headerlink" href="#src.ui.mainwindow.MainWindow.addNote" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.add_icon">
+<code class="sig-name descname">add_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.add_icon"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.add_icon" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.add_link">
+<code class="sig-name descname">add_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.add_link"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.add_link" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.center">
+<code class="sig-name descname">center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.center"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.center" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.closeEvent">
+<code class="sig-name descname">closeEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QCloseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.closeEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.closeEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.close_file">
+<code class="sig-name descname">close_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.close_file"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.close_file" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="src.ui.mainwindow.MainWindow.close_signal">
+<code class="sig-name descname">close_signal</code><a class="headerlink" href="#src.ui.mainwindow.MainWindow.close_signal" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.contentChanged">
+<code class="sig-name descname">contentChanged</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">changed</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.contentChanged"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.contentChanged" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.exportas_pdf">
+<code class="sig-name descname">exportas_pdf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.exportas_pdf"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.exportas_pdf" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.exportas_png">
+<code class="sig-name descname">exportas_png</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.exportas_png"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.exportas_png" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_autoSave">
+<code class="sig-name descname">file_autoSave</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_autoSave"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_autoSave" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_last_open">
+<code class="sig-name descname">file_last_open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_last_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_last_open" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_new">
+<code class="sig-name descname">file_new</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_new"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_new" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_open">
+<code class="sig-name descname">file_open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_open" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_print">
+<code class="sig-name descname">file_print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_print"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_print" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_save">
+<code class="sig-name descname">file_save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">checkIfReadOnly</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_save"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_save" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.file_saveas">
+<code class="sig-name descname">file_saveas</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.file_saveas"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.file_saveas" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.getLink">
+<code class="sig-name descname">getLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">link</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.getLink"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.getLink" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.getNote">
+<code class="sig-name descname">getNote</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">note</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.getNote"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.getNote" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.getPos">
+<code class="sig-name descname">getPos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">size</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.getPos"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.getPos" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.hot_key">
+<code class="sig-name descname">hot_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.hot_key"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.hot_key" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.initUI">
+<code class="sig-name descname">initUI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.initUI"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.initUI" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.labelShow">
+<code class="sig-name descname">labelShow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.labelShow"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.labelShow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.messageShow">
+<code class="sig-name descname">messageShow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.messageShow"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.messageShow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.nodeNumChange">
+<code class="sig-name descname">nodeNumChange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.nodeNumChange"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.nodeNumChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.quit">
+<code class="sig-name descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.quit"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.quit" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setLeftPanel">
+<code class="sig-name descname">setLeftPanel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setLeftPanel"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setLeftPanel" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setPropertyDock">
+<code class="sig-name descname">setPropertyDock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setPropertyDock"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setPropertyDock" title="永久链接至目标">¶</a></dt>
+<dd><p>Dock Widget Show Hot Key Help</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setUpIconToolBar">
+<code class="sig-name descname">setUpIconToolBar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setUpIconToolBar"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setUpIconToolBar" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setUpMenuBar">
+<code class="sig-name descname">setUpMenuBar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setUpMenuBar"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setUpMenuBar" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setUpStatusBar">
+<code class="sig-name descname">setUpStatusBar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setUpStatusBar"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setUpStatusBar" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.setUpToolBar">
+<code class="sig-name descname">setUpToolBar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.setUpToolBar"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.setUpToolBar" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.set_shortcut">
+<code class="sig-name descname">set_shortcut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.set_shortcut"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.set_shortcut" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.show_file_tree">
+<code class="sig-name descname">show_file_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_tree</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.show_file_tree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.show_file_tree" title="永久链接至目标">¶</a></dt>
+<dd><p>输入一个文件树，对其进行显示</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>file_tree</strong> (<a class="reference internal" href="src.util.html#src.util.file_tree.FileTree" title="src.util.file_tree.FileTree"><em>FileTree</em></a>) – 需要显示的文件树</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.slot1">
+<code class="sig-name descname">slot1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.slot1"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.slot1" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="src.ui.mainwindow.MainWindow.update_title">
+<code class="sig-name descname">update_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/ui/mainwindow.html#MainWindow.update_title"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.ui.mainwindow.MainWindow.update_title" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.ui">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.ui" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, cheesebox
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

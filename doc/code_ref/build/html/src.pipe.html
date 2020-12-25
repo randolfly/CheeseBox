@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>src.pipe package &mdash; CheeseBox 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CheeseBox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">src.pipe package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-src.pipe.file_pipe">src.pipe.file_pipe module</a></li>
+<li><a class="reference internal" href="#module-src.pipe.net_pipe">src.pipe.net_pipe module</a></li>
+<li><a class="reference internal" href="#module-src.pipe.pipe">src.pipe.pipe module</a></li>
+<li><a class="reference internal" href="#module-src.pipe">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CheeseBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>src.pipe package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/src.pipe.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="src-pipe-package">
+<h1>src.pipe package<a class="headerlink" href="#src-pipe-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-src.pipe.file_pipe">
+<span id="src-pipe-file-pipe-module"></span><h2>src.pipe.file_pipe module<a class="headerlink" href="#module-src.pipe.file_pipe" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.pipe.file_pipe.FilePipe">
+<em class="property">class </em><code class="sig-prename descclassname">src.pipe.file_pipe.</code><code class="sig-name descname">FilePipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_system_destination</span></em>, <em class="sig-param"><span class="n">file_system_root_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/file_pipe.html#FilePipe"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.file_pipe.FilePipe" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">pipe.Pipe</span></code></p>
+<dl class="py method">
+<dt id="src.pipe.file_pipe.FilePipe.get_file_tree">
+<code class="sig-name descname">get_file_tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_path</span></em>, <em class="sig-param"><span class="n">file_node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/file_pipe.html#FilePipe.get_file_tree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.file_pipe.FilePipe.get_file_tree" title="永久链接至目标">¶</a></dt>
+<dd><p>递归函数，遍历该文档目录和子目录下的所有文件，获取其path，作为本地文件下read_file_system的实现方式</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_path</strong> (<em>String</em>) – 根目录</p></li>
+<li><p><strong>file_node</strong> (<a class="reference internal" href="src.util.html#src.util.file_node.FileNode" title="src.util.file_node.FileNode"><em>FileNode</em></a>) – 根目录文件节点</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.pipe.file_pipe.FilePipe.read_file_system">
+<code class="sig-name descname">read_file_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">read_file_system_relative_path</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/file_pipe.html#FilePipe.read_file_system"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.file_pipe.FilePipe.read_file_system" title="永久链接至目标">¶</a></dt>
+<dd><p>给定扫描文件系统的根目录，扫描出一个文件树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>read_file_system_relative_path</strong> (<em>String</em>) – 文件系统目录，是一个相对于file_system_root_path的相对路径. Defaults to ‘’.</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>生成的文件树</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p><a class="reference internal" href="src.util.html#src.util.file_tree.FileTree" title="src.util.file_tree.FileTree">FileTree</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.pipe.file_pipe.FilePipe.write_file_system">
+<code class="sig-name descname">write_file_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_system_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/file_pipe.html#FilePipe.write_file_system"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.file_pipe.FilePipe.write_file_system" title="永久链接至目标">¶</a></dt>
+<dd><p>根据系统中设定的file_system_destination往外写file_system的存储文件</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>file_system_name</strong> (<em>String</em>) – 存储文件的名字</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="src.pipe.file_pipe.print_all_path">
+<code class="sig-prename descclassname">src.pipe.file_pipe.</code><code class="sig-name descname">print_all_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/file_pipe.html#print_all_path"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.file_pipe.print_all_path" title="永久链接至目标">¶</a></dt>
+<dd><p>测试用函数</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.pipe.net_pipe">
+<span id="src-pipe-net-pipe-module"></span><h2>src.pipe.net_pipe module<a class="headerlink" href="#module-src.pipe.net_pipe" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.pipe.net_pipe.NetPipe">
+<em class="property">class </em><code class="sig-prename descclassname">src.pipe.net_pipe.</code><code class="sig-name descname">NetPipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">file_system_destination</span></em>, <em class="sig-param"><span class="n">file_system_root_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/net_pipe.html#NetPipe"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.net_pipe.NetPipe" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">pipe.Pipe</span></code></p>
+<dl class="py method">
+<dt id="src.pipe.net_pipe.NetPipe.read_file_system">
+<code class="sig-name descname">read_file_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user_semester_list</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/net_pipe.html#NetPipe.read_file_system"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.net_pipe.NetPipe.read_file_system" title="永久链接至目标">¶</a></dt>
+<dd><p>给定扫描文件系统的学期，扫描出一个文件树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>user_semester_list</strong> (<em>List</em><em>[</em><em>String</em><em>]</em>) – 用户学期</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>对应的文件树</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>file_tree (<a class="reference internal" href="src.util.html#src.util.file_tree.FileTree" title="src.util.file_tree.FileTree">FileTree</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.pipe.pipe">
+<span id="src-pipe-pipe-module"></span><h2>src.pipe.pipe module<a class="headerlink" href="#module-src.pipe.pipe" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="src.pipe.pipe.Pipe">
+<em class="property">class </em><code class="sig-prename descclassname">src.pipe.pipe.</code><code class="sig-name descname">Pipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_system_destination</span></em>, <em class="sig-param"><span class="n">file_system_root_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/pipe.html#Pipe"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.pipe.Pipe" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>管道抽象类</p>
+<p>Pipe主要功能在于read &amp; write, 而借助linux的思路，考虑虚拟文件系统的路子，屏蔽不同文件系统来源带来的差异(比如
+网络和local的文件存储位置),简单的进行读写操作。</p>
+<dl class="py method">
+<dt id="src.pipe.pipe.Pipe.file_system_xml_parse">
+<em class="property">abstract </em><code class="sig-name descname">file_system_xml_parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xml_file_path</span></em>, <em class="sig-param"><span class="n">xml_file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/pipe.html#Pipe.file_system_xml_parse"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.pipe.Pipe.file_system_xml_parse" title="永久链接至目标">¶</a></dt>
+<dd><p>给定使用xml格式存储的文件树文件的路径和文件名，解析出这个文件树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xml_file_path</strong> (<em>String</em>) – xml文件的绝对路径</p></li>
+<li><p><strong>xml_file_name</strong> (<em>String</em>) – xml文件的文件名</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>解析出的文件树</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p><a class="reference internal" href="src.util.html#src.util.file_tree.FileTree" title="src.util.file_tree.FileTree">FileTree</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.pipe.pipe.Pipe.read_file_system">
+<em class="property">abstract </em><code class="sig-name descname">read_file_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">read_file_system_relative_path</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/pipe.html#Pipe.read_file_system"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.pipe.Pipe.read_file_system" title="永久链接至目标">¶</a></dt>
+<dd><p>给定扫描文件系统的根目录，扫描出一个文件树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>read_file_system_relative_path</strong> (<em>String</em>) – 文件系统目录，是一个相对于file_system_root_path的相对路径. Defaults to ‘’.</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>生成的文件树</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p><a class="reference internal" href="src.util.html#src.util.file_tree.FileTree" title="src.util.file_tree.FileTree">FileTree</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="src.pipe.pipe.Pipe.write_file_system">
+<em class="property">abstract </em><code class="sig-name descname">write_file_system</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_system_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/pipe/pipe.html#Pipe.write_file_system"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#src.pipe.pipe.Pipe.write_file_system" title="永久链接至目标">¶</a></dt>
+<dd><p>根据系统中设定的file_system_destination往外写file_system的存储文件</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>file_system_name</strong> (<em>String</em>) – 存储文件的名字</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-src.pipe">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.pipe" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, cheesebox
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
