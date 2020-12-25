@@ -68,4 +68,5 @@
 
 ### 代码文档
 
-参考文档[version 1.0](./doc/code_ref/build/html/index.html)
+参考文档(`Read the Doc` 编译)，[version 1.0](https://cheesebox.readthedocs.io/zh/latest/index.html#indices-and-tables)
+参考文档(自己编译), [version 1.0](./doc/code_ref/build/html/index.html)
