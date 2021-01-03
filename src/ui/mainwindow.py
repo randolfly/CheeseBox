@@ -12,8 +12,9 @@ from Graph import Graph
 from Component import *
 from Config import *
 from Top_panel import Top_panel
-# from Left_panel import Left_panel
 from Right_panel import Right_panel
+
+
 class MainWindow(QMainWindow):
     """Main Window
 
@@ -29,6 +30,7 @@ class MainWindow(QMainWindow):
     close_signal = pyqtSignal()
 
     def __init__(self, settings):
+
         super().__init__()
         # self.path = None
         self.root = QFileInfo(__file__).absolutePath()
@@ -825,9 +827,14 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self, Event):
         self.rightpanel.updateTag(self)
 
+    def open(self):
+        print("open")
 
+    def renew(self):
+        self.rightpanel.delete_tag()
+        self.rightpanel.create_tag()
 
-if __name__ == '__main__':
+if  __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName('MyXind')
 

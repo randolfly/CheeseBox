@@ -1,0 +1,256 @@
+{
+  "uid" : "4aad3d0d57cf6a90",
+  "name" : "test_read_file_system",
+  "fullName" : "test_file_pipe.TestFilePipe#test_read_file_system",
+  "historyId" : "feb98c126f2738271a9db452999746c5",
+  "time" : {
+    "start" : 1608544987353,
+    "stop" : 1608544987462,
+    "duration" : 109
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'file_name'",
+  "statusTrace" : "self = <test_file_pipe.TestFilePipe object at 0x7f52a8b7bd00>\n\n    @allure.story('测试扫描文件系统，获取文件树功能')\n    def test_read_file_system(self):\n        write_pwd = os.getcwd()\n        read_path = path.dirname(os.getcwd())\n        file_pipe = init_file_pipe(write_pwd, read_path)\n        assert file_pipe is not None\n    \n        file_tree = read_file_system(file_pipe)\n        assert file_tree is not None\n    \n        t1 = get_subtree_node(file_tree, 'main.py')\n        t2 = get_subtree_node(file_tree, 'pipe/file_pipe.py')\n        t3 = get_subtree_node(file_tree, 'pipe/file_pipe.pyd')\n        t4 = get_subtree_node(file_tree, 'test/report/html')\n        t5 = get_subtree_node(file_tree, 'test/test_all.py')\n        t6 = get_subtree_node(file_tree, 'util/file_tree.py')\n        t7 = get_subtree_node(file_tree, 'util')\n        # file_tree.print_tree()\n    \n        assert t1.file_name == 'main.py'\n        assert t2.file_name == 'file_pipe.py'\n        assert t3 is None\n>       assert t4.file_name == 'html'\nE       AttributeError: 'NoneType' object has no attribute 'file_name'\n\ntest_file_pipe.py:74: AttributeError",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'NoneType' object has no attribute 'file_name'",
+    "statusTrace" : "self = <test_file_pipe.TestFilePipe object at 0x7f52a8b7bd00>\n\n    @allure.story('测试扫描文件系统，获取文件树功能')\n    def test_read_file_system(self):\n        write_pwd = os.getcwd()\n        read_path = path.dirname(os.getcwd())\n        file_pipe = init_file_pipe(write_pwd, read_path)\n        assert file_pipe is not None\n    \n        file_tree = read_file_system(file_pipe)\n        assert file_tree is not None\n    \n        t1 = get_subtree_node(file_tree, 'main.py')\n        t2 = get_subtree_node(file_tree, 'pipe/file_pipe.py')\n        t3 = get_subtree_node(file_tree, 'pipe/file_pipe.pyd')\n        t4 = get_subtree_node(file_tree, 'test/report/html')\n        t5 = get_subtree_node(file_tree, 'test/test_all.py')\n        t6 = get_subtree_node(file_tree, 'util/file_tree.py')\n        t7 = get_subtree_node(file_tree, 'util')\n        # file_tree.print_tree()\n    \n        assert t1.file_name == 'main.py'\n        assert t2.file_name == 'file_pipe.py'\n        assert t3 is None\n>       assert t4.file_name == 'html'\nE       AttributeError: 'NoneType' object has no attribute 'file_name'\n\ntest_file_pipe.py:74: AttributeError",
+    "steps" : [ {
+      "name" : "创建一个FilePipe对象",
+      "time" : {
+        "start" : 1608544987353,
+        "stop" : 1608544987353,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_system_destination",
+        "value" : "'/home/randolf/Documents/Code/Python/Project/CheeseBox/src/test'"
+      }, {
+        "name" : "file_system_root_path",
+        "value" : "'/home/randolf/Documents/Code/Python/Project/CheeseBox/src'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定文件系统根路径，扫描文件系统生成文件树",
+      "time" : {
+        "start" : 1608544987354,
+        "stop" : 1608544987461,
+        "duration" : 107
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "file_pipe",
+        "value" : "<file_pipe.FilePipe object at 0x7f52a8b7b670>"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987461,
+        "stop" : 1608544987461,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'main.py'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987461,
+        "stop" : 1608544987461,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'pipe/file_pipe.py'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987461,
+        "stop" : 1608544987461,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'pipe/file_pipe.pyd'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987461,
+        "stop" : 1608544987461,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'test/report/html'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987461,
+        "stop" : 1608544987462,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'test/test_all.py'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987462,
+        "stop" : 1608544987462,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'util/file_tree.py'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "给定相对路径，获取子树顶点",
+      "time" : {
+        "start" : 1608544987462,
+        "stop" : 1608544987462,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "tree",
+        "value" : "<file_tree.FileTree object at 0x7f52a8b7bfa0>"
+      }, {
+        "name" : "relative_dir",
+        "value" : "'util'"
+      } ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "story",
+    "value" : "测试扫描文件系统，获取文件树功能"
+  }, {
+    "name" : "feature",
+    "value" : "测试FilePipe功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_file_pipe"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestFilePipe"
+  }, {
+    "name" : "host",
+    "value" : "Randolf"
+  }, {
+    "name" : "thread",
+    "value" : "45056-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_file_pipe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4aad3d0d57cf6a90.json",
+  "parameterValues" : [ ]
+}

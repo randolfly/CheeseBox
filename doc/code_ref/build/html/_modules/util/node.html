@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>util.node &mdash; CheeseBox 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CheeseBox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CheeseBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>util.node</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>util.node 源代码</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># coding=utf-8</span>
+<span class="c1">#</span>
+<span class="c1"># Author       : randolf</span>
+<span class="c1"># Date         : 2020-12-03 15:44:56</span>
+<span class="c1"># LastEditors  : randolf</span>
+<span class="c1"># LastEditTime : 2020-12-04 16:31:01</span>
+<span class="c1"># FilePath     : /src/util/node.py</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="n">src_path</span> <span class="o">=</span>  <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)))</span>
+<span class="n">util_path</span> <span class="o">=</span>  <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s1">&#39;util&#39;</span><span class="p">)</span>
+<span class="n">pipe_path</span> <span class="o">=</span>  <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s1">&#39;pipes&#39;</span><span class="p">)</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">src_path</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">util_path</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pipe_path</span><span class="p">)</span>
+
+
+<span class="kn">from</span> <span class="nn">string_helper</span> <span class="kn">import</span> <span class="n">StringHelper</span>
+
+<span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
+<span class="c1"># import functools</span>
+
+<div class="viewcode-block" id="Node"><a class="viewcode-back" href="../../util.html#util.node.Node">[文档]</a><span class="k">class</span> <span class="nc">Node</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;定义逻辑上的树操作的节点</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        file_name: 这个节点文件(文件夹)的名字</span>
+<span class="sd">        father_node: 这个节点的父亲节点，至多存在一个</span>
+<span class="sd">        child_node: 这个节点的儿子节点，可以存在多个，因此是一个列表</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;初始化Node类</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name (String): 用于初始化的文件夹名字</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="n">file_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">father_node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># 由小到大排序</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># 创建StringHelper 类</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">string_helper</span> <span class="o">=</span> <span class="n">StringHelper</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Node.search_left"><a class="viewcode-back" href="../../util.html#util.node.Node.search_left">[文档]</a>    <span class="k">def</span> <span class="nf">search_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;给定文件名，查找对应子节点,返回最接近的位置的左边index</span>
+
+<span class="sd">        返回的插入点 i 可以将列表分成两部分。左侧是 all(val &lt; x for val in a[lo:i]) ，右侧是 all(val &gt;= x for val in a[i:hi]) 。</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name (String） 待查找的文件名</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: 需要查找的文件名index(左边)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 获取拼音列表</span>
+
+        <span class="n">node_pinyin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">string_helper</span><span class="o">.</span><span class="n">get_string_pinyin</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">child_node_pinyin</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">string_helper</span><span class="o">.</span><span class="n">get_string_pinyin</span><span class="p">(</span>
+            <span class="n">node_item</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">node_item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">node_pinyin</span> <span class="o">&gt;</span> <span class="n">child_node_pinyin</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">child_node_pinyin</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">node_pinyin</span> <span class="o">&lt;</span> <span class="n">child_node_pinyin</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">child_node_pinyin</span><span class="p">,</span> <span class="n">node_pinyin</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pos</span></div>
+
+<div class="viewcode-block" id="Node.binary_search"><a class="viewcode-back" href="../../util.html#util.node.Node.binary_search">[文档]</a>    <span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;给定文件名，查找对应子节点,存在返回index，不存在返回-1</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name (String） 待查找的文件名</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: 需要查找的文件名index，存在返回index，不存在返回-1</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">left_index</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">right_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">node_pinyin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">string_helper</span><span class="o">.</span><span class="n">get_string_pinyin</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">mid_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_index</span><span class="o">+</span><span class="n">right_index</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+
+        <span class="k">while</span> <span class="n">left_index</span> <span class="o">&lt;=</span> <span class="n">right_index</span><span class="p">:</span>
+            <span class="n">mid_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">left_index</span><span class="o">+</span><span class="n">right_index</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+            <span class="n">mid_item_pinyin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">string_helper</span><span class="o">.</span><span class="n">get_string_pinyin</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="p">[</span><span class="n">mid_index</span><span class="p">]</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">node_pinyin</span> <span class="o">&lt;</span> <span class="n">mid_item_pinyin</span><span class="p">:</span>
+                <span class="n">right_index</span> <span class="o">=</span> <span class="n">mid_index</span><span class="o">-</span><span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">node_pinyin</span> <span class="o">&gt;</span> <span class="n">mid_item_pinyin</span><span class="p">:</span>
+                <span class="n">left_index</span> <span class="o">=</span> <span class="n">mid_index</span><span class="o">+</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">mid_index</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+
+<div class="viewcode-block" id="Node.add_child"><a class="viewcode-back" href="../../util.html#util.node.Node.add_child">[文档]</a>    <span class="k">def</span> <span class="nf">add_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;为当前节点添加子节点</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): 子节点</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">father_node</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="p">:</span>
+            <span class="n">node_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_left</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">node_index</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Node.delete_child"><a class="viewcode-back" href="../../util.html#util.node.Node.delete_child">[文档]</a>    <span class="k">def</span> <span class="nf">delete_child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;在当前节点中的子节点里删除file_name对应的子节点</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name (String): 想要删除的子节点文件名</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary_search</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="c1"># TODO 定义error类型以及响应，handle这种删除错误</span>
+        <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;删除操作：未找到该节点&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Node.set_father"><a class="viewcode-back" href="../../util.html#util.node.Node.set_father">[文档]</a>    <span class="k">def</span> <span class="nf">set_father</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;给当前节点设置父亲节点</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node (Node): 想要设置的父亲节点</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">father_node</span> <span class="o">=</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="Node.get_father"><a class="viewcode-back" href="../../util.html#util.node.Node.get_father">[文档]</a>    <span class="k">def</span> <span class="nf">get_father</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;获取当前节点的父亲节点</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Node: 这个节点的父亲节点</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">father_node</span></div>
+
+<div class="viewcode-block" id="Node.get_child"><a class="viewcode-back" href="../../util.html#util.node.Node.get_child">[文档]</a>    <span class="k">def</span> <span class="nf">get_child</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;获取当前节点的子节点</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Node: 这个节点的子节点列表</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span></div>
+
+    <span class="c1"># @functools.lru_cache()</span>
+<div class="viewcode-block" id="Node.show"><a class="viewcode-back" href="../../util.html#util.node.Node.show">[文档]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;打印当前节点下的子树</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            layer (int): 首节点前的空格. Defaults to 0.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">+</span><span class="s2">&quot;--&quot;</span><span class="o">*</span><span class="n">layer</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">child_node</span><span class="p">:</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></div></div>
+        <span class="c1"># map(lambda child:child.show(layer+1), self.child_node)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># 简单测试环节</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+    <span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">Node</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;胖嘟嘟&#39;</span><span class="p">,</span> <span class="s1">&#39;老干妈&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">,</span>
+                                   <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;张荣侨&#39;</span><span class="p">,</span> <span class="s1">&#39;张荣Randolf&#39;</span><span class="p">,</span> <span class="s1">&#39;配方法&#39;</span><span class="p">,</span><span class="s1">&#39;sin&#39;</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">test_list</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="n">a</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">child_node</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">delete_child</span><span class="p">(</span><span class="s1">&#39;胖嘟嘟&#39;</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">child_node</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, cheesebox
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

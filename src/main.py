@@ -56,7 +56,8 @@ def main():
     
     # window.show_file_tree(file_tree)
     
-    # window.addNote.connect(NoteWindow.handle_addnote)
+    # window.addNote.connec1oo
+    # (NoteWindow.handle_addnote)
     # window.close_signal.connect(NoteWindow.handle_close)
     # window.scene.press_close.connect(NoteWindow.handle_close)
 

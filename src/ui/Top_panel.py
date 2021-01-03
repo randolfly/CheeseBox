@@ -1,5 +1,29 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
+from os import path
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+
+import os
+import sys
+from os import path
+
+src_path =  path.dirname(path.dirname(path.abspath(__file__)))
+util_path =  path.join(src_path, 'util')
+pipe_path =  path.join(src_path, 'pipes')
+ui_path =  path.join(src_path, 'ui')
+
+sys.path.append(src_path)
+sys.path.append(util_path)
+sys.path.append(pipe_path)
+sys.path.append(ui_path)
+
+from file_tree import FileTree
+from file_node import FileNode
+from file_pipe import FilePipe
+from net_pipe import NetPipe
 
 
 class Top_panel(object):
@@ -96,7 +120,7 @@ class Top_panel(object):
         self.action1_delete.triggered.connect(self.slot1)
         self.action1_new.triggered.connect(self.slot1)
         self.action1_save.triggered.connect(MainWindow.file_saveas)
-        self.action1_open.triggered.connect(self.slot1)
+        self.action1_open.triggered.connect(lambda: self.open(MainWindow))
         self.action2_sub.triggered.connect(MainWindow.scene.addSonNode)
         self.action2_after.triggered.connect(MainWindow.scene.addSiblingNode)
         self.action2_cut.triggered.connect(MainWindow.scene.cut)
@@ -112,3 +136,28 @@ class Top_panel(object):
 
     def slot1(self):
         print("slot test")
+
+    def open(self, MainWindow):
+        MainWindow.renew()
+        reply = QtWidgets.QMessageBox.question(MainWindow,"文件系统选择","选择本地文件系统？",QtWidgets.QMessageBox.Yes|QtWidgets.QMessageBox.No)
+        if reply == QtWidgets.QMessageBox.Yes:
+            file_path = QtWidgets.QFileDialog.getExistingDirectory(MainWindow, "选择文件夹", "./")
+            # print(file_path)
+            file_pipe = FilePipe(os.getcwd(), file_path)
+            # print(os.getcwd())
+            # print('=='*10)
+
+            file_tree = file_pipe.read_file_system()
+            MainWindow.show_file_tree(file_tree)
+            # file_tree.print_tree()
+        else:
+            user, u_ok = QInputDialog.getText(MainWindow, "网络学堂登陆", "用户名")
+            password, p_ok = QInputDialog.getText(MainWindow, "网络学堂登陆", "密码")
+            # print(user,password,u_ok,p_ok)
+            if u_ok and p_ok:
+                net_pipe = NetPipe(user, password ,os.getcwd(), (os.getcwd()))
+                file_tree = net_pipe.read_file_system(['2019-2020-1'])
+                MainWindow.show_file_tree(file_tree)
+
+
+

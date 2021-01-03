@@ -1,0 +1,916 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ui.Graph &mdash; CheeseBox 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CheeseBox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CheeseBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>ui.Graph</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>ui.Graph 源代码</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">PyQt5.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtXml</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtPrintSupport</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+<span class="kn">from</span> <span class="nn">Node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">Branch</span> <span class="kn">import</span> <span class="n">Branch</span>
+<span class="kn">from</span> <span class="nn">Command</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Config</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="Graph"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph">[文档]</a><span class="k">class</span> <span class="nc">Graph</span><span class="p">(</span><span class="n">QGraphicsScene</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;ReWrite QGraphicsScene</span>
+
+<span class="sd">    Add Node and Branch to Scene</span>
+<span class="sd">    </span>
+<span class="sd">    Signals:</span>
+<span class="sd">        contentChanged: node content change signal</span>
+<span class="sd">        nodeNumChange: num od node changed</span>
+<span class="sd">        messageShow: message show in status bar</span>
+<span class="sd">        press_close: press scene close subWindow(Note Window and Link Window)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">brachDistance</span> <span class="o">=</span> <span class="mi">80</span>
+    <span class="n">contentChanged</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">()</span>
+    <span class="n">nodeNumChange</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">messageShow</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">press_close</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Graph</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">y</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_context</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addFirstNode</span><span class="p">()</span>
+
+    <span class="c1"># 生成 Node 并且将 Node 与 Slots 连接</span>
+<div class="viewcode-block" id="Graph.nodeFactory"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeFactory">[文档]</a>    <span class="k">def</span> <span class="nf">nodeFactory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
+
+        <span class="n">node</span><span class="o">.</span><span class="n">nodeChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodeChanged</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">nodeEdited</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodeEdited</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">nodeSelected</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodeSelected</span><span class="p">)</span>
+        <span class="c1"># node.nodeMoved.connect(self.nodeMoved)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">nodeLostFocus</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodeLostFocus</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">node</span></div>
+
+<div class="viewcode-block" id="Graph.setUndoStack"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.setUndoStack">[文档]</a>    <span class="k">def</span> <span class="nf">setUndoStack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stack</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span> <span class="o">=</span> <span class="n">stack</span></div>
+
+<div class="viewcode-block" id="Graph.addFirstNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.addFirstNode">[文档]</a>    <span class="k">def</span> <span class="nf">addFirstNode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodeFactory</span><span class="p">()</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setNodeLevel</span><span class="p">(</span><span class="n">MainThemeLevel</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Graph.addFirstFileNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.addFirstFileNode">[文档]</a>    <span class="k">def</span> <span class="nf">addFirstFileNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fileNode</span><span class="p">):</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodeFactory</span><span class="p">()</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">fileNode</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">setNodeLevel</span><span class="p">(</span><span class="n">MainThemeLevel</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">node</span></div>
+
+    <span class="c1"># 添加 branch</span>
+<div class="viewcode-block" id="Graph.addBranch"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.addBranch">[文档]</a>    <span class="k">def</span> <span class="nf">addBranch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">srcNode</span><span class="p">,</span> <span class="n">dstNode</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="n">Branch</span><span class="p">()</span>
+        <span class="n">branch</span><span class="o">.</span><span class="n">srcNode</span> <span class="o">=</span> <span class="n">srcNode</span>
+        <span class="n">branch</span><span class="o">.</span><span class="n">dstNode</span> <span class="o">=</span> <span class="n">dstNode</span>
+        <span class="n">branch</span><span class="o">.</span><span class="n">adjust</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span></div>
+
+    <span class="c1"># 删除 branch</span>
+<div class="viewcode-block" id="Graph.removeBranch"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.removeBranch">[文档]</a>    <span class="k">def</span> <span class="nf">removeBranch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m_node</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">branch</span><span class="o">.</span><span class="n">srcNode</span> <span class="o">==</span> <span class="n">m_node</span> <span class="ow">or</span> <span class="n">branch</span><span class="o">.</span><span class="n">dstNode</span> <span class="o">==</span> <span class="n">m_node</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">removeItem</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span></div>
+
+    <span class="c1"># 设置活动节点</span>
+<div class="viewcode-block" id="Graph.setActivateNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.setActivateNode">[文档]</a>    <span class="k">def</span> <span class="nf">setActivateNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setBorder</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setBorder</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
+
+    <span class="c1"># 获得子节点的最大位置</span>
+<div class="viewcode-block" id="Graph.getSonNodeMaxPos"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.getSonNodeMaxPos">[文档]</a>    <span class="k">def</span> <span class="nf">getSonNodeMaxPos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">maxY</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">maxY</span><span class="p">:</span>
+                <span class="n">maxY</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span>
+        <span class="c1">#print(&#39;maxY: &#39;, maxY)</span>
+        <span class="k">return</span> <span class="n">maxY</span></div>
+
+    <span class="c1"># dfs</span>
+<div class="viewcode-block" id="Graph.getSubTree"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.getSubTree">[文档]</a>    <span class="k">def</span> <span class="nf">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">subTree</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">queue</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">queue</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        
+        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v center: </span><span class="si">{}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">v</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">y</span><span class="p">)))</span>
+            <span class="n">subTree</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">sonNode</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+                <span class="n">queue</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sonNode</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">subTree</span></div>
+    
+    <span class="c1"># get subtree branch</span>
+<div class="viewcode-block" id="Graph.getSubTreeBranch"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.getSubTreeBranch">[文档]</a>    <span class="k">def</span> <span class="nf">getSubTreeBranch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">subTreeBranch</span> <span class="o">=</span> <span class="p">[]</span> 
+        <span class="n">nodeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">branch</span><span class="o">.</span><span class="n">dstNode</span> <span class="ow">in</span> <span class="n">nodeList</span><span class="p">:</span>
+                <span class="n">subTreeBranch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
+    
+        <span class="k">return</span> <span class="n">subTreeBranch</span></div>
+
+    <span class="c1"># move subTree</span>
+<div class="viewcode-block" id="Graph.moveTree"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.moveTree">[文档]</a>    <span class="k">def</span> <span class="nf">moveTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+        <span class="n">subTree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">subNode</span> <span class="ow">in</span> <span class="n">subTree</span><span class="p">:</span>
+            <span class="n">subNode</span><span class="o">.</span><span class="n">moveBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+            <span class="n">subNode</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span></div>
+
+    <span class="c1"># adjust parent Tree position recursive</span>
+<div class="viewcode-block" id="Graph.adjustNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.adjustNode">[文档]</a>    <span class="k">def</span> <span class="nf">adjustNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">son</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">reverse</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>        
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">son</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveTree</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">sign</span> <span class="o">*</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_margin</span> <span class="o">+</span> <span class="n">node</span><span class="o">.</span><span class="n">m_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">son</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveTree</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">sign</span> <span class="o">*</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_margin</span> <span class="o">+</span> <span class="n">node</span><span class="o">.</span><span class="n">m_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
+        
+        <span class="k">if</span> <span class="n">parent</span><span class="o">.</span><span class="n">parentNode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adjustNode</span><span class="p">(</span><span class="n">parent</span><span class="o">.</span><span class="n">parentNode</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">reverse</span><span class="p">)</span></div>
+
+    <span class="c1"># adjust branch dfter adjust node position</span>
+<div class="viewcode-block" id="Graph.adjustBranch"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.adjustBranch">[文档]</a>    <span class="k">def</span> <span class="nf">adjustBranch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="p">:</span>
+            <span class="n">branch</span><span class="o">.</span><span class="n">adjust</span><span class="p">()</span></div>
+
+    <span class="c1"># TODO: Two side node</span>
+<div class="viewcode-block" id="Graph.getSonPos"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.getSonPos">[文档]</a>    <span class="k">def</span> <span class="nf">getSonPos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my y: </span><span class="si">{0}</span><span class="s1">, scene y: </span><span class="si">{1}</span><span class="s1">:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> 
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">y</span><span class="p">()))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;activate Node: &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">())</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">()</span> <span class="o">+</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">brachDistance</span><span class="p">,</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">y</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">maxY</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSonNodeMaxPos</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">()</span> <span class="o">+</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">brachDistance</span><span class="p">,</span> \
+                    <span class="n">maxY</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">m_margin</span></div>
+
+    <span class="c1"># 添加子节点</span>
+<div class="viewcode-block" id="Graph.addSonNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.addSonNode">[文档]</a>    <span class="k">def</span> <span class="nf">addSonNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">m_context</span> <span class="o">=</span> <span class="n">Context</span><span class="p">()</span>   <span class="c1"># Context 为局部对象, 不要共享为全局对象, 引用传递会出现错误</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_scene</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSonPos</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_text_name</span> <span class="o">=</span> <span class="n">text</span>
+
+        <span class="n">insertNodeCommand</span> <span class="o">=</span> <span class="n">InsertNodeCommand</span><span class="p">(</span><span class="n">m_context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">insertNodeCommand</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">contentChanged</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodeNumChange</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: add new node !&#39;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">insertNodeCommand</span><span class="o">.</span><span class="n">node</span></div>
+
+
+<div class="viewcode-block" id="Graph.addSiblingNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.addSiblingNode">[文档]</a>    <span class="k">def</span> <span class="nf">addSiblingNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: Bade Node&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: Bade Node&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">m_border</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addSonNode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div>
+
+    <span class="c1"># 删除节点</span>
+<div class="viewcode-block" id="Graph.removeNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.removeNode">[文档]</a>    <span class="k">def</span> <span class="nf">removeNode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: Base Node&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: Base Node&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">m_context</span> <span class="o">=</span> <span class="n">Context</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_scene</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_nodeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">)</span>
+
+        <span class="n">removeNodeCommand</span> <span class="o">=</span> <span class="n">RemoveNodeCommand</span><span class="p">(</span><span class="n">m_context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">removeNodeCommand</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">contentChanged</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodeNumChange</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: remove node !&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># Node 移动</span>
+<div class="viewcode-block" id="Graph.nodeMoved"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeMoved">[文档]</a>    <span class="k">def</span> <span class="nf">nodeMoved</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="n">m_context</span> <span class="o">=</span> <span class="n">Context</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_scene</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_nodeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">)</span>
+
+        <span class="n">moveCommand</span> <span class="o">=</span> <span class="n">MoveCommand</span><span class="p">(</span><span class="n">m_context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">moveCommand</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: move node !&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># Node 选中</span>
+<div class="viewcode-block" id="Graph.nodeSelected"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeSelected">[文档]</a>    <span class="k">def</span> <span class="nf">nodeSelected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sender</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sender</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node Selected Sender: &#39;</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
+        <span class="c1"># print(&#39;node number: &#39;, sender.num)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">sender</span><span class="p">)</span></div>
+
+    <span class="c1"># Node 文本编辑</span>
+<div class="viewcode-block" id="Graph.nodeEdited"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeEdited">[文档]</a>    <span class="k">def</span> <span class="nf">nodeEdited</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;node edited Mode&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">toHtml</span><span class="p">())</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setFocusItem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: editing node !&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.nodeChanged"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeChanged">[文档]</a>    <span class="k">def</span> <span class="nf">nodeChanged</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#self.adjustBranch()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contentChanged</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>    </div>
+
+    <span class="c1"># 递归调整树, 以使 rootNode 在 subtree 中处于中点</span>
+<div class="viewcode-block" id="Graph.adjustSubTreeNode"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.adjustSubTreeNode">[文档]</a>    <span class="k">def</span> <span class="nf">adjustSubTreeNode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sceneBoundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">height</span>
+        <span class="n">nodeList</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodeList</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">dy</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="n">dy</span><span class="o">/</span><span class="mi">2</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">moveBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">dy</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">moveBy</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+    <span class="c1"># Node 失焦事件</span>
+<div class="viewcode-block" id="Graph.nodeLostFocus"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeLostFocus">[文档]</a>    <span class="k">def</span> <span class="nf">nodeLostFocus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;focusOut&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adjustSubTreeNode</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adjustBranch</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.moveUp"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.moveUp">[文档]</a>    <span class="k">def</span> <span class="nf">moveUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span> <span class="ow">and</span> \
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    
+            <span class="n">activateY</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">y</span>
+            <span class="n">closestY</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="n">closestNode</span> <span class="o">=</span> <span class="kc">None</span>
+        
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">activateY</span> <span class="ow">and</span> <span class="n">closestY</span> <span class="o">&lt;</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+                    <span class="n">closestY</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span>
+                    <span class="n">closestNode</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="k">if</span> <span class="n">closestNode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">closestNode</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Graph.moveDown"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.moveDown">[文档]</a>    <span class="k">def</span> <span class="nf">moveDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span> <span class="ow">and</span> \
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+            <span class="n">activateY</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">y</span>
+            <span class="n">closestY</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="n">closestNode</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">activateY</span> <span class="ow">and</span> <span class="n">closestY</span> <span class="o">&gt;</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+                    <span class="n">closestY</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span>
+                    <span class="n">closestNode</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="k">if</span> <span class="n">closestNode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">closestNode</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Graph.moveRight"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.moveRight">[文档]</a>    <span class="k">def</span> <span class="nf">moveRight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+            <span class="n">minY</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="n">minNode</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">minY</span><span class="p">:</span>
+                    <span class="n">minY</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span>
+                    <span class="n">minNode</span> <span class="o">=</span> <span class="n">node</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="n">minNode</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Graph.moveLeft"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.moveLeft">[文档]</a>    <span class="k">def</span> <span class="nf">moveLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="p">)</span></div>
+
+    <span class="c1"># 通过方向键移动 activateNode</span>
+<div class="viewcode-block" id="Graph.keyPressEvent"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.keyPressEvent">[文档]</a>    <span class="k">def</span> <span class="nf">keyPressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key_Escape</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nodeLostFocus</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key_Right</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveRight</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key_Left</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveLeft</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key_Up</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveUp</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key_Down</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">moveDown</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">keyPressEvent</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">keyPressEvent</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+    
+    <span class="c1"># TODO: add into Command, undo and redo</span>
+<div class="viewcode-block" id="Graph.cut"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.cut">[文档]</a>    <span class="k">def</span> <span class="nf">cut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">removeNode</span><span class="p">()</span></div>
+
+    <span class="c1"># 复制 subtree</span>
+<div class="viewcode-block" id="Graph.copy"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.copy">[文档]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">subTree</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">):</span>
+            <span class="n">subTreeNode</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">subTreeNode</span><span class="p">[</span><span class="s1">&#39;htmlContent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">toHtml</span><span class="p">()</span>
+            <span class="n">subTreeNode</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="n">son</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">sonNode</span> <span class="ow">in</span> <span class="n">node</span><span class="o">.</span><span class="n">sonNode</span><span class="p">:</span>
+                <span class="n">son</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">sonNode</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">sonNode</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+            <span class="n">subTreeNode</span><span class="p">[</span><span class="s1">&#39;son&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">son</span>
+
+            <span class="n">subTree</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subTreeNode</span><span class="p">)</span>
+        
+        <span class="n">clipboard</span> <span class="o">=</span> <span class="n">QApplication</span><span class="o">.</span><span class="n">clipboard</span><span class="p">()</span>
+        <span class="n">clipboard</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">subTree</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: Copy Successfully !&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># 生成 subtree</span>
+<div class="viewcode-block" id="Graph.genSubTree"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.genSubTree">[文档]</a>    <span class="k">def</span> <span class="nf">genSubTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodeInfo</span><span class="p">,</span> <span class="n">nodeList</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nodeInfo</span><span class="p">[</span><span class="s1">&#39;son&#39;</span><span class="p">]:</span>
+            <span class="k">return</span>
+
+        <span class="nb">sorted</span><span class="p">(</span><span class="n">nodeInfo</span><span class="p">[</span><span class="s1">&#39;son&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setHtml</span><span class="p">(</span><span class="n">nodeInfo</span><span class="p">[</span><span class="s1">&#39;htmlContent&#39;</span><span class="p">])</span>
+        <span class="n">sonInfo</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">nodeInfo</span><span class="p">[</span><span class="s1">&#39;son&#39;</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">nodeInfo</span> <span class="ow">in</span> <span class="n">nodeList</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="n">nodeInfo</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">]:</span>
+                    <span class="n">sonInfo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nodeInfo</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">sonInfo</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addSonNode</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">setHtml</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;htmlContent&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">genSubTree</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">nodeList</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setActivateNode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">parentNode</span><span class="p">)</span></div>
+
+    <span class="c1"># 粘贴 subtree</span>
+<div class="viewcode-block" id="Graph.paste"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.paste">[文档]</a>    <span class="k">def</span> <span class="nf">paste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        
+        <span class="n">clipboard</span> <span class="o">=</span> <span class="n">QApplication</span><span class="o">.</span><span class="n">clipboard</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">clipboard</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: clipboard has not text content !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Error: clipboard has not text content !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">nodeList</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">clipboard</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addSonNode</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genSubTree</span><span class="p">(</span><span class="n">nodeList</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nodeList</span><span class="p">)</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: Paste Successfully !&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># 修改节点背景颜色</span>
+<div class="viewcode-block" id="Graph.nodeColor"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.nodeColor">[文档]</a>    <span class="k">def</span> <span class="nf">nodeColor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">dialog</span> <span class="o">=</span> <span class="n">QColorDialog</span><span class="p">()</span>
+        <span class="n">dialog</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Set Node Color&#39;</span><span class="p">)</span>
+        <span class="n">dialog</span><span class="o">.</span><span class="n">setCurrentColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">m_color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dialog</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+            <span class="n">dialog</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+
+        <span class="n">m_context</span> <span class="o">=</span> <span class="n">Context</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_color</span> <span class="o">=</span> <span class="n">dialog</span><span class="o">.</span><span class="n">selectedColor</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_scene</span> <span class="o">=</span> <span class="bp">self</span>
+
+        <span class="n">nodeColorCommand</span> <span class="o">=</span> <span class="n">NodeColorCommand</span><span class="p">(</span><span class="n">m_context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">nodeColorCommand</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;change node color&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># 修改节点中文本颜色</span>
+<div class="viewcode-block" id="Graph.textColor"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.textColor">[文档]</a>    <span class="k">def</span> <span class="nf">textColor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">dialog</span> <span class="o">=</span> <span class="n">QColorDialog</span><span class="p">()</span>
+        <span class="n">dialog</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Set Text Color&#39;</span><span class="p">)</span>
+        <span class="n">dialog</span><span class="o">.</span><span class="n">setCurrentColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">m_textColor</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dialog</span><span class="o">.</span><span class="n">exec</span><span class="p">():</span>
+            <span class="k">return</span>
+
+        <span class="n">m_context</span> <span class="o">=</span> <span class="n">Context</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_activateNode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_textColor</span> <span class="o">=</span> <span class="n">dialog</span><span class="o">.</span><span class="n">selectedColor</span><span class="p">()</span>
+        <span class="n">m_context</span><span class="o">.</span><span class="n">m_scene</span> <span class="o">=</span> <span class="bp">self</span>
+
+        <span class="n">textColorCommand</span> <span class="o">=</span> <span class="n">TextColorCommand</span><span class="p">(</span><span class="n">m_context</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_undoStack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">textColorCommand</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Info: change text color !&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># rewrite rightclick menu</span>
+    <span class="c1"># 重写scene右键菜单事件, 区分有无 item 的右键菜单事件</span>
+<div class="viewcode-block" id="Graph.contextMenuEvent"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.contextMenuEvent">[文档]</a>    <span class="k">def</span> <span class="nf">contextMenuEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="n">selectedItem</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">itemAt</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">scenePos</span><span class="p">(),</span> <span class="n">QTransform</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">selectedItem</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">selectedItem</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_editingMode</span><span class="p">:</span>
+            <span class="n">rightclick_menu</span> <span class="o">=</span> <span class="n">QMenu</span><span class="p">()</span>
+
+            <span class="c1"># Cut</span>
+            <span class="n">cut_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Cut&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">cut_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+X&#39;</span><span class="p">)</span>
+            <span class="n">cut_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cut</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">cut_action</span><span class="p">)</span>
+
+            <span class="c1"># Copy</span>
+            <span class="n">copy_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Copy&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">copy_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+C&#39;</span><span class="p">)</span>
+            <span class="n">copy_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">copy_action</span><span class="p">)</span>
+
+            <span class="c1"># Paste</span>
+            <span class="n">paste_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Paste&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">paste_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+V&#39;</span><span class="p">)</span>
+            <span class="n">paste_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paste</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">paste_action</span><span class="p">)</span>
+
+            <span class="c1"># Delete</span>
+            <span class="n">delete_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Delete&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">delete_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Delete&#39;</span><span class="p">)</span>
+            <span class="n">delete_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">removeNode</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">delete_action</span><span class="p">)</span>
+            
+            <span class="c1">############################################################################</span>
+            <span class="c1">#  New Son Node</span>
+            <span class="c1">############################################################################</span>
+            <span class="n">new_sonNode_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;subtopic&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">new_sonNode_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+L&#39;</span><span class="p">)</span>
+            <span class="n">new_sonNode_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addSonNode</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">new_sonNode_action</span><span class="p">)</span>
+
+            <span class="c1">############################################################################</span>
+            <span class="c1">#  Add Branch</span>
+            <span class="c1">############################################################################</span>
+            <span class="n">new_siblingNode_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;topicafter&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">new_siblingNode_action</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+K&#39;</span><span class="p">)</span>
+            <span class="n">new_siblingNode_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addSiblingNode</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">new_siblingNode_action</span><span class="p">)</span>
+
+            <span class="c1"># Set Color</span>
+            <span class="n">set_color_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Set Color&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">set_color_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodeColor</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">set_color_action</span><span class="p">)</span>
+
+            <span class="c1"># Set Text Color</span>
+            <span class="n">set_textColor_action</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Set Text Color&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">set_textColor_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">textColor</span><span class="p">)</span>
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">set_textColor_action</span><span class="p">)</span>
+
+            <span class="n">rightclick_menu</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="n">QCursor</span><span class="p">()</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">contextMenuEvent</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+    <span class="c1"># TODO: add relation between freeTheme and theme</span>
+<div class="viewcode-block" id="Graph.buildRelation"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.buildRelation">[文档]</a>    <span class="k">def</span> <span class="nf">buildRelation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Graph.node_"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.node_">[文档]</a>    <span class="k">def</span> <span class="nf">node_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">father</span><span class="p">):</span> 
+        <span class="n">ET</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">father</span><span class="p">,</span>
+            <span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="p">{</span>
+                <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">),</span>
+                <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
+                <span class="s1">&#39;son_num&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">sonNode</span><span class="p">)),</span>
+                <span class="s1">&#39;width&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">width</span><span class="p">),</span>
+                <span class="s1">&#39;m_color_red&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_color</span><span class="o">.</span><span class="n">red</span><span class="p">()),</span>
+                <span class="s1">&#39;m_color_green&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_color</span><span class="o">.</span><span class="n">green</span><span class="p">()),</span>
+                <span class="s1">&#39;m_color_blue&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_color</span><span class="o">.</span><span class="n">blue</span><span class="p">()),</span>
+                <span class="s1">&#39;m_level&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_level</span><span class="p">),</span>
+                <span class="s1">&#39;m_textColor_red&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_textColor</span><span class="o">.</span><span class="n">red</span><span class="p">()),</span>
+                <span class="s1">&#39;m_textColor_green&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_textColor</span><span class="o">.</span><span class="n">green</span><span class="p">()),</span>
+                <span class="s1">&#39;m_textColor_blue&#39;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">m_textColor</span><span class="o">.</span><span class="n">blue</span><span class="p">()),</span>
+                <span class="s1">&#39;m_note&#39;</span><span class="p">:</span> <span class="n">node</span><span class="o">.</span><span class="n">m_note</span><span class="p">,</span>
+                <span class="s1">&#39;m_link&#39;</span><span class="p">:</span> <span class="n">node</span><span class="o">.</span><span class="n">m_link</span><span class="p">,</span>
+                <span class="s1">&#39;htmlContent&#39;</span><span class="p">:</span><span class="n">node</span><span class="o">.</span><span class="n">toHtml</span><span class="p">()</span>
+            <span class="p">})</span></div>
+
+    <span class="c1"># 将 scene 中的信息写入文件中</span>
+<div class="viewcode-block" id="Graph.writeContentToXmlFile"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.writeContentToXmlFile">[文档]</a>    <span class="k">def</span> <span class="nf">writeContentToXmlFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="c1">#最外层节点标签为&#39;data&#39;,没有任何属性</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSubTree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="c1">#树中的所有节点在xml中均以&#39;data&#39;为根节点，为并列结构</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">node_</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">whole_tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">whole_tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
+
+    <span class="c1"># 将 scene 中信息写入 PNG 图片</span>
+<div class="viewcode-block" id="Graph.writeContentToPngFile"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.writeContentToPngFile">[文档]</a>    <span class="k">def</span> <span class="nf">writeContentToPngFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">QImage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sceneRect</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">(),</span> <span class="n">QImage</span><span class="o">.</span><span class="n">Format_ARGB32_Premultiplied</span><span class="p">)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">QPainter</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">setRenderHint</span><span class="p">(</span><span class="n">QPainter</span><span class="o">.</span><span class="n">Antialiasing</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setBackgroundBrush</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">white</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">setBackground</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">white</span><span class="p">))</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+    <span class="c1"># 将 scene 中信息写入 PDF 文件</span>
+<div class="viewcode-block" id="Graph.writeContentToPdfFile"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.writeContentToPdfFile">[文档]</a>    <span class="k">def</span> <span class="nf">writeContentToPdfFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="c1"># 生成 Printer 对象</span>
+        <span class="n">printer</span> <span class="o">=</span> <span class="n">QPrinter</span><span class="p">(</span><span class="n">QPrinter</span><span class="o">.</span><span class="n">HighResolution</span><span class="p">)</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">setPageSize</span><span class="p">(</span><span class="n">QPrinter</span><span class="o">.</span><span class="n">A4</span><span class="p">)</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">setOrientation</span><span class="p">(</span><span class="n">QPrinter</span><span class="o">.</span><span class="n">Portrait</span><span class="p">)</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">setOutputFormat</span><span class="p">(</span><span class="n">QPrinter</span><span class="o">.</span><span class="n">PdfFormat</span><span class="p">)</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">setOutputFileName</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># 将 scene 中信息 render 到 painter上</span>
+        <span class="n">painter</span> <span class="o">=</span> <span class="n">QPainter</span><span class="p">(</span><span class="n">printer</span><span class="p">)</span>
+        <span class="n">painter</span><span class="o">.</span><span class="n">setRenderHint</span><span class="p">(</span><span class="n">QPainter</span><span class="o">.</span><span class="n">Antialiasing</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setBackgroundBrush</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">white</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">painter</span><span class="p">)</span>
+        <span class="n">painter</span><span class="o">.</span><span class="n">setBackground</span><span class="p">(</span><span class="n">QColor</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">white</span><span class="p">))</span>
+        <span class="n">painter</span><span class="o">.</span><span class="n">end</span><span class="p">()</span></div>
+
+    <span class="c1"># 从 XML 文件中读取 scene 信息</span>
+<div class="viewcode-block" id="Graph.readContentFromXmlFile"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.readContentFromXmlFile">[文档]</a>    <span class="k">def</span> <span class="nf">readContentFromXmlFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: tree parse error !&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;root: &#39;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+        <span class="n">node_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">attr_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">node_attr</span> <span class="ow">in</span> <span class="n">root</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodeFactory</span><span class="p">()</span>
+            
+            <span class="n">attr</span> <span class="o">=</span> <span class="n">node_attr</span><span class="o">.</span><span class="n">attrib</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+            <span class="c1">#将xml中的数据存入节点中</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">])</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">m_color</span> <span class="o">=</span> <span class="n">QColor</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_color_red&#39;</span><span class="p">]),</span>
+                                    <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_color_green&#39;</span><span class="p">]),</span> 
+                                    <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_color_blue&#39;</span><span class="p">]))</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">m_level</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_level&#39;</span><span class="p">])</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">m_textColor</span> <span class="o">=</span> <span class="n">QColor</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_textColor_red&#39;</span><span class="p">]),</span> 
+                                        <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_textColor_green&#39;</span><span class="p">]),</span>
+                                        <span class="nb">float</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_textColor_blue&#39;</span><span class="p">]))</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">m_note</span> <span class="o">=</span> <span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_note&#39;</span><span class="p">]</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">m_link</span> <span class="o">=</span> <span class="n">attr</span><span class="p">[</span><span class="s1">&#39;m_link&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">m_link</span> <span class="o">!=</span> <span class="s1">&#39;https://&#39;</span><span class="p">:</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">hasLink</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">setHtml</span><span class="p">(</span><span class="n">attr</span><span class="p">[</span><span class="s1">&#39;htmlContent&#39;</span><span class="p">])</span>
+
+            <span class="n">node</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+            <span class="n">attr_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+            <span class="n">node_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            
+        <span class="c1">#由于写xml文件中节点是根据深度优先遍历的结果进行排序的</span>
+        <span class="c1">#xml中的第一个节点一定是根节点</span>
+        <span class="n">node_scan_head</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">node_list</span><span class="p">)):</span>
+            <span class="n">node_scan_tail</span> <span class="o">=</span> <span class="n">node_scan_head</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">attr_list</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="s1">&#39;son_num&#39;</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">node_scan_head</span><span class="p">,</span><span class="n">node_scan_tail</span><span class="p">):</span>
+                <span class="n">node_list</span><span class="p">[</span><span class="n">m</span><span class="p">]</span><span class="o">.</span><span class="n">sonNode</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_list</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+                <span class="n">node_list</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">parentNode</span> <span class="o">=</span> <span class="n">node_list</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">addBranch</span><span class="p">(</span><span class="n">node_list</span><span class="p">[</span><span class="n">m</span><span class="p">],</span> <span class="n">node_list</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+            <span class="n">node_scan_head</span> <span class="o">=</span> <span class="n">node_scan_tail</span>
+        
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+    <span class="c1"># 删除 scene 中所有 node</span>
+<div class="viewcode-block" id="Graph.removeAllNodes"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.removeAllNodes">[文档]</a>    <span class="k">def</span> <span class="nf">removeAllNodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">removeItem</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">NodeList</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+    <span class="c1"># 删除 scene 中所有 branch</span>
+<div class="viewcode-block" id="Graph.removeAllBranches"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.removeAllBranches">[文档]</a>    <span class="k">def</span> <span class="nf">removeAllBranches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">removeItem</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">BranchList</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+    <span class="c1"># 插入图片并且调整节点位置</span>
+<div class="viewcode-block" id="Graph.insertPicture"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.insertPicture">[文档]</a>    <span class="k">def</span> <span class="nf">insertPicture</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">messageShow</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;Warning: no activate node !&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m_activateNode</span><span class="o">.</span><span class="n">insertPicture</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contentChanged</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjustSubTreeNode</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjustBranch</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Graph.mousePressEvent"><a class="viewcode-back" href="../../ui.html#ui.Graph.Graph.mousePressEvent">[文档]</a>    <span class="k">def</span> <span class="nf">mousePressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">press_close</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">mousePressEvent</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, cheesebox
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1030 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>util package &mdash; CheeseBox 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CheeseBox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">util package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-util.config">util.config module</a></li>
+<li><a class="reference internal" href="#module-util.config_helper">util.config_helper module</a></li>
+<li><a class="reference internal" href="#module-util.database_helper">util.database_helper module</a></li>
+<li><a class="reference internal" href="#module-util.error_helper">util.error_helper module</a></li>
+<li><a class="reference internal" href="#module-util.file_node">util.file_node module</a></li>
+<li><a class="reference internal" href="#module-util.file_tree">util.file_tree module</a></li>
+<li><a class="reference internal" href="#module-util.net_helper">util.net_helper module</a></li>
+<li><a class="reference internal" href="#module-util.node">util.node module</a></li>
+<li><a class="reference internal" href="#module-util.string_helper">util.string_helper module</a></li>
+<li><a class="reference internal" href="#module-util.tree">util.tree module</a></li>
+<li><a class="reference internal" href="#module-util.ui_branch">util.ui_branch module</a></li>
+<li><a class="reference internal" href="#module-util.ui_node">util.ui_node module</a></li>
+<li><a class="reference internal" href="#module-util.ui_tree">util.ui_tree module</a></li>
+<li><a class="reference internal" href="#module-util.xml_helper">util.xml_helper module</a></li>
+<li><a class="reference internal" href="#module-util">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CheeseBox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>util package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/util.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="util-package">
+<h1>util package<a class="headerlink" href="#util-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-util.config">
+<span id="util-config-module"></span><h2>util.config module<a class="headerlink" href="#module-util.config" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-util.config_helper">
+<span id="util-config-helper-module"></span><h2>util.config_helper module<a class="headerlink" href="#module-util.config_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.config_helper.ConfigHelper">
+<em class="property">class </em><code class="sig-prename descclassname">util.config_helper.</code><code class="sig-name descname">ConfigHelper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config_path</span></em>, <em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">system_root_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>处理软件系统设置相关的文件存储与读取类</p>
+<dl class="py method">
+<dt id="util.config_helper.ConfigHelper.data_load">
+<code class="sig-name descname">data_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper.data_load"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper.data_load" title="永久链接至目标">¶</a></dt>
+<dd><p>从本地的配置文件加载数据</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.config_helper.ConfigHelper.data_write">
+<code class="sig-name descname">data_write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper.data_write"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper.data_write" title="永久链接至目标">¶</a></dt>
+<dd><p>向给定的配置文件地址写入数据</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.config_helper.ConfigHelper.get_password">
+<code class="sig-name descname">get_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper.get_password"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper.get_password" title="永久链接至目标">¶</a></dt>
+<dd><p>获取网络学堂的的密码</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.config_helper.ConfigHelper.get_root_path">
+<code class="sig-name descname">get_root_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper.get_root_path"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper.get_root_path" title="永久链接至目标">¶</a></dt>
+<dd><p>获取软件中文件系统对应的地址字典，文件系统名字为键，文件系统根目录绝对路径为值</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.config_helper.ConfigHelper.get_username">
+<code class="sig-name descname">get_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/config_helper.html#ConfigHelper.get_username"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.config_helper.ConfigHelper.get_username" title="永久链接至目标">¶</a></dt>
+<dd><p>获取网络学堂的的用户名</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.database_helper">
+<span id="util-database-helper-module"></span><h2>util.database_helper module<a class="headerlink" href="#module-util.database_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.database_helper.DatabaseHelper">
+<em class="property">class </em><code class="sig-prename descclassname">util.database_helper.</code><code class="sig-name descname">DatabaseHelper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datapath_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/database_helper.html#DatabaseHelper"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.database_helper.DatabaseHelper" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>数据库操作类，用于存储tag信息</p>
+<dl class="py method">
+<dt id="util.database_helper.DatabaseHelper.node_tag_write">
+<code class="sig-name descname">node_tag_write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/database_helper.html#DatabaseHelper.node_tag_write"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.database_helper.DatabaseHelper.node_tag_write" title="永久链接至目标">¶</a></dt>
+<dd><p>指定节点，将其tag存储至数据库中</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="#util.file_node.FileNode" title="util.file_node.FileNode"><em>FileNode</em></a>) – 需要存储的文件节点</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.database_helper.DatabaseHelper.tag_search">
+<code class="sig-name descname">tag_search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/database_helper.html#DatabaseHelper.tag_search"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.database_helper.DatabaseHelper.tag_search" title="永久链接至目标">¶</a></dt>
+<dd><p>指定需要搜索的tag, 在数据库中进行搜索并返回搜索结果列表</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>tag</strong> (<em>String</em>) – 给定的搜索tag名称</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.database_helper.DatabaseHelper.tree_tag_write">
+<code class="sig-name descname">tree_tag_write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/database_helper.html#DatabaseHelper.tree_tag_write"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.database_helper.DatabaseHelper.tree_tag_write" title="永久链接至目标">¶</a></dt>
+<dd><p>指定文件树，将其tag存储至数据库中</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<a class="reference internal" href="#util.file_tree.FileTree" title="util.file_tree.FileTree"><em>FileTree</em></a>) – 需要存储的文件树</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.error_helper">
+<span id="util-error-helper-module"></span><h2>util.error_helper module<a class="headerlink" href="#module-util.error_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.error_helper.ErrorHelprt">
+<em class="property">class </em><code class="sig-prename descclassname">util.error_helper.</code><code class="sig-name descname">ErrorHelprt</code><a class="reference internal" href="_modules/util/error_helper.html#ErrorHelprt"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.error_helper.ErrorHelprt" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="util.error_helper.ErrorHelprt.error_handler">
+<code class="sig-name descname">error_handler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/error_helper.html#ErrorHelprt.error_handler"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.error_helper.ErrorHelprt.error_handler" title="永久链接至目标">¶</a></dt>
+<dd><p>处理错误信息</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.file_node">
+<span id="util-file-node-module"></span><h2>util.file_node module<a class="headerlink" href="#module-util.file_node" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.file_node.FileNode">
+<em class="property">class </em><code class="sig-prename descclassname">util.file_node.</code><code class="sig-name descname">FileNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/file_node.html#FileNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.file_node.FileNode" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">node.Node</span></code></p>
+<p>继承Node，作为FileNode的节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>Node</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="util.file_node.FileNode.get_relative_path">
+<code class="sig-name descname">get_relative_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/file_node.html#FileNode.get_relative_path"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.file_node.FileNode.get_relative_path" title="永久链接至目标">¶</a></dt>
+<dd><p>获取文件node的路径，在当前文件系统下的相对路径，可以是磁盘上的，也可以是网络上的</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>相对于文件系统下的相对路径(“./A/B/C/”)</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.file_node.FileNode.get_tag">
+<code class="sig-name descname">get_tag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/file_node.html#FileNode.get_tag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.file_node.FileNode.get_tag" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前文件node的tag列表</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>node的tag列表</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.file_tree">
+<span id="util-file-tree-module"></span><h2>util.file_tree module<a class="headerlink" href="#module-util.file_tree" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.file_tree.FileTree">
+<em class="property">class </em><code class="sig-prename descclassname">util.file_tree.</code><code class="sig-name descname">FileTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_node</span></em>, <em class="sig-param"><span class="n">file_system_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/file_tree.html#FileTree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.file_tree.FileTree" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">tree.Tree</span></code></p>
+<p>文件系统管理相关的树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>Tree</strong> (<a class="reference internal" href="#util.tree.Tree" title="util.tree.Tree"><em>Tree</em></a>) – 继承于Tree的抽象基类</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="util.file_tree.FileTree.fetch_file_tree">
+<code class="sig-name descname">fetch_file_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/file_tree.html#FileTree.fetch_file_tree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.file_tree.FileTree.fetch_file_tree" title="永久链接至目标">¶</a></dt>
+<dd><p>通过Pipe获取文件树，需要依据文件系统类型选取管道</p>
+<p>fetch文件系统存储位置(本地/网上)获取到的文件树</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>fetch操作过程返回的状态</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p>STATUS</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.net_helper">
+<span id="util-net-helper-module"></span><h2>util.net_helper module<a class="headerlink" href="#module-util.net_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.net_helper.NetHelper">
+<em class="property">class </em><code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">NetHelper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.download_selected_courses_files">
+<code class="sig-name descname">download_selected_courses_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">courses</span></em>, <em class="sig-param"><span class="n">file_storage_destination</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.download_selected_courses_files"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.download_selected_courses_files" title="永久链接至目标">¶</a></dt>
+<dd><p>给定下载课程列表，下载至file_storage_destination处</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>courses</strong> (<em>List</em>) – 课表</p></li>
+<li><p><strong>file_storage_destination</strong> (<em>String</em>) – 下载存储路径</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.get_course_file_tree_node">
+<code class="sig-name descname">get_course_file_tree_node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.get_course_file_tree_node"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.get_course_file_tree_node" title="永久链接至目标">¶</a></dt>
+<dd><p>遍历学期列表，返回对应的文件树的根节点</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.get_course_files">
+<code class="sig-name descname">get_course_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">course</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.get_course_files"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.get_course_files" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.get_course_name">
+<code class="sig-name descname">get_course_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">course</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.get_course_name"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.get_course_name" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.get_course_semester">
+<code class="sig-name descname">get_course_semester</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">course</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.get_course_semester"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.get_course_semester" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.net_helper.NetHelper.get_courses">
+<code class="sig-name descname">get_courses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">semesters</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#NetHelper.get_courses"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.NetHelper.get_courses" title="永久链接至目标">¶</a></dt>
+<dd><p>给定学期，获得这个学期的课表</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>semesters</strong> (<em>String</em>) – 学期号列表，如[‘2019-2020-1’,’2020-2021-1’]</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>课表list</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="util.net_helper.TqdmUpTo">
+<em class="property">class </em><code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">TqdmUpTo</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">_</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">__</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#TqdmUpTo"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.TqdmUpTo" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">tqdm.std.tqdm</span></code></p>
+<dl class="py method">
+<dt id="util.net_helper.TqdmUpTo.update_to">
+<code class="sig-name descname">update_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">b</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">bsize</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">tsize</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#TqdmUpTo.update_to"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.TqdmUpTo.update_to" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.append_hw_csv">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">append_hw_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em>, <em class="sig-param"><span class="n">stu</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#append_hw_csv"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.append_hw_csv" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.build_discuss">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">build_discuss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#build_discuss"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.build_discuss" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.build_notify">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">build_notify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#build_notify"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.build_notify" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.clear">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#clear"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.clear" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.dfs_clean">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">dfs_clean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#dfs_clean"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.dfs_clean" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.download">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uri</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#download"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.download" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.escape">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#escape"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.escape" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.get_args">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">get_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#get_args"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.get_args" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.get_courses">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">get_courses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#get_courses"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.get_courses" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.get_json">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">get_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uri</span></em>, <em class="sig-param"><span class="n">values</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#get_json"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.get_json" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.get_page">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">get_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uri</span></em>, <em class="sig-param"><span class="n">values</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#get_page"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.get_page" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.gethash">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">gethash</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#gethash"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.gethash" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.login">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">login</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em>, <em class="sig-param"><span class="n">password</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.login" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.open_page">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">open_page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uri</span></em>, <em class="sig-param"><span class="n">values</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#open_page"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.open_page" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.sync_discuss">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">sync_discuss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#sync_discuss"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.sync_discuss" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.sync_file">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">sync_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#sync_file"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.sync_file" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.sync_hw">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">sync_hw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#sync_hw"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.sync_hw" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.sync_info">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">sync_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#sync_info"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.sync_info" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="util.net_helper.sync_notify">
+<code class="sig-prename descclassname">util.net_helper.</code><code class="sig-name descname">sync_notify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/net_helper.html#sync_notify"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.net_helper.sync_notify" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-util.node">
+<span id="util-node-module"></span><h2>util.node module<a class="headerlink" href="#module-util.node" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.node.Node">
+<em class="property">class </em><code class="sig-prename descclassname">util.node.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>定义逻辑上的树操作的节点</p>
+<dl class="py attribute">
+<dt id="util.node.Node.file_name">
+<code class="sig-name descname">file_name</code><a class="headerlink" href="#util.node.Node.file_name" title="永久链接至目标">¶</a></dt>
+<dd><p>这个节点文件(文件夹)的名字</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="util.node.Node.father_node">
+<code class="sig-name descname">father_node</code><a class="headerlink" href="#util.node.Node.father_node" title="永久链接至目标">¶</a></dt>
+<dd><p>这个节点的父亲节点，至多存在一个</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="util.node.Node.child_node">
+<code class="sig-name descname">child_node</code><a class="headerlink" href="#util.node.Node.child_node" title="永久链接至目标">¶</a></dt>
+<dd><p>这个节点的儿子节点，可以存在多个，因此是一个列表</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.add_child">
+<code class="sig-name descname">add_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.add_child"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.add_child" title="永久链接至目标">¶</a></dt>
+<dd><p>为当前节点添加子节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="#util.node.Node" title="util.node.Node"><em>Node</em></a>) – 子节点</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.binary_search">
+<code class="sig-name descname">binary_search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.binary_search"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.binary_search" title="永久链接至目标">¶</a></dt>
+<dd><p>给定文件名，查找对应子节点,存在返回index，不存在返回-1</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>String） 待查找的文件名</strong> (<em>file_name</em>) – </p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>需要查找的文件名index，存在返回index，不存在返回-1</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.delete_child">
+<code class="sig-name descname">delete_child</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.delete_child"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.delete_child" title="永久链接至目标">¶</a></dt>
+<dd><p>在当前节点中的子节点里删除file_name对应的子节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>String</em>) – 想要删除的子节点文件名</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.get_child">
+<code class="sig-name descname">get_child</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.get_child"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.get_child" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前节点的子节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>这个节点的子节点列表</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p><a class="reference internal" href="#util.node.Node" title="util.node.Node">Node</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.get_father">
+<code class="sig-name descname">get_father</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.get_father"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.get_father" title="永久链接至目标">¶</a></dt>
+<dd><p>获取当前节点的父亲节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回</dt>
+<dd class="field-odd"><p>这个节点的父亲节点</p>
+</dd>
+<dt class="field-even">返回类型</dt>
+<dd class="field-even"><p><a class="reference internal" href="#util.node.Node" title="util.node.Node">Node</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.search_left">
+<code class="sig-name descname">search_left</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.search_left"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.search_left" title="永久链接至目标">¶</a></dt>
+<dd><p>给定文件名，查找对应子节点,返回最接近的位置的左边index</p>
+<p>返回的插入点 i 可以将列表分成两部分。左侧是 all(val &lt; x for val in a[lo:i]) ，右侧是 all(val &gt;= x for val in a[i:hi]) 。</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>(</strong><strong>String） 待查找的文件名</strong> (<em>file_name</em>) – </p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>需要查找的文件名index(左边)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.set_father">
+<code class="sig-name descname">set_father</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.set_father"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.set_father" title="永久链接至目标">¶</a></dt>
+<dd><p>给当前节点设置父亲节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="#util.node.Node" title="util.node.Node"><em>Node</em></a>) – 想要设置的父亲节点</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.node.Node.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/node.html#Node.show"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.node.Node.show" title="永久链接至目标">¶</a></dt>
+<dd><p>打印当前节点下的子树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>layer</strong> (<em>int</em>) – 首节点前的空格. Defaults to 0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.string_helper">
+<span id="util-string-helper-module"></span><h2>util.string_helper module<a class="headerlink" href="#module-util.string_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.string_helper.StringHelper">
+<em class="property">class </em><code class="sig-prename descclassname">util.string_helper.</code><code class="sig-name descname">StringHelper</code><a class="reference internal" href="_modules/util/string_helper.html#StringHelper"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.string_helper.StringHelper" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>辅助操作字符串的类</p>
+<p>提供字符串排序功能等等</p>
+<p>Attributes:</p>
+<dl class="py method">
+<dt id="util.string_helper.StringHelper.chinese_string_sort">
+<code class="sig-name descname">chinese_string_sort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chinese_string_list</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/string_helper.html#StringHelper.chinese_string_sort"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.string_helper.StringHelper.chinese_string_sort" title="永久链接至目标">¶</a></dt>
+<dd><p>对于中文字符串按照拼音顺序进行排序</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>chinese_string_list</strong> (<em>List</em><em>[</em><em>String</em><em>]</em>) – 待排序的中文字符串列表</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>排序后的中文字符串列表</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>chinese_string_list_sorted (List[String])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.string_helper.StringHelper.get_string_pinyin">
+<code class="sig-name descname">get_string_pinyin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/string_helper.html#StringHelper.get_string_pinyin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.string_helper.StringHelper.get_string_pinyin" title="永久链接至目标">¶</a></dt>
+<dd><p>获取一个字符串的拼音表示字符串</p>
+<p>如果是中文，比如’张荣侨’，返回’zhangrongqiao’;
+如果是英文或者数字，比如’randolf0210ppp’, 返回原值，’randolf0210ppp’
+如果中英文夹杂，返回对应的排列，如’randolf0210张荣侨ppp’，返回值，’randolf0210zhangrongqiaoppp’
+如果含有特殊字符，比如’_’，比如’rand_olf张荣侨ppp’, 返回: ‘rand_olfzhangrongqiaoppp’</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>[description]</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.tree">
+<span id="util-tree-module"></span><h2>util.tree module<a class="headerlink" href="#module-util.tree" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.tree.Tree">
+<em class="property">class </em><code class="sig-prename descclassname">util.tree.</code><code class="sig-name descname">Tree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/tree.html#Tree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.tree.Tree" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>定义逻辑上的树</p>
+<dl class="py method">
+<dt id="util.tree.Tree.get_subtree_node">
+<code class="sig-name descname">get_subtree_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relative_dir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/tree.html#Tree.get_subtree_node"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.tree.Tree.get_subtree_node" title="永久链接至目标">¶</a></dt>
+<dd><p>给定相对路径，返回相对路径下的子节点</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>relative_dir</strong> (<em>String</em>) – 相对根目录的路径</p>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>相对根目录下的子树节点</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p><a class="reference internal" href="ui.html#ui.Node.Node" title="ui.Node.Node">Node</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.tree.Tree.print_tree">
+<code class="sig-name descname">print_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/tree.html#Tree.print_tree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.tree.Tree.print_tree" title="永久链接至目标">¶</a></dt>
+<dd><p>打印整棵树</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.ui_branch">
+<span id="util-ui-branch-module"></span><h2>util.ui_branch module<a class="headerlink" href="#module-util.ui_branch" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-util.ui_node">
+<span id="util-ui-node-module"></span><h2>util.ui_node module<a class="headerlink" href="#module-util.ui_node" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.ui_node.UINode">
+<em class="property">class </em><code class="sig-prename descclassname">util.ui_node.</code><code class="sig-name descname">UINode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">node.Node</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QGraphicsTextItem</span></code></p>
+<p>继承Node, 作为视图上Node的节点，用于显示UI的文件系统树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>Node</strong> (<a class="reference internal" href="ui.html#ui.Node.Node" title="ui.Node.Node"><em>Node</em></a>) – [description]</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.TODO">
+<code class="sig-name descname">TODO</code><a class="headerlink" href="#util.ui_node.UINode.TODO" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.x_position">
+<code class="sig-name descname">x_position</code><a class="headerlink" href="#util.ui_node.UINode.x_position" title="永久链接至目标">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>Signals:</dt><dd><p>nodeChanged: node content change
+nodeMoved: node moved
+nodeEdited: dobleclick edit node
+nodeSelected: click select node
+nodeLostFocus: node lost focus</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="util.ui_node.UINode.focusOutEvent">
+<code class="sig-name descname">focusOutEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QFocusEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.focusOutEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.focusOutEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.itemChange">
+<code class="sig-name descname">itemChange</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">QGraphicsItem.GraphicsItemChange</em>, <em class="sig-param">Any</em><span class="sig-paren">)</span> &#x2192; Any<a class="reference internal" href="_modules/util/ui_node.html#UINode.itemChange"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.itemChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.mouseDoubleClickEvent">
+<code class="sig-name descname">mouseDoubleClickEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.mouseDoubleClickEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.mouseDoubleClickEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.mouseMoveEvent">
+<code class="sig-name descname">mouseMoveEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.mouseMoveEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.mouseMoveEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.mousePressEvent">
+<code class="sig-name descname">mousePressEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QGraphicsSceneMouseEvent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.mousePressEvent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.mousePressEvent" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.node_changed">
+<code class="sig-name descname">node_changed</code><a class="headerlink" href="#util.ui_node.UINode.node_changed" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.node_edited">
+<code class="sig-name descname">node_edited</code><a class="headerlink" href="#util.ui_node.UINode.node_edited" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.node_lost_focus">
+<code class="sig-name descname">node_lost_focus</code><a class="headerlink" href="#util.ui_node.UINode.node_lost_focus" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.node_moved">
+<code class="sig-name descname">node_moved</code><a class="headerlink" href="#util.ui_node.UINode.node_moved" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_node.UINode.node_selected">
+<code class="sig-name descname">node_selected</code><a class="headerlink" href="#util.ui_node.UINode.node_selected" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.paint">
+<code class="sig-name descname">paint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">QPainter</span></em>, <em class="sig-param"><span class="n">QStyleOptionGraphicsItem</span></em>, <em class="sig-param"><span class="n">QWidget</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.paint"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.paint" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setBorder">
+<code class="sig-name descname">setBorder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hasBorder</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setBorder"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setBorder" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setColor">
+<code class="sig-name descname">setColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setEditable">
+<code class="sig-name descname">setEditable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">editable</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setEditable"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setEditable" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setMargin">
+<code class="sig-name descname">setMargin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">margin</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setMargin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setMargin" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setNodeLevel">
+<code class="sig-name descname">setNodeLevel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setNodeLevel"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setNodeLevel" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_node.UINode.setTextColor">
+<code class="sig-name descname">setTextColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">textColor</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_node.html#UINode.setTextColor"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_node.UINode.setTextColor" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.ui_tree">
+<span id="util-ui-tree-module"></span><h2>util.ui_tree module<a class="headerlink" href="#module-util.ui_tree" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.ui_tree.UITree">
+<em class="property">class </em><code class="sig-prename descclassname">util.ui_tree.</code><code class="sig-name descname">UITree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_node</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_tree.html#UITree"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_tree.UITree" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">tree.Tree</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QGraphicsScene</span></code></p>
+<p>UI显示相关的树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><p><strong>Tree</strong> (<a class="reference internal" href="#util.tree.Tree" title="util.tree.Tree"><em>Tree</em></a>) – 继承于Tree的抽象基类</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Signals:</dt><dd><p>contentChanged: node content change signal
+nodeNumChange: num od node changed
+messageShow: message show in status bar
+press_close: press scene close subWindow(Note Window and Link Window)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="util.ui_tree.UITree.addFirstNode">
+<code class="sig-name descname">addFirstNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_tree.html#UITree.addFirstNode"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_tree.UITree.addFirstNode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_tree.UITree.brachDistance">
+<code class="sig-name descname">brachDistance</code><em class="property"> = 80</em><a class="headerlink" href="#util.ui_tree.UITree.brachDistance" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_tree.UITree.contentChanged">
+<code class="sig-name descname">contentChanged</code><a class="headerlink" href="#util.ui_tree.UITree.contentChanged" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_tree.UITree.messageShow">
+<code class="sig-name descname">messageShow</code><a class="headerlink" href="#util.ui_tree.UITree.messageShow" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_tree.UITree.nodeFactory">
+<code class="sig-name descname">nodeFactory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_tree.html#UITree.nodeFactory"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_tree.UITree.nodeFactory" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_tree.UITree.nodeNumChange">
+<code class="sig-name descname">nodeNumChange</code><a class="headerlink" href="#util.ui_tree.UITree.nodeNumChange" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="util.ui_tree.UITree.press_close">
+<code class="sig-name descname">press_close</code><a class="headerlink" href="#util.ui_tree.UITree.press_close" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="util.ui_tree.UITree.setUndoStack">
+<code class="sig-name descname">setUndoStack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stack</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/ui_tree.html#UITree.setUndoStack"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.ui_tree.UITree.setUndoStack" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util.xml_helper">
+<span id="util-xml-helper-module"></span><h2>util.xml_helper module<a class="headerlink" href="#module-util.xml_helper" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt id="util.xml_helper.XmlHelper">
+<em class="property">class </em><code class="sig-prename descclassname">util.xml_helper.</code><code class="sig-name descname">XmlHelper</code><a class="reference internal" href="_modules/util/xml_helper.html#XmlHelper"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.xml_helper.XmlHelper" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="util.xml_helper.XmlHelper.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">father</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/xml_helper.html#XmlHelper.add_node"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.xml_helper.XmlHelper.add_node" title="永久链接至目标">¶</a></dt>
+<dd><p>给定一个node节点和一个父亲节点，将node插入到父亲节点下</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<a class="reference internal" href="ui.html#ui.Node.Node" title="ui.Node.Node"><em>Node</em></a>) – 一个需要插入的节点，将在XML文件中其插入到父亲节点(father)下</p></li>
+<li><p><strong>father</strong> (<a class="reference internal" href="ui.html#ui.Node.Node" title="ui.Node.Node"><em>Node</em></a>) – 文件树中待插入的节点</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.xml_helper.XmlHelper.parse_xml">
+<code class="sig-name descname">parse_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em>, <em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/xml_helper.html#XmlHelper.parse_xml"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.xml_helper.XmlHelper.parse_xml" title="永久链接至目标">¶</a></dt>
+<dd><p>给定xml文件地址以及xml文件名，解析这个文件为一棵树</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>String</em>) – xml文件的地址</p></li>
+<li><p><strong>file_name</strong> (<em>String</em>) – xml文件的文件名</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回</dt>
+<dd class="field-even"><p>xml树(未处理为文件树)</p>
+</dd>
+<dt class="field-odd">返回类型</dt>
+<dd class="field-odd"><p>ElementTree</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="util.xml_helper.XmlHelper.xml_generate">
+<code class="sig-name descname">xml_generate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em>, <em class="sig-param"><span class="n">file_path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/util/xml_helper.html#XmlHelper.xml_generate"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#util.xml_helper.XmlHelper.xml_generate" title="永久链接至目标">¶</a></dt>
+<dd><p>给定文件名生成一个xml文件，用于存储UI树结构或者File 树结构</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>String</em>) – 生成的XML文件文件名</p></li>
+<li><p><strong>file_path</strong> (<em>String</em>) – 生成的XML文件文件绝对路径</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-util">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-util" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, cheesebox
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

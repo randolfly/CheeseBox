@@ -1,6 +1,7 @@
 .vscode
+/src/.idea
 .pytest_cache
 .exe
-build/
+# build/
 **/__pycache__/
-/src/test/report/
+# /src/test/report/
